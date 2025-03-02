@@ -1,0 +1,19 @@
+components:
+- components: []
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {col_widths: '{}'}
+  type: ColumnPanel
+- components: []
+  layout_properties: {slot: nav-right}
+  name: navbar_links
+  properties: {}
+  type: FlowPanel
+- layout_properties: {slot: left-nav}
+  name: column_panel_1
+  properties: {}
+  type: ColumnPanel
+container:
+  properties: {background: '', border: '', foreground: '', html: '@theme:standard-page.html', role: secondary-app-bar, tooltip: '', visible: true}
+  type: HtmlTemplate
+is_package: true
