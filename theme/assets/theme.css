@@ -780,7 +780,7 @@ https://stackoverflow.com/questions/30533055/calculating-shadow-values-for-all-m
   width: 100%;
   font-size: 20px;
   font-weight: 500;
-  background-color:  %color:Primary 500%;;
+  background-color:  %color:Primary 700%;;
   color: white;
   min-height: 70px;
   text-align: center;
@@ -799,7 +799,7 @@ https://stackoverflow.com/questions/30533055/calculating-shadow-values-for-all-m
 
 .footer a, .footer a.anvil-component {
   padding: 5px;
-/*   margin: 8px 0 0; */
+  margin: 8px 0 0;
   border-radius: 20px;
 }
 

@@ -1,21 +1,113 @@
 components:
 - components:
-  - layout_properties: {grid_position: 'DVOTBZ,XSSGYP'}
-    name: label_1
-    properties: {}
-    type: Label
-  layout_properties: {slot: default}
-  name: content_panel
-  properties: {col_widths: '{}'}
-  type: ColumnPanel
-- components: []
+  - name: button_7
+    properties: {foreground: black, text: Home}
+    type: Button
+  - name: button_6
+    properties: {foreground: black, text: About}
+    type: Button
+  - name: button_5
+    properties: {align: center, foreground: black, text: Features}
+    type: Button
+  - name: button_4
+    properties: {foreground: black, text: Users}
+    type: Button
+  - name: button_3
+    properties: {foreground: black, text: Payment}
+    type: Button
+  - layout_properties: {}
+    name: button_2
+    properties: {background: white, border: 2px solid black, foreground: black, text: Log In}
+    type: Button
+  - layout_properties: {}
+    name: button_1
+    properties: {background: '#59c8ff', border: 2px solid black, foreground: black, text: Request an account}
+    type: Button
   layout_properties: {slot: nav-right}
   name: navbar_links
   properties: {}
   type: FlowPanel
-- layout_properties: {slot: left-nav}
+- layout_properties: {slot: title}
+  name: image_1
+  properties: {height: 40, source: _/theme/app-logo.png}
+  type: Image
+- components:
+  - components:
+    - layout_properties: {grid_position: 'ZTWOAM,JZZAFP'}
+      name: column_panel_4
+      properties: {}
+      type: ColumnPanel
+    layout_properties: {grid_position: 'WBNFQY,GRAWRF'}
+    name: column_panel_3
+    properties: {}
+    type: ColumnPanel
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {col_widths: '{}', wrap_on: mobile}
+  type: ColumnPanel
+- components:
+  - layout_properties: {grid_position: 'PMYBAG,TKWUCJ JTUOXE,RWMAXG'}
+    name: image_2
+    properties: {height: 59, source: _/theme/app-logo.png}
+    type: Image
+  - layout_properties: {grid_position: 'PMYBAG,TKWUCJ WZBIRT,YVBRPW'}
+    name: label_3
+    properties: {font_size: 18, foreground: black, text: © 2025 All Rights Reserved}
+    type: Label
+  - layout_properties: {grid_position: 'PMYBAG,HUVEXR QODGFP,XCYSKY'}
+    name: label_1
+    properties: {align: right, bold: true, foreground: black, text: BUSINESS TRENDS}
+    type: Label
+  - layout_properties: {grid_position: 'PMYBAG,HUVEXR XWVEMA,ZUJTYP'}
+    name: label_2
+    properties:
+      align: right
+      font_size: 17
+      foreground: black
+      text: |-
+        Sentiment analysis of Arabic Google Maps reviews to help
+        local businesses stay competitive, spot trends, and improve.
+    type: Label
+  - components:
+    - layout_properties: {grid_position: 'ZSIUQO,HHKVHF'}
+      name: spacer_2
+      properties: {height: 32}
+      type: Spacer
+    - layout_properties: {grid_position: 'ZSIUQO,UVEZSA'}
+      name: spacer_1
+      properties: {height: 32}
+      type: Spacer
+    - layout_properties: {grid_position: 'ZSIUQO,BKQMLK'}
+      name: spacer_3
+      properties: {height: 32}
+      type: Spacer
+    - layout_properties: {grid_position: 'ZSIUQO,EGTCAK'}
+      name: spacer_4
+      properties: {height: 32}
+      type: Spacer
+    - layout_properties: {grid_position: 'ZSIUQO,EHPGUB'}
+      name: button_11
+      properties: {text: button_11}
+      type: Button
+    - layout_properties: {grid_position: 'ZSIUQO,VOZTNQ'}
+      name: button_10
+      properties: {text: button_10}
+      type: Button
+    - layout_properties: {grid_position: 'ZSIUQO,GHXAMC'}
+      name: button_9
+      properties: {text: button_9}
+      type: Button
+    - layout_properties: {grid_position: 'ZSIUQO,WRTGCO'}
+      name: button_8
+      properties: {text: button_8}
+      type: Button
+    layout_properties: {grid_position: 'ZKZATE,ASHFVA'}
+    name: column_panel_2
+    properties: {}
+    type: ColumnPanel
+  layout_properties: {slot: footer-slot}
   name: column_panel_1
-  properties: {}
+  properties: {col_widths: '{"HUVEXR":40}', wrap_on: never}
   type: ColumnPanel
 container:
   properties: {background: '', border: '', foreground: '', html: '@theme:standard-page.html', role: secondary-app-bar, tooltip: '', visible: true}
