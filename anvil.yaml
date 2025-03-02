@@ -5,5 +5,8 @@ name: Clone of Material Design with Stick Footer
 package_name: Material_Design_with_Stick_Footer
 renamed: true
 runtime_options: {client_version: '3', server_spec: null, server_version: python3-sandbox, version: 2}
-services: []
+services:
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/tables.yml
 startup_form: Form1
