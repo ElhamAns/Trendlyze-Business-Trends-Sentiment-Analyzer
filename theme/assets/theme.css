@@ -609,8 +609,8 @@ body>div[data-notify="container"].alert-warning>span[data-notify="title"]{
 
 /* full_width_row sections go full bleed */
 .column-panel.anvil-role-card > .anvil-panel-section > .anvil-panel-section-container.full-width-row {
-  margin-left: -12px;
-  margin-right: -12px;
+  /* margin-left: -12px; */
+  /* margin-right: -12px; */
   width: initial;
   max-width: initial;
 }

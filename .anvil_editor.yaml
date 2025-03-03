@@ -1,10 +1,15 @@
 unique_ids:
   assets:
     app-logo.png: '1740912227243649047957758.8593'
+    competitor-logo.png: '1740967818818717067886560.7389'
+    dashboard.png: '1740965042262747033793726.6853'
+    data-driven-logo.png: '1740967916709546894915231.5519'
+    segment-icon.png: '1740967394500953549130954.8485'
     standard-page.html: TRDRHPY4CSWC3KA23PB72POVVBRI4V4O
     theme.css: ZWW7VATNPJC6EW44YDZGE6NB7BH6NLO6
   forms:
     Form1: LR77GVF4ZPAA7GDOARCWB6PZPP2ENG6B
+    Form2: '1740966406577684578282274.6436'
   modules: {}
   scripts: {}
   server_modules: {}
