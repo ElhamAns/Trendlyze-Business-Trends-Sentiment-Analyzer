@@ -1,27 +1,109 @@
 components:
 - components:
-  - layout_properties: {grid_position: 'MCBFVZ,TRAEGB'}
+  - layout_properties: {grid_position: 'HARACA,XLCQVG'}
     name: label_1
-    properties: {align: center, text: ABOUT US}
+    properties: {align: center, bold: true, font_size: 48, text: Request an Account}
     type: Label
-  - layout_properties: {grid_position: 'XKMEQQ,HABBAE'}
-    name: label_2
-    properties:
-      font_size: 26
-      text: |-
-        Business Trends is committed to transforming consumer comments into useful
-        information so that nearby companies may prosper. In order to provide a more
-        thorough insight of consumer preferences and perspectives, our technology
-        analyzes Arabic Google Maps reviews using sophisticated sentiment analysis and
-        business trend tracking. Through the provision of comprehensive insights about
-        consumer mood, popular items, and rival performance, we enable entrepreneurs to
-        make more informed decisions that improve their offerings, spur expansion, and
-        maintain a competitive edge in the market. Our goal is to turn your customer
-        reviews into an effective instrument for business success.
-    type: Label
+  - components:
+    - layout_properties: {grid_position: 'CHHHOC,CNCTOU'}
+      name: file_loader_1
+      properties:
+        icon: fa:upload
+        spacing:
+          margin: [34, null, null, null]
+        text: Add Logo
+      type: FileLoader
+    - layout_properties: {grid_position: 'CHHHOC,SPHPGG IIVWIB,LWQDOF'}
+      name: label_2
+      properties: {bold: true, font_size: 18, text: Business name}
+      type: Label
+    - layout_properties: {grid_position: 'CHHHOC,SPHPGG WDHXUB,NNNIGN'}
+      name: text_box_1
+      properties: {background: white, placeholder: 'e.g., John’s Bakery'}
+      type: TextBox
+    - layout_properties: {grid_position: 'ZHZFXW,TMORVK FAIZJT,EVUWGL'}
+      name: label_3
+      properties: {bold: true, font_size: 18, text: Email}
+      type: Label
+    - layout_properties: {grid_position: 'ZHZFXW,TMORVK HPZWTO,BHHIIT'}
+      name: text_box_2
+      properties: {background: white, placeholder: example@gmail.com}
+      type: TextBox
+    - layout_properties: {grid_position: 'ZHZFXW,TMORVK GOOQQZ,LCKTKO'}
+      name: label_5
+      properties: {bold: true, font_size: 18, text: Password}
+      type: Label
+    - layout_properties: {grid_position: 'ZHZFXW,TMORVK IBJEXB,QXAFZS'}
+      name: text_box_4
+      properties: {background: white, placeholder: must be 8 characters}
+      type: TextBox
+    - layout_properties: {grid_position: 'ZHZFXW,TMORVK AALFLQ,FUYRFQ'}
+      name: label_7
+      properties: {bold: true, font_size: 18, text: Business Type}
+      type: Label
+    - layout_properties: {grid_position: 'ZHZFXW,TMORVK AIBNSH,EBYZEU'}
+      name: drop_down_1
+      properties: {}
+      type: DropDown
+    - layout_properties: {grid_position: 'ZHZFXW,TMORVK TSHWYM,AYJFEM'}
+      name: label_9
+      properties: {bold: true, font_size: 18, text: City}
+      type: Label
+    - layout_properties: {grid_position: 'ZHZFXW,TMORVK PYAWEC,VHMTNB'}
+      name: drop_down_3
+      properties: {}
+      type: DropDown
+    - layout_properties: {grid_position: 'ZHZFXW,IBGFCP RPKSXF,XOVIQZ'}
+      name: label_4
+      properties: {bold: true, font_size: 18, text: Confirm email}
+      type: Label
+    - layout_properties: {grid_position: 'ZHZFXW,IBGFCP FCMPVV,BTZRPN'}
+      name: text_box_3
+      properties: {background: white, placeholder: repeat email}
+      type: TextBox
+    - layout_properties: {grid_position: 'ZHZFXW,IBGFCP TWBTQD,JYKJTO'}
+      name: label_6
+      properties: {bold: true, font_size: 18, text: Confirm password}
+      type: Label
+    - layout_properties: {grid_position: 'ZHZFXW,IBGFCP LLHCPY,PQHELJ'}
+      name: text_box_5
+      properties: {background: white, placeholder: repeat password}
+      type: TextBox
+    - layout_properties: {grid_position: 'ZHZFXW,IBGFCP DMGRQE,KDHIRL'}
+      name: label_8
+      properties: {bold: true, font_size: 18, text: Country}
+      type: Label
+    - layout_properties: {grid_position: 'ZHZFXW,IBGFCP IJLCGX,PNVNRO'}
+      name: drop_down_2
+      properties: {}
+      type: DropDown
+    - layout_properties: {grid_position: 'ZHZFXW,IBGFCP BDJQWK,VTYAEG'}
+      name: label_10
+      properties: {bold: true, font_size: 18, text: Area}
+      type: Label
+    - layout_properties: {grid_position: 'ZHZFXW,IBGFCP DJLBZD,EGAHJT'}
+      name: drop_down_4
+      properties: {}
+      type: DropDown
+    - layout_properties: {grid_position: 'BXFILS,HLQTYQ'}
+      name: label_11
+      properties: {bold: true, font_size: 18, text: Description}
+      type: Label
+    - layout_properties: {grid_position: 'CYLGHO,UJGEWC'}
+      name: text_area_1
+      properties: {auto_expand: true, placeholder: Describe Your Business in Few Words...}
+      type: TextArea
+    layout_properties: {grid_position: 'UFLMRA,URGBMJ'}
+    name: card_1
+    properties: {background: '#e1edfc', col_widths: '{"CNCTOU":15,"SPHPGG":45}', role: card}
+    type: ColumnPanel
   layout_properties: {grid_position: 'GBGVOT,GCNSET'}
   name: column_panel_1
   properties: {}
   type: ColumnPanel
-container: {type: ColumnPanel}
+container:
+  properties:
+    spacing:
+      margin: [null, null, null, 0]
+  type: ColumnPanel
 is_package: true
