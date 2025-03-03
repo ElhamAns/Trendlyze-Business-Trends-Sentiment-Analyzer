@@ -13,3 +13,11 @@ class Form1(Form1Template):
 
     print(type(self))
 
+  def button_7_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass
+
+  def button_6_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass
+
