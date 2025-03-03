@@ -1,0 +1,73 @@
+components:
+- components:
+  - layout_properties: {grid_position: 'KYIJYL,YSABEX'}
+    name: image_1
+    properties:
+      height: 76
+      margin: [null, 183, null, 182]
+      source: _/theme/app-logo.png
+    type: Image
+  - layout_properties: {grid_position: 'DCEUDS,LCYEAZ'}
+    name: label_1
+    properties: {align: center, bold: true, font_size: 36, text: Forget Password}
+    type: Label
+  - components:
+    - layout_properties: {grid_position: 'TXZQLI,TGGCGB'}
+      name: spacer_1
+      properties: {height: 32}
+      type: Spacer
+    - layout_properties: {grid_position: 'MOJMTF,MFLLDI'}
+      name: label_2
+      properties:
+        bold: true
+        font_size: 18
+        spacing:
+          margin: [null, '168', null, 168]
+        text: Email
+      type: Label
+    - layout_properties: {grid_position: 'ELCVUH,ELYMJJ'}
+      name: text_box_2
+      properties:
+        background: white
+        margin: [null, '0', null, '168']
+        placeholder: example@gmail.com
+      type: TextBox
+    - layout_properties: {grid_position: 'ELCVUH,VHRMAW'}
+      name: spacer_2
+      properties: {height: 32}
+      type: Spacer
+    - layout_properties: {grid_position: 'EQLHHA,ZDDPDU'}
+      name: label_4
+      properties:
+        bold: true
+        font_size: 18
+        spacing:
+          margin: [null, '168', null, '168']
+        text: Confirm Email
+      type: Label
+    - layout_properties: {grid_position: 'FDQZLA,EWKIOZ'}
+      name: text_box_1
+      properties:
+        background: white
+        margin: [null, null, null, '168']
+        placeholder: example@gmail.com
+      type: TextBox
+    - layout_properties: {grid_position: 'FDQZLA,PERFWP'}
+      name: spacer_3
+      properties: {height: 32}
+      type: Spacer
+    - event_bindings: {click: button_1_click}
+      layout_properties: {grid_position: 'AHEGNP,CEOCLT'}
+      name: button_1
+      properties: {background: black, bold: true, foreground: white, text: Send Otp Code}
+      type: Button
+    layout_properties: {grid_position: 'YAYZQK,ZATKLL'}
+    name: card_1
+    properties: {background: '#e1edfc', col_widths: '{"ELYMJJ":40,"VHRMAW":20,"EWKIOZ":40,"PERFWP":20}', role: card}
+    type: ColumnPanel
+  layout_properties: {grid_position: 'QXILPK,JJYAKJ'}
+  name: column_panel_1
+  properties: {}
+  type: ColumnPanel
+container: {type: ColumnPanel}
+is_package: true

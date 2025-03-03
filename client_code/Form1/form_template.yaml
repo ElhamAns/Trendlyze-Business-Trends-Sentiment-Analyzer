@@ -17,11 +17,13 @@ components:
   - name: button_3
     properties: {foreground: black, text: Payment}
     type: Button
-  - layout_properties: {}
+  - event_bindings: {click: button_2_click}
+    layout_properties: {}
     name: button_2
     properties: {background: white, border: 2px solid black, foreground: black, text: Log In}
     type: Button
-  - layout_properties: {}
+  - event_bindings: {click: button_1_click}
+    layout_properties: {}
     name: button_1
     properties: {background: '#59c8ff', border: 2px solid black, foreground: black, text: Request an account}
     type: Button
