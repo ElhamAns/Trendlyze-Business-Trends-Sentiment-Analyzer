@@ -42,16 +42,16 @@ components:
       properties: {bold: true, font_size: 18, text: Business Type}
       type: Label
     - layout_properties: {grid_position: 'ZHZFXW,TMORVK AIBNSH,EBYZEU'}
-      name: drop_down_1
-      properties: {}
+      name: type_drop_down
+      properties: {background: white, foreground: ''}
       type: DropDown
     - layout_properties: {grid_position: 'ZHZFXW,TMORVK TSHWYM,AYJFEM'}
       name: label_9
       properties: {bold: true, font_size: 18, text: City}
       type: Label
     - layout_properties: {grid_position: 'ZHZFXW,TMORVK PYAWEC,VHMTNB'}
-      name: drop_down_3
-      properties: {}
+      name: city_drop_down
+      properties: {background: white}
       type: DropDown
     - layout_properties: {grid_position: 'ZHZFXW,IBGFCP RPKSXF,XOVIQZ'}
       name: label_4
@@ -74,16 +74,16 @@ components:
       properties: {bold: true, font_size: 18, text: Country}
       type: Label
     - layout_properties: {grid_position: 'ZHZFXW,IBGFCP IJLCGX,PNVNRO'}
-      name: drop_down_2
-      properties: {}
+      name: country_drop_down
+      properties: {background: white}
       type: DropDown
     - layout_properties: {grid_position: 'ZHZFXW,IBGFCP BDJQWK,VTYAEG'}
       name: label_10
       properties: {bold: true, font_size: 18, text: Area}
       type: Label
     - layout_properties: {grid_position: 'ZHZFXW,IBGFCP DJLBZD,EGAHJT'}
-      name: drop_down_4
-      properties: {}
+      name: area_drop_down
+      properties: {background: white}
       type: DropDown
     - layout_properties: {grid_position: 'BXFILS,HLQTYQ'}
       name: label_11
@@ -93,20 +93,27 @@ components:
       name: text_area_1
       properties: {auto_expand: true, placeholder: Describe Your Business in Few Words...}
       type: TextArea
-    - layout_properties: {grid_position: 'BWUUOM,XVWHUQ'}
+    - data_bindings: []
+      layout_properties: {grid_position: 'BWUUOM,XVWHUQ'}
       name: check_box_1
       properties:
         align: center
+        checked: false
+        enabled: true
         text: |-
           I have read and agreed to the Terms of 
           Service and Privacy Policy
+        visible: true
       type: CheckBox
-    - event_bindings: {click: button_1_click}
+    - data_bindings:
+      - {code: if self.check_box_1.checked(), property: enabled, writeback: false}
+      event_bindings: {click: button_1_click}
       layout_properties: {grid_position: 'SYTDON,GWJTKO'}
       name: button_1
       properties:
         background: black
         bold: true
+        enabled: true
         foreground: white
         spacing:
           margin: [null, 329, null, 327]
