@@ -43,6 +43,15 @@ db_schema:
     - admin_ui: {order: 12, width: 200}
       name: logo
       type: media
+    - admin_ui: {order: 13, width: 200}
+      name: requested_at
+      type: datetime
+    - admin_ui: {order: 14, width: 200}
+      name: status
+      type: string
+    - admin_ui: {order: 15, width: 200}
+      name: subscription_package
+      type: string
     server: full
     title: Users
 dependencies: []
