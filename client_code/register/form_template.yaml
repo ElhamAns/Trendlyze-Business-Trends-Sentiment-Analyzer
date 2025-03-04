@@ -18,7 +18,7 @@ components:
       properties: {bold: true, font_size: 18, text: Business name}
       type: Label
     - layout_properties: {grid_position: 'CHHHOC,SPHPGG WDHXUB,NNNIGN'}
-      name: text_box_1
+      name: business_name
       properties: {background: white, border: '', placeholder: 'e.g., John’s Bakery'}
       type: TextBox
     - layout_properties: {grid_position: 'ZHZFXW,TMORVK FAIZJT,EVUWGL'}
@@ -26,7 +26,7 @@ components:
       properties: {bold: true, font_size: 18, text: Email}
       type: Label
     - layout_properties: {grid_position: 'ZHZFXW,TMORVK HPZWTO,BHHIIT'}
-      name: text_box_2
+      name: email
       properties: {background: white, placeholder: example@gmail.com}
       type: TextBox
     - layout_properties: {grid_position: 'ZHZFXW,TMORVK GOOQQZ,LCKTKO'}
@@ -34,8 +34,8 @@ components:
       properties: {bold: true, font_size: 18, text: Password}
       type: Label
     - layout_properties: {grid_position: 'ZHZFXW,TMORVK IBJEXB,QXAFZS'}
-      name: text_box_4
-      properties: {background: white, placeholder: must be 8 characters}
+      name: passwrod
+      properties: {background: white, hide_text: true, placeholder: must be 8 characters}
       type: TextBox
     - layout_properties: {grid_position: 'ZHZFXW,TMORVK AALFLQ,FUYRFQ'}
       name: label_7
@@ -58,7 +58,7 @@ components:
       properties: {bold: true, font_size: 18, text: Confirm email}
       type: Label
     - layout_properties: {grid_position: 'ZHZFXW,IBGFCP FCMPVV,BTZRPN'}
-      name: text_box_3
+      name: confirm_email
       properties: {background: white, placeholder: repeat email}
       type: TextBox
     - layout_properties: {grid_position: 'ZHZFXW,IBGFCP TWBTQD,JYKJTO'}
@@ -66,8 +66,8 @@ components:
       properties: {bold: true, font_size: 18, text: Confirm password}
       type: Label
     - layout_properties: {grid_position: 'ZHZFXW,IBGFCP LLHCPY,PQHELJ'}
-      name: text_box_5
-      properties: {background: white, placeholder: repeat password}
+      name: confirm_password
+      properties: {background: white, hide_text: true, placeholder: repeat password}
       type: TextBox
     - layout_properties: {grid_position: 'ZHZFXW,IBGFCP DMGRQE,KDHIRL'}
       name: label_8
@@ -101,7 +101,8 @@ components:
           I have read and agreed to the Terms of 
           Service and Privacy Policy
       type: CheckBox
-    - layout_properties: {grid_position: 'SYTDON,GWJTKO'}
+    - event_bindings: {click: button_1_click}
+      layout_properties: {grid_position: 'SYTDON,GWJTKO'}
       name: button_1
       properties:
         background: black

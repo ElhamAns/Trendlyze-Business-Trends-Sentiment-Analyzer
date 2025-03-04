@@ -18,3 +18,16 @@ class register(registerTemplate):
     """This method is called when the button is clicked"""
     open_form('login')
     pass
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    if self.email != self.confirm_email:
+      alert("Email and Confirm email must be same")
+      return
+    if len(self.passwrod) < 8:
+      alert("Length of password must be greater than 8")
+      return
+    if self.passwrod != self.confirm_password:
+      alert("Password and Confirm Paswword must be same")
+      return
+    pass
