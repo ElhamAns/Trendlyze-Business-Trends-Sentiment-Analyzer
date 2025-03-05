@@ -25,17 +25,28 @@ class register(registerTemplate):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    if self.email != self.confirm_email:
+    if self.email.text != self.confirm_email.text:
       alert("Email and Confirm email must be same")
       return
-    if len(self.passwrod) < 8:
+    if len(self.passwrod.text) < 8:
       alert("Length of password must be greater than 8")
       return
-    if self.passwrod != self.confirm_password:
+    if self.passwrod.text != self.confirm_password.text:
       alert("Password and Confirm Paswword must be same")
       return
-    pass
+    user_already_exist = anvil.server.call('check_existing_user', self.email.text)
+    if user_already_exist:
+      alert("User Already Exist")
+      return
+    err = anvil.server.call('_do_signup', self.file_loader_1.file, self.business_name.text, self.email.text, self.passwrod.text, self.type_drop_down.selected_value, self.country_drop_down.selected_value, self.city_drop_down.selected_value, self.area_drop_down.selected_value, self.text_area_1.text)
+    if err is not None:
+      alert(err)
+    else:
+      alert(f"We have sent a confirmation email to {self.email.text}.\n\nCheck your email, and click on the link.")
+      open_form('login')
+      return
 
+    
   def enable_submit_button(self):
     if self.check_box_1.checked:
       print("in if")

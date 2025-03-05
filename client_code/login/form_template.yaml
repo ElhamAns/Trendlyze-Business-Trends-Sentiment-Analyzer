@@ -56,6 +56,10 @@ components:
       name: spacer_3
       properties: {height: 32}
       type: Spacer
+    - layout_properties: {grid_position: 'NQUUOU,AQMUVT'}
+      name: button_3
+      properties: {background: black, text: Login}
+      type: Button
     - event_bindings: {click: button_1_click}
       layout_properties: {grid_position: 'AHEGNP,CEOCLT'}
       name: button_1
