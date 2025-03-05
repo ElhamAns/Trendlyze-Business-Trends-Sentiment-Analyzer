@@ -35,3 +35,14 @@ class register(registerTemplate):
       alert("Password and Confirm Paswword must be same")
       return
     pass
+
+  def enable_submit_button(self):
+    if self.check_box_1.checked:
+      print("in if")
+      return True
+
+  def check_box_1_change(self, **event_args):
+    if self.check_box_1.checked:
+      self.button_1.enabled = True
+    else:
+      self.button_1.enabled = False

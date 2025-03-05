@@ -94,6 +94,7 @@ components:
       properties: {auto_expand: true, placeholder: Describe Your Business in Few Words...}
       type: TextArea
     - data_bindings: []
+      event_bindings: {change: check_box_1_change}
       layout_properties: {grid_position: 'BWUUOM,XVWHUQ'}
       name: check_box_1
       properties:
@@ -106,7 +107,7 @@ components:
         visible: true
       type: CheckBox
     - data_bindings:
-      - {code: if self.check_box_1.checked(), property: enabled, writeback: false}
+      - {code: self.enable_submit_button(), property: enabled, writeback: false}
       event_bindings: {click: button_1_click}
       layout_properties: {grid_position: 'SYTDON,GWJTKO'}
       name: button_1
