@@ -7,27 +7,40 @@ components:
       type: Label
     - components:
       - components:
-        - layout_properties: {column: JKSDUP}
+        - data_bindings:
+          - {code: 'self.item[''business_name'']', property: text, writeback: false}
+          layout_properties: {column: JKSDUP}
           name: label_2
           properties: {}
           type: Label
-        - layout_properties: {column: VJQQOR}
+        - data_bindings:
+          - {code: 'self.item[''area'']', property: text, writeback: false}
+          layout_properties: {column: VJQQOR}
           name: label_3
           properties: {}
           type: Label
-        - layout_properties: {column: OJLQEN}
+        - data_bindings:
+          - {code: 'self.item[''requested_at'']', property: text, writeback: false}
+          layout_properties: {column: OJLQEN}
           name: label_4
           properties: {}
           type: Label
-        - layout_properties: {column: NEPVRV}
+        - data_bindings:
+          - {code: 'self.item[''business_type'']', property: text, writeback: false}
+          layout_properties: {column: NEPVRV}
           name: label_5
           properties: {}
           type: Label
-        - layout_properties: {column: BIXNNN}
+        - data_bindings:
+          - {code: self.get_status(), property: text, writeback: false}
+          - {code: self.get_background_color(), property: background, writeback: false}
+          layout_properties: {column: BIXNNN}
           name: label_6
-          properties: {}
+          properties: {background: self., foreground: ''}
           type: Label
-        - layout_properties: {column: ZJDIIC}
+        - data_bindings:
+          - {code: 'self.item[''status'']', property: enabled, writeback: false}
+          layout_properties: {column: ZJDIIC}
           name: button_1
           properties: {text: Pay now}
           type: Button

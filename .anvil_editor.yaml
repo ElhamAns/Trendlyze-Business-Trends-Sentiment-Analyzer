@@ -1,5 +1,6 @@
 unique_ids:
   assets:
+    admin_dashboard.html: '174120612747799633445583.6374'
     app-logo.png: '1740912227243649047957758.8593'
     competitor-logo.png: '1740967818818717067886560.7389'
     dashboard.png: '1740965042262747033793726.6853'
@@ -10,12 +11,15 @@ unique_ids:
     theme.css: ZWW7VATNPJC6EW44YDZGE6NB7BH6NLO6
   forms:
     Form1: LR77GVF4ZPAA7GDOARCWB6PZPP2ENG6B
+    admin_dashboard: '1741206064806614367936179.5667'
+    admin_dashboard.ItemTemplate1: '1741206434819826095701173.237'
     forgetPassword: '1740991313630418700649056.9611'
     login: '1740990352874450834725710.7965'
     register: '1740966406577684578282274.6436'
     signUpReqquestStatus: '1741050310718990670727519.8452'
     signUpReqquestStatus.RowTemplate1: '1741050515724163555611539.66348'
-  modules: {}
+  modules:
+    login_flow: '1741203643657545999267965.6556'
   scripts: {}
   server_modules:
     authFlow: '1741160093867387440407659.11383'

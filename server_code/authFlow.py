@@ -8,6 +8,8 @@ import anvil.server
 from anvil.http import url_encode
 import bcrypt
 from random import SystemRandom
+from datetime import datetime
+from login import login
 random = SystemRandom()
 
 def mk_token():
@@ -85,7 +87,11 @@ def _do_signup(logo, business_name, email, password, business_type, country, cit
                            country=country, 
                            city=city, 
                            area=area, 
-                           description=description)
+                           description=description,
+                           requested_at=datetime.now(),
+                           # will remove this on email send
+                           enabled=True
+                                )
       return user
     
   user = add_user_if_missing()
@@ -131,6 +137,7 @@ def _confirm_email_address(email, confirm_key):
   if user is not None:
     user['confirmed_email'] = True
     user['link_key'] = None
+    user['enabled'] = True
     anvil.users.force_login(user)
     return True
 
@@ -140,16 +147,43 @@ def check_existing_user(email):
   if user:
     return True
 
-@anvil.server.callable
-def register_new_user(logo, business_name, email, password, business_type, country, city, area, description):
-  pwhash = hash_password(password, bcrypt.gensalt())
+
+def login_with_form(allow_cancel=False):
+  """Log in by popping up the custom LoginDialog"""
+  d = login()
+
+  BUTTONS = [("Log in", "login", "primary")]
+  if allow_cancel:
+    BUTTONS += [("Cancel", None)]
   
-  app_tables.users.add_row(logo=logo, 
-                           business_name=business_name, 
-                           email=email, 
-                           password_hash=pwhash, 
-                           business_type=business_type, 
-                           country=country, 
-                           city=city, 
-                           area=area, 
-                           description=description)
+  while anvil.users.get_user() is None:
+    choice = alert(d, title="Log In", dismissible=allow_cancel, buttons=BUTTONS)
+    
+    if choice == 'login':
+      try:
+        anvil.users.login_with_email(d.email_box.text, d.password_box.text, remember=True)
+      except anvil.users.EmailNotConfirmed:
+        d.confirm_lnk.visible = True
+      except anvil.users.AuthenticationFailed as e:
+        d.login_err_lbl.text = str(e.args[0])
+        d.login_err_lbl.visible = True
+        
+    elif choice == 'reset_password':
+      fp = ForgottenPasswordDialog(d.email_box.text)
+      
+      if alert(fp, title='Forgot Password', buttons=[("Reset password", True, "primary"), ("Cancel", False)]):
+        
+        if anvil.server.call('_send_password_reset', fp.email_box.text):
+          alert(f"A password reset email has been sent to {fp.email_box.text}.")
+        else:
+          alert("That username does not exist in our records.")
+        
+    elif choice == 'confirm_email':
+      if anvil.server.call('_send_email_confirm_link', d.email_box.text):
+        alert(f"A new confirmation email has been sent to {d.email_box.text}.")
+      else:
+        alert(f"'{d.email_box.text}' is not an unconfirmed user account.")
+      d.confirm_lnk.visible = False
+    
+    elif choice is None and allow_cancel:
+      break
