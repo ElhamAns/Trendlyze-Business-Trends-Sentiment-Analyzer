@@ -30,6 +30,9 @@ class login(loginTemplate):
     """This method is called when the button is clicked"""
     try:
       user = anvil.users.login_with_email(self.email_text_box.text, self.password_text_box.text, remember=True)
+      if user['is_admin']:
+        open_form('admin_dashboard')
+        return
       open_form(signUpReqquestStatus(item=user))
     except anvil.users.AuthenticationFailed as e:
       alert("user not found")

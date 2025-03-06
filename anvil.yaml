@@ -55,6 +55,9 @@ db_schema:
     - admin_ui: {order: 17, width: 200}
       name: status
       type: bool
+    - admin_ui: {order: 18, width: 200}
+      name: is_admin
+      type: bool
     server: full
     title: Users
 dependencies: []
