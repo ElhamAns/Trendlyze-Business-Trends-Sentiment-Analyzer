@@ -12,12 +12,6 @@ class Form1(Form1Template):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
-
-    # Any code you write here will run when the form opens.
-    print(self.__name__)
-
-    print(type(self))
-
   def button_7_click(self, **event_args):
     """This method is called when the button is clicked"""
     pass
