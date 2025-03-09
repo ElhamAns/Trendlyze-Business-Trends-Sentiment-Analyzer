@@ -250,7 +250,7 @@ components:
     type: ColumnPanel
   layout_properties: {slot: default}
   name: column_panel_2
-  properties: {}
+  properties: {col_widths: '{"PUADYY":20,"BXRTGY":20,"MGLMBA":20}'}
   type: ColumnPanel
 container:
   properties: {html: '@theme:admin_dashboard.html'}
