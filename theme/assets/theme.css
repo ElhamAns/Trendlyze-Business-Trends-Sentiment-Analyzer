@@ -49,34 +49,36 @@ a>.anvil-component-icon.right_edge-icon,
 
 
 .col-padding.col-padding-tiny { padding: 0 2px; }
-.column-panel.col-padding-tiny > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -2px; }
+.column-panel.col-padding-tiny > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -2px; align-items: flex-end;}
 
 .col-padding.col-padding-small { padding: 0 4px; }
-.column-panel.col-padding-small > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -4px; }
+.column-panel.col-padding-small > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -4px; align-items: flex-end;}
 
 .col-padding.col-padding-medium { padding: 0 8px; }
-.column-panel.col-padding-medium > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -8px; }
+.column-panel.col-padding-medium > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -8px; align-items: flex-end;}
 
 .col-padding.col-padding-large { padding: 0 12px; }
-.column-panel.col-padding-large > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -12px; }
+.column-panel.col-padding-large > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -12px; align-items: flex-end;}
 
 .col-padding.col-padding-huge { padding: 0 20px; }
-.column-panel.col-padding-huge > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -20px; }
+.column-panel.col-padding-huge > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -20px; align-items: flex-end;}
 
 .flow-panel.flow-spacing-tiny > .flow-panel-gutter { margin: 0 -2px; }
-.flow-panel.flow-spacing-tiny > .flow-panel-gutter > .flow-panel-item { margin: 0 2px; }
+.flow-panel.flow-spacing-tiny > .flow-panel-gutter > .flow-panel-item { margin: 0 2px; align-items: flex-end;}
 
 .flow-panel.flow-spacing-small > .flow-panel-gutter { margin: 0 -4px; }
-.flow-panel.flow-spacing-small > .flow-panel-gutter > .flow-panel-item { margin: 0 4px; }
+.flow-panel.flow-spacing-small > .flow-panel-gutter > .flow-panel-item { margin: 0 4px; align-items: flex-end;}
 
 .flow-panel.flow-spacing-medium > .flow-panel-gutter { margin: 0 -8px; }
-.flow-panel.flow-spacing-medium > .flow-panel-gutter > .flow-panel-item { margin: 0 8px; }
+.flow-panel.flow-spacing-medium > .flow-panel-gutter > .flow-panel-item { margin: 0 8px; align-items: flex-end;}
 
 .flow-panel.flow-spacing-large > .flow-panel-gutter { margin: 0 -12px; }
-.flow-panel.flow-spacing-large > .flow-panel-gutter > .flow-panel-item { margin: 0 12px; }
+.flow-panel.flow-spacing-large > .flow-panel-gutter > .flow-panel-item { margin: 0 12px; align-items: flex-end;}
 
 .flow-panel.flow-spacing-huge > .flow-panel-gutter { margin: 0 -20px; }
-.flow-panel.flow-spacing-huge > .flow-panel-gutter > .flow-panel-item { margin: 0 20px; }
+.flow-panel.flow-spacing-huge > .flow-panel-gutter > .flow-panel-item { 
+  margin: 0 20px; 
+  align-items: flex-end;}
 
 
 /* Typography */
@@ -263,10 +265,10 @@ a:hover, a:active {
 .left-nav > .column-panel {
   padding: 24px 0;
 }
-.left-nav > .column-panel > .anvil-panel-section > .anvil-panel-section-container:not(.full-width-row) {
+.left-nav > .column-panel > .anvil-panel-section > .anvil-panel-section-container:(.full-width-row) {
   margin: 0 16px;
   width: initial;
-  max-width: initial;
+  max-width: 1500px%;
   overflow-x: visible;
 }
 .left-nav > .column-panel > .anvil-panel-section:first-child > .anvil-panel-section-container.full-width-row {
@@ -609,8 +611,8 @@ body>div[data-notify="container"].alert-warning>span[data-notify="title"]{
 
 /* full_width_row sections go full bleed */
 .column-panel.anvil-role-card > .anvil-panel-section > .anvil-panel-section-container.full-width-row {
-  /* margin-left: -12px; */
-  /* margin-right: -12px; */
+  margin-left: -12px;
+  margin-right: -12px;
   width: initial;
   max-width: initial;
 }
@@ -819,3 +821,25 @@ footer a, .footer .anvil-component {
   padding: 0 4px;
 }
 
+
+.column-panel > .column-panel-gutter {
+    align-items: flex-end;
+}
+.col-panel > .col-panel-gutter {
+    align-items: flex-end;
+}
+
+.anvil-panel-row {
+    align-items: flex-end;
+}
+
+.anvil-role-center-items > .flow-panel-gutter {
+    justify-content: left;
+    align-content: left;
+    min-height: 70vh;  /* 70 view port heights adjust as needed */
+}
+
+
+.anvil-role-PARENT .flow-panel>.flow-panel-gutter {
+  align-items:right;
+}
