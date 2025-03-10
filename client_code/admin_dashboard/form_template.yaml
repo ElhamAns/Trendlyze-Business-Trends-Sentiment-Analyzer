@@ -23,7 +23,7 @@ components:
       properties:
         align: right
         background: '#abbee9'
-        foreground: gray
+        foreground: theme:Gray 800
         spacing:
           padding: [null, '0', null, '0']
         text: view more->
@@ -273,8 +273,8 @@ components:
         - {data_key: column_1, id: JKSDUP, title: Business Name}
         - {data_key: column_2, id: VJQQOR, title: Location}
         - {data_key: column_3, id: OJLQEN, title: Date - Time}
-        - {data_key: column_1, id: DSSULS, title: Type}
-        - {data_key: column_2, id: RVTQMO, title: Action}
+        - {data_key: column_1, expand: false, id: DSSULS, title: Type, width: 145}
+        - {data_key: column_2, expand: false, id: RVTQMO, title: Action, width: 155}
         - {data_key: column_3, id: DURDNQ, title: Status}
         foreground: ''
         rows_per_page: 5
