@@ -1,0 +1,182 @@
+components:
+- components:
+  - components:
+    - layout_properties: {grid_position: 'YVPGSA,TYHTSQ'}
+      name: label_4
+      properties: {font_size: 30, text: Registered Clients}
+      type: Label
+    layout_properties: {grid_position: 'ZHWFCP,FBTZEW'}
+    name: card_1
+    properties: {role: card}
+    type: ColumnPanel
+  - components:
+    - name: repeating_panel_3
+      properties: {item_template: admin_dashboard.RowTemplate2}
+      type: RepeatingPanel
+    layout_properties: {grid_position: 'ITPQGM,TEHKUD'}
+    name: data_grid_1
+    properties:
+      border: 1px solid
+      columns:
+      - {data_key: column_1, id: JKSDUP, title: Business Name}
+      - {data_key: column_2, id: VJQQOR, title: Location}
+      - {data_key: column_3, id: OJLQEN, title: Email}
+      - {data_key: column_1, expand: false, id: DSSULS, title: Type, width: 145}
+      - {data_key: column_3, id: DURDNQ, title: Status}
+      foreground: ''
+      rows_per_page: 5
+    type: DataGrid
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {}
+  type: ColumnPanel
+- layout_properties: {slot: title}
+  name: image_1
+  properties: {height: '75', source: _/theme/app-logo.png}
+  type: Image
+- components:
+  - layout_properties: {grid_position: 'ZSBJJE,IOCADU'}
+    name: button_5
+    properties:
+      foreground: black
+      spacing:
+        margin: ['18', null, null, null]
+      text: Home
+    type: Button
+  - layout_properties: {grid_position: 'ZSBJJE,STIRKJ'}
+    name: button_4
+    properties:
+      foreground: black
+      spacing:
+        margin: ['18', null, null, null]
+      text: Clients
+    type: Button
+  - layout_properties: {grid_position: 'ZSBJJE,UVKFFB'}
+    name: button_3
+    properties:
+      foreground: black
+      spacing:
+        margin: ['18', null, null, null]
+      text: Settings
+    type: Button
+  - layout_properties: {grid_position: 'ZSBJJE,MGBBJV'}
+    name: spacer_8
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'ZSBJJE,GUPAZS'}
+    name: spacer_7
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'ZSBJJE,MVQVQJ'}
+    name: spacer_6
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'ZSBJJE,SVLZXD'}
+    name: spacer_15
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'ZSBJJE,WBFANB'}
+    name: spacer_14
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'ZSBJJE,WFZVJF'}
+    name: spacer_4
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'ZSBJJE,JWQNLT'}
+    name: spacer_5
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'ZSBJJE,QKITJK'}
+    name: spacer_3
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'ZSBJJE,QBWEHS'}
+    name: spacer_2
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'ZSBJJE,SNUTKK'}
+    name: spacer_1
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'ZSBJJE,IDUSYR'}
+    name: label_3
+    properties:
+      spacing:
+        margin: [null, null, null, 4]
+        padding: [null, null, null, '0']
+      text: |-
+        mansoor
+        admin
+    type: Label
+  - layout_properties: {grid_position: 'ZSBJJE,SELPCA'}
+    name: spacer_11
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'ZSBJJE,UUAYMZ'}
+    name: spacer_10
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'ZSBJJE,POGOLB'}
+    name: spacer_12
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'ZSBJJE,VCFOON'}
+    name: spacer_13
+    properties: {height: 32}
+    type: Spacer
+  - layout_properties: {grid_position: 'ZSBJJE,MPBZQG'}
+    name: button_2
+    properties:
+      font_size: 25
+      foreground: black
+      icon: fa:sign-out
+      spacing:
+        margin: ['14', null, null, null]
+      text: ''
+    type: Button
+  layout_properties: {slot: nav-right}
+  name: column_panel_1
+  properties: {col_widths: '{"IOCADU":9,"STIRKJ":11,"UVKFFB":12,"IDUSYR":9,"MPBZQG":6,"SNUTKK":2,"QBWEHS":2,"WFZVJF":4,"JWQNLT":4,"QKITJK":4,"MGBBJV":2,"GUPAZS":3,"MVQVQJ":3,"SVLZXD":3,"WBFANB":3,"SELPCA":2,"UUAYMZ":3,"POGOLB":3,"VCFOON":2}'}
+  type: ColumnPanel
+- components:
+  - components:
+    - layout_properties: {grid_position: 'RIQBVY,BJXVDC'}
+      name: label_1
+      properties: {text: Notifications}
+      type: Label
+    - layout_properties: {grid_position: 'LPIWDD,RKSQHZ'}
+      name: repeating_panel_2
+      properties: {item_template: admin_dashboard.ItemTemplate3}
+      type: RepeatingPanel
+    layout_properties: {grid_position: 'CMWUGY,BOCLYD'}
+    name: column_panel_6
+    properties: {}
+    type: ColumnPanel
+  - components:
+    - layout_properties: {grid_position: 'OIXHUP,JITXOZ'}
+      name: label_2
+      properties: {text: Clients}
+      type: Label
+    - layout_properties: {grid_position: 'OIXHUP,RJHSKU'}
+      name: button_1
+      properties:
+        align: right
+        background: '#abbee9'
+        foreground: theme:Gray 800
+        spacing:
+          padding: [null, '0', null, '0']
+        text: view more->
+      type: Button
+    layout_properties: {grid_position: 'JIJBWK,HWXZFU'}
+    name: column_panel_7
+    properties: {col_widths: '{"JITXOZ":20,"RJHSKU":40}'}
+    type: ColumnPanel
+  layout_properties: {slot: right-nav}
+  name: column_panel_5
+  properties: {}
+  type: ColumnPanel
+container:
+  properties: {html: '@theme:admin_dashboard.html'}
+  type: HtmlTemplate
+is_package: true
