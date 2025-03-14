@@ -99,7 +99,7 @@ def _do_signup(logo, business_name, email, password, business_type, country, cit
   if user is None:
     return "This email address has already been registered for our service. Try logging in."
   
-  # _send_email_confirm_link(email)
+  _send_email_confirm_link(email)
   
   # No error = success
   return None

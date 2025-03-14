@@ -1,0 +1,21 @@
+components:
+- layout_properties: {grid_position: 'ZWAZCG,UJHCZB'}
+  name: label_1
+  properties: {align: left, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: none, text: 'Enter your new password:', underline: false, visible: true, width: default}
+  type: Label
+- event_bindings: {pressed_enter: focus_pw_repeat_box}
+  layout_properties: {grid_position: 'QYVPHI,IGFFGT'}
+  name: pw_box
+  properties: {align: left, background: '', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', hide_text: true, italic: false, placeholder: '', role: null, spacing_above: none, spacing_below: small, text: '', type: text, underline: false, visible: true, width: default}
+  type: TextBox
+- layout_properties: {grid_position: 'WMVMQE,GQHKWY'}
+  name: label_2
+  properties: {align: left, background: '', bold: false, border: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: none, text: 'Re-enter password:', underline: false, visible: true, width: default}
+  type: Label
+- event_bindings: {pressed_enter: close_alert}
+  layout_properties: {grid_position: 'VSCCBZ,XNQXBE'}
+  name: pw_repeat_box
+  properties: {align: left, background: '', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', hide_text: true, italic: false, placeholder: '', role: null, spacing_above: none, spacing_below: small, text: '', type: text, underline: false, visible: true, width: default}
+  type: TextBox
+container: {type: ColumnPanel}
+is_package: true

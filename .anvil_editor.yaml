@@ -18,6 +18,7 @@ unique_ids:
     theme.css: ZWW7VATNPJC6EW44YDZGE6NB7BH6NLO6
   forms:
     Form1: LR77GVF4ZPAA7GDOARCWB6PZPP2ENG6B
+    PasswordResetDialog: '1741912330788532643588375.108'
     admin_dashboard: '1741206064806614367936179.5667'
     admin_dashboard.ItemTemplate1: '1741206434819826095701173.237'
     admin_dashboard.ItemTemplate2: '1741422929907878541660660.4489'
@@ -33,6 +34,7 @@ unique_ids:
     signUpReqquestStatus: '1741050310718990670727519.8452'
     signUpReqquestStatus.RowTemplate1: '1741050515724163555611539.66348'
   modules:
+    authh_module: '1741912639131463119449749.90247'
     login_flow: '1741203643657545999267965.6556'
   scripts: {}
   server_modules:
