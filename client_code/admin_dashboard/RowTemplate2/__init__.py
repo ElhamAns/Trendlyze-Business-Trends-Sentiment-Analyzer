@@ -13,3 +13,24 @@ class RowTemplate2(RowTemplate2Template):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+
+  def button_1_click(self, **event_args):
+    self.item['status'] = True
+    self.refresh_data_bindings()
+    """This method is called when the button is clicked"""
+    pass
+
+  def button_2_click(self, **event_args):
+    self.item['status'] = False
+    self.refresh_data_bindings()
+    """This method is called when the button is clicked"""
+    pass
+
+  def get_status(self):
+    if self.item['status']:
+      return 'Accepted'
+    elif self.item['status'] == False:
+      return 'Rejected'
+    else:
+      return 'Pending'
+    

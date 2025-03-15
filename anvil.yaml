@@ -2,7 +2,7 @@ allow_embedding: false
 correct_dependency_ids: {}
 db_schema:
   clients:
-    client: none
+    client: full
     columns:
     - admin_ui: {order: 0, width: 200}
       name: business_name
