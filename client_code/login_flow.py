@@ -5,6 +5,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from .PasswordResetDialog import PasswordResetDialog
 
 def do_email_confirm_or_reset():
   print("herereeeeeee")
