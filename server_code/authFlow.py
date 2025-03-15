@@ -9,7 +9,6 @@ from anvil.http import url_encode
 import bcrypt
 from random import SystemRandom
 random = SystemRandom()
-
 def mk_token():
   """Generate a random 14-character token"""
   return "".join([random.choice("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789") for i in range(14)])
