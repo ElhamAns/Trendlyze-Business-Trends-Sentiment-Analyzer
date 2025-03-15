@@ -38,4 +38,5 @@ unique_ids:
     login_flow: '1741203643657545999267965.6556'
   scripts: {}
   server_modules:
+    adminDashboard: '1742000033628605658773764.6472'
     authFlow: '1741160093867387440407659.11383'
