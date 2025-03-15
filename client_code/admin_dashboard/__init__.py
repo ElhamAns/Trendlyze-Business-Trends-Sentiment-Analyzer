@@ -4,12 +4,7 @@ import anvil.server
 import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
-from anvil.tables import app_tables
-
-class admin_dashboard(admin_dashboardTemplate):
-  def __init__(self, **properties):
-    # Set Form properties and Data Bindings.
-    self.clients_count = anvil.server.call('get_all_clients_count')
+from anvil.tables import app_tables                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   = anvil.server.call('get_all_clients_count')
     self.init_components(**properties)
     self.repeating_panel_3.items = anvil.server.call('get_admin_requests')
     self.all_clients = anvil.server.call('get_all_clients')
@@ -26,7 +21,8 @@ class admin_dashboard(admin_dashboardTemplate):
                               'October', 
                               'November',
                               'December']
-    
+
+
 
     # Any code you write here will run when the form opens.
 
