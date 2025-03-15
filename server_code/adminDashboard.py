@@ -6,11 +6,13 @@ from anvil.tables import app_tables
 import anvil.server
 import datetime
 
-def get_admin_requests(month):
+@anvil.server.callable
+def get_admin_requests(month=None):
     users = app_tables.users.search(confirmed_email=True)
+    clients = app_tables.clients.search(user=q.any_of(*users))
     
     if not month:
-        return users
+        return clients
     
     # Get the start and end of the given month
     current_year = datetime.now().year
@@ -21,15 +23,7 @@ def get_admin_requests(month):
         end_date = datetime.datetime(current_year, month + 1, 1)
 
     # Filter users based on request time
-
-
-  
-    filtered_users = [
-        user for user in users
-        if any(req['timestamp'] >= start_date and req['timestamp'] < end_date
-               for req in app_tables.requests.search(user=user))
-    ]
-    
-    return filtered_users
+    users = app_tables.users.search(requested_at=q.between(start_date, end_date))
+    return users
 
   

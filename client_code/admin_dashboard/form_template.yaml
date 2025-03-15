@@ -271,11 +271,11 @@ components:
         border: 1px solid
         columns:
         - {data_key: column_1, id: JKSDUP, title: Business Name}
-        - {data_key: column_2, id: VJQQOR, title: Location}
-        - {data_key: column_3, id: OJLQEN, title: Date - Time}
-        - {data_key: column_1, expand: false, id: DSSULS, title: Type, width: 145}
+        - {data_key: column_2, expand: false, id: VJQQOR, title: Location, width: 153}
+        - {data_key: column_3, expand: false, id: OJLQEN, title: Date - Time, width: 129}
+        - {data_key: column_1, expand: false, id: DSSULS, title: Type, width: 89}
         - {data_key: column_2, expand: false, id: RVTQMO, title: Action, width: 155}
-        - {data_key: column_3, id: DURDNQ, title: Status}
+        - {data_key: column_3, expand: false, id: DURDNQ, title: Status, width: 66}
         foreground: ''
         rows_per_page: 5
       type: DataGrid

@@ -33,9 +33,10 @@ class login(loginTemplate):
       if user['is_admin']:
         open_form('admin_dashboard')
         return
-      open_form(signUpReqquestStatus(item=user))
+      client = anvil.server.call('get_user_cleint', user)
+      open_form(signUpReqquestStatus(item=client))
     except anvil.users.AuthenticationFailed as e:
-      alert("user not found")
+      alert(f"{e}")
     # user = anvil.users.login_with_email(self.email_text_box, self.password_text_box)
     # if user:
     #   alert("user loged in successfully")

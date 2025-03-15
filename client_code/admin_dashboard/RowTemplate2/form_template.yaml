@@ -1,31 +1,72 @@
 components:
-- layout_properties: {column: VJQQOR}
+- data_bindings:
+  - {code: 'f"{self.item[''country'']} {self.item[''city'']}"', property: text, writeback: false}
+  layout_properties: {column: VJQQOR}
   name: label_1
-  properties: {}
+  properties:
+    spacing:
+      margin: ['8', null, null, null]
   type: Label
-- layout_properties: {column: OJLQEN}
+- data_bindings:
+  - {code: 'self.item[''requested_at''].date()', property: text, writeback: false}
+  layout_properties: {column: OJLQEN}
   name: label_2
-  properties: {}
+  properties:
+    spacing:
+      margin: ['8', null, null, null]
   type: Label
-- layout_properties: {column: DSSULS}
+- data_bindings:
+  - {code: 'self.item[''business_type'']', property: text, writeback: false}
+  layout_properties: {column: DSSULS}
   name: label_3
-  properties: {}
+  properties:
+    spacing:
+      margin: ['8', null, null, null]
   type: Label
-- layout_properties: {column: DURDNQ}
+- data_bindings:
+  - {code: 'self.item[''status''] if self.item[''status''] else "Pending"', property: text, writeback: false}
+  layout_properties: {column: DURDNQ}
   name: label_4
-  properties: {}
+  properties:
+    spacing:
+      margin: ['8', null, null, null]
   type: Label
 - components:
-  - layout_properties: {grid_position: 'DBMCBG,VIDSLH'}
+  - data_bindings:
+    - {code: 'self.item[''logo'']', property: source, writeback: false}
+    layout_properties: {grid_position: 'DBMCBG,VIDSLH'}
     name: image_1
     properties: {height: 35}
     type: Image
-  - layout_properties: {grid_position: 'DBMCBG,NKVKOL'}
+  - data_bindings:
+    - {code: 'self.item[''business_name'']', property: text, writeback: false}
+    layout_properties: {grid_position: 'DBMCBG,NKVKOL'}
     name: label_5
-    properties: {}
+    properties:
+      spacing:
+        margin: ['0', null, null, null]
     type: Label
   layout_properties: {column: JKSDUP}
   name: column_panel_2
+  properties: {col_spacing: none, col_widths: '{"VIDSLH":22,"NKVKOL":38}'}
+  type: ColumnPanel
+- components:
+  - layout_properties: {grid_position: 'LOXEDC,HJNGTF'}
+    name: button_1
+    properties:
+      spacing:
+        padding: [null, '0', null, '0']
+      text: Accept
+    type: Button
+  - layout_properties: {grid_position: 'LOXEDC,ARZNZJ'}
+    name: button_2
+    properties:
+      spacing:
+        padding: [null, '0', null, '0']
+      text: Reject
+    type: Button
+  layout_properties: {column: RVTQMO}
+  name: column_panel_1
   properties: {}
   type: ColumnPanel
 container: {type: DataRowPanel}

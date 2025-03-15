@@ -1,6 +1,65 @@
 allow_embedding: false
 correct_dependency_ids: {}
 db_schema:
+  clients:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: business_name
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: business_type
+      type: string
+    - admin_ui: {order: 2, width: 200}
+      name: country
+      type: string
+    - admin_ui: {order: 3, width: 200}
+      name: city
+      type: string
+    - admin_ui: {order: 4, width: 200}
+      name: area
+      type: string
+    - admin_ui: {order: 5, width: 200}
+      name: logo
+      type: media
+    - admin_ui: {order: -1, width: 200}
+      name: user
+      target: users
+      type: link_single
+    - admin_ui: {order: 6, width: 200}
+      name: subscription_package
+      target: subscription_types
+      type: link_single
+    - admin_ui: {order: 4.5, width: 200}
+      name: description
+      type: string
+    - admin_ui: {order: -0.5, width: 200}
+      name: requested_at
+      type: datetime
+    - admin_ui: {order: -0.25, width: 200}
+      name: status
+      type: bool
+    server: full
+    title: Clients
+  notifications:
+    client: none
+    columns: []
+    server: full
+    title: Notifications
+  subscription_types:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: type
+      type: string
+    - admin_ui: {order: 2, width: 200}
+      name: time_period
+      type: number
+    - admin_ui: {order: 3, width: 200}
+      name: amount
+      type: number
+    server: full
+    title: Subscription_types
   users:
     client: none
     columns:
@@ -22,39 +81,9 @@ db_schema:
     - admin_ui: {order: 5, width: 200}
       name: confirmed_email
       type: bool
-    - admin_ui: {order: 6, width: 200}
-      name: business_name
-      type: string
-    - admin_ui: {order: 7, width: 200}
-      name: business_type
-      type: string
-    - admin_ui: {order: 8, width: 200}
-      name: country
-      type: string
-    - admin_ui: {order: 9, width: 200}
-      name: city
-      type: string
-    - admin_ui: {order: 10, width: 200}
-      name: area
-      type: string
-    - admin_ui: {order: 11, width: 200}
-      name: description
-      type: string
-    - admin_ui: {order: 12, width: 200}
-      name: logo
-      type: media
-    - admin_ui: {order: 13, width: 200}
-      name: requested_at
-      type: datetime
-    - admin_ui: {order: 15, width: 200}
-      name: subscription_package
-      type: string
     - admin_ui: {order: 16, width: 200}
       name: link_key
       type: string
-    - admin_ui: {order: 17, width: 200}
-      name: status
-      type: bool
     - admin_ui: {order: 18, width: 200}
       name: is_admin
       type: bool
@@ -76,5 +105,5 @@ services:
 - client_config: {}
   server_config: {custom_smtp: false, test_mode: false}
   source: /runtime/services/anvil/email.yml
-startup: {module: authh_module, type: module}
+startup: {module: admin_dashboard, type: form}
 startup_form: null
