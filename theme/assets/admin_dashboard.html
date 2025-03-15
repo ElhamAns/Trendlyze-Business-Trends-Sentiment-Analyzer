@@ -1,4 +1,7 @@
-/**
+<style>
+
+
+  /**
  This CSS implements the Material Design look and feel for Anvil apps.
  **/
 
@@ -49,36 +52,34 @@ a>.anvil-component-icon.right_edge-icon,
 
 
 .col-padding.col-padding-tiny { padding: 0 2px; }
-.column-panel.col-padding-tiny > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -2px; align-items: flex-end;}
+.column-panel.col-padding-tiny > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -2px; }
 
 .col-padding.col-padding-small { padding: 0 4px; }
-.column-panel.col-padding-small > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -4px; align-items: flex-end;}
+.column-panel.col-padding-small > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -4px; }
 
 .col-padding.col-padding-medium { padding: 0 8px; }
-.column-panel.col-padding-medium > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -8px; align-items: flex-end;}
+.column-panel.col-padding-medium > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -8px; }
 
 .col-padding.col-padding-large { padding: 0 12px; }
-.column-panel.col-padding-large > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -12px; align-items: flex-end;}
+.column-panel.col-padding-large > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -12px; }
 
 .col-padding.col-padding-huge { padding: 0 20px; }
-.column-panel.col-padding-huge > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -20px; align-items: flex-end;}
+.column-panel.col-padding-huge > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter { margin: 0 -20px; }
 
 .flow-panel.flow-spacing-tiny > .flow-panel-gutter { margin: 0 -2px; }
-.flow-panel.flow-spacing-tiny > .flow-panel-gutter > .flow-panel-item { margin: 0 2px; align-items: flex-end;}
+.flow-panel.flow-spacing-tiny > .flow-panel-gutter > .flow-panel-item { margin: 0 2px; }
 
 .flow-panel.flow-spacing-small > .flow-panel-gutter { margin: 0 -4px; }
-.flow-panel.flow-spacing-small > .flow-panel-gutter > .flow-panel-item { margin: 0 4px; align-items: flex-end;}
+.flow-panel.flow-spacing-small > .flow-panel-gutter > .flow-panel-item { margin: 0 4px; }
 
 .flow-panel.flow-spacing-medium > .flow-panel-gutter { margin: 0 -8px; }
-.flow-panel.flow-spacing-medium > .flow-panel-gutter > .flow-panel-item { margin: 0 8px; align-items: flex-end;}
+.flow-panel.flow-spacing-medium > .flow-panel-gutter > .flow-panel-item { margin: 0 8px; }
 
 .flow-panel.flow-spacing-large > .flow-panel-gutter { margin: 0 -12px; }
-.flow-panel.flow-spacing-large > .flow-panel-gutter > .flow-panel-item { margin: 0 12px; align-items: flex-end;}
+.flow-panel.flow-spacing-large > .flow-panel-gutter > .flow-panel-item { margin: 0 12px; }
 
 .flow-panel.flow-spacing-huge > .flow-panel-gutter { margin: 0 -20px; }
-.flow-panel.flow-spacing-huge > .flow-panel-gutter > .flow-panel-item { 
-  margin: 0 20px; 
-  align-items: flex-end;}
+.flow-panel.flow-spacing-huge > .flow-panel-gutter > .flow-panel-item { margin: 0 20px; }
 
 
 /* Typography */
@@ -182,10 +183,11 @@ a:hover, a:active {
 
 .nav-holder {
   display: flex;
-  flex-direction: row;
+  /* Adjust flexbos to fill from right hand side */
+  flex-direction: row-reverse;
 }
 
-.nav-holder .left-nav {
+.nav-holder .right-nav {
   position: relative;
   flex-shrink: 0;
   min-width: 160px;
@@ -202,7 +204,7 @@ a:hover, a:active {
   html:not(.designer) .nav-holder {
     display: block;
   }
-  html:not(.designer) .nav-holder .left-nav {
+  html:not(.designer) .nav-holder .right-nav {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -216,7 +218,7 @@ a:hover, a:active {
     transition: right 0.5s;
   }
   
-  html:not(.designer) .nav-holder .left-nav.shown {
+  html:not(.designer) .nav-holder .right-nav.shown {
     display: block;
   }
   .nav-shield.shown {
@@ -231,11 +233,12 @@ a:hover, a:active {
   }
  }
 
-.nav-holder .left-nav, .left-nav-placeholder {
+.nav-holder .right-nav, .right-nav-placeholder {
   display: flex;
   flex-direction: column;
   background: white;
-  border-right: 1px solid #e0e0e0;
+  /* Move border to left hand side */ 
+  border-left: 1px solid #e0e0e0;
   font-size: 14px;
   font-weight: 500;
   color: rgba(0,0,0,0.87);
@@ -243,13 +246,13 @@ a:hover, a:active {
   overflow-y: auto;
 }
 
-.left-nav-placeholder {
+.right-nav-placeholder {
   display: block;
   padding: 8px;
   line-height: 1;
   width: 58px;
 }
-.left-nav-placeholder .prompt {
+.right-nav-placeholder .prompt {
   display: inline-block;
   white-space: nowrap;
   transform: translate(-50%,0) rotate(-90deg) translate(-50%,0) translate(15px,16px);
@@ -258,46 +261,46 @@ a:hover, a:active {
   outline: 1px dotted #888;
   visibility: hidden;
 }
-.anvil-highlight .left-nav-placeholder .prompt {
+.anvil-highlight .right-nav-placeholder .prompt {
   visibility: visible;
 }
 
-.left-nav > .column-panel {
+.right-nav > .column-panel {
   padding: 24px 0;
 }
-.left-nav > .column-panel > .anvil-panel-section > .anvil-panel-section-container:(.full-width-row) {
+.right-nav > .column-panel > .anvil-panel-section > .anvil-panel-section-container:not(.full-width-row) {
   margin: 0 16px;
   width: initial;
-  max-width: 1500px%;
+  max-width: initial;
   overflow-x: visible;
 }
-.left-nav > .column-panel > .anvil-panel-section:first-child > .anvil-panel-section-container.full-width-row {
+.right-nav > .column-panel > .anvil-panel-section:first-child > .anvil-panel-section-container.full-width-row {
   margin-top: -24px;
 }
-.left-nav > .column-panel > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter > .anvil-panel-row > .anvil-panel-col {
+.right-nav > .column-panel > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter > .anvil-panel-row > .anvil-panel-col {
   overflow-x: visible;
 }
 
 /* Make all the sidebar icons look nice */
 
-.left-nav .anvil-component-icon {
+.right-nav .anvil-component-icon {
   font-size: 160%;
 }
 
-.left-nav .anvil-component-icon.left-icon {
+.right-nav .anvil-component-icon.left-icon {
   width: 0;
   margin-right: 56px;
   position: relative;
   top: 0.15em;  
 }
 
-.left-nav .anvil-component-icon.left_edge-icon, .left-nav .anvil-component-icon.right_edge-icon {
+.right-nav .anvil-component-icon.left_edge-icon, .right-nav .anvil-component-icon.right_edge-icon {
   left: 16px;
   padding-top: 2px;
   width: 0;
 }
 
-.left-nav .anvil-component-icon.right_edge-icon {
+.right-nav .anvil-component-icon.right_edge-icon {
   left: initial;
   right: 16px;
   top: 0;
@@ -308,30 +311,30 @@ a:hover, a:active {
    (Top-level columns in ColumnPanels get overflow-x visible [see above]to enable this)
 */
 
-.left-nav a, .left-nav .anvil-label.left_edge-icon, .left-nav .anvil-label.right_edge-icon {
+.right-nav a, .right-nav .anvil-label.left_edge-icon, .right-nav .anvil-label.right_edge-icon {
   color: rgba(0,0,0,0.87);
   margin: 0 -16px;
   padding: 4px 16px;
 }
 
-.left-nav .anvil-component.left_edge-icon {
+.right-nav .anvil-component.left_edge-icon {
   padding-left: 72px;
 }
 
-.left-nav a:hover, .left-nav .anvil-role-selected {
+.right-nav a:hover, .right-nav .anvil-role-selected {
   color: %color:Primary 700%;
   background-color: rgba(0,0,0,.08);
 }
 
-.designer .nav-holder .left-nav {
+.designer .nav-holder .right-nav {
   min-width: 56px;
 }
 
-.designer .nav-holder .left-nav > .anvil-component {
+.designer .nav-holder .right-nav > .anvil-component {
   min-width: 160px;
 }
 
-.nav-holder .left-nav > .anvil-component {
+.nav-holder .right-nav > .anvil-component {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -361,21 +364,21 @@ a:hover, a:active {
   margin-bottom: 0;
 }
 
-.app-bar > .sidebar-toggle { display:block; float:left;  margin-left: -61px; }
-.app-bar > .top-left-btn { float: left; margin-left: -60px; margin-right: -40px; }
+.app-bar > .sidebar-toggle { display:block; float:right;  margin-left: -61px; }
+.app-bar > .top-right-btn { float: right; margin-left: -60px; margin-right: -40px; }
 .app-bar > .title { float: left; }
 .app-bar > .title > .placeholder { outline: 1px dotted; padding-left: 16px; padding-right: 16px; margin: 8px 8px 0; display:none; }
-.app-bar > .app-bar-nav { float: right; font-weight: normal; }
+.app-bar > .app-bar-nav { float: right; font-weight: normal; margin-right: 60px; }
 .app-bar > .app-bar-nav .placeholder { margin-top: 8px; padding: 0 8px; }
 .anvil-highlight .app-bar > .app-bar-nav .placeholder { outline: 1px dotted #ccc; }
 .anvil-highlight .app-bar > .title > .placeholder { display:block; }
 
 .app-bar a, .app-bar .anvil-component {
   display: block;
-  color: white;
+  color: black;
   line-height: 30px;
   min-width: 30px;
-  min-height: 30px;
+  min-height: 50px;
   margin: 5px 4px 0;
 }
 
@@ -414,7 +417,6 @@ a:hover, a:active {
 .anvil-highlight .app-bar-nav > .anvil-container:not(.has-components):not(a)::after {  
   content: "Drop Links here"
 }
-
 
 /* Rejig margin vs padding to give links the halo */
 .app-bar a, .app-bar a.anvil-component {
@@ -773,73 +775,68 @@ https://stackoverflow.com/questions/30533055/calculating-shadow-values-for-all-m
 */
 
 
+</style>
 
-/* Footer bar */
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  font-size: 20px;
-  font-weight: 500;
-  background-color:  %color:Primary 700%;;
-  color: white;
-  min-height: 70px;
-  text-align: center;
-  padding: 0 72px 0 72px;
-   z-index: 1;
-  box-shadow: 0 -4px 5px 0 rgba(0, 0, 0, 0.14), 0 -1px 10px 0 rgba(0, 0, 0, 0.12), 0 -2px 4px -1px rgba(0, 0, 0, 0.2);    
-}
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 
-.footer > .footer-slot > .placeholder { outline: 1px dotted; padding-left: 16px; padding-right: 16px; margin-top: 12px; display:none; }
-.anvil-highlight .footer > .footer-slot > .placeholder { display:block; }
-  
-.content{
-/*  adjusted for the footer  */
-  margin-bottom: 70px;
-}
+<div class="structure">
+  <div class="app-bar" anvil-drop-container=".anvil-container" anvil-drop-redirect=".placeholder">
+    <a class="sidebar-toggle" anvil-if-slot-empty="top-right-btn" anvil-hide-if-slot-empty="right-nav" anvil-drop-slot="top-right-btn" href="javascript:void(0)"><i class="fa fa-bars"></i></a>
+    <a class="sidebar-toggle anvil-designer-only" anvil-if-slot-empty="top-right-btn" anvil-if-slot-empty="right-nav" anvil-drop-slot="top-right-btn"><i class="fa fa-blank"></i></a>
+    <div class="top-right-btn" anvil-slot="top-right-btn"></div>
+    <div class="title" anvil-slot="title">
+      <div class="placeholder anvil-designer-only" anvil-if-slot-empty="title" anvil-drop-here>Drop title here</div>
+    </div>
+    <div class="app-bar-nav" anvil-slot="nav-right">
+      <div class="placeholder anvil-designer-only" anvil-if-slot-empty="nav-right" anvil-drop-here>Drop a FlowPanel here</div>
+    </div>
+    <div style="clear:both"></div>
+  </div>
 
-.footer a, .footer a.anvil-component {
-  padding: 5px;
-  margin: 8px 0 0;
-  border-radius: 20px;
-}
+  <div class="nav-holder">
+    <div class="right-nav anvil-measure-this" anvil-slot-repeat="right-nav" anvil-drop-container=">.anvil-container">
+    </div>
+    <div class="right-nav-placeholder anvil-designer-only" anvil-if-slot-empty="right-nav" anvil-drop-slot="right-nav">
+      <div class="prompt">To add a sidebar, drop a ColumnPanel here.</div>
+    </div>
 
-footer a, .footer .anvil-component {
-  display: block;
-  color: white;
-  line-height: 30px;
-  min-width: 30px;
-  min-height: 30px;
-  margin: 4px 0;
-}
-.footer a:hover, .footer a:active {
-  color: #eee; text-decoration: none;
-  background-color: %color:Primary 700%;
-}
-.footer a .link-text {
-  padding: 0 4px;
-}
-
-
-.column-panel > .column-panel-gutter {
-    align-items: flex-end;
-}
-.col-panel > .col-panel-gutter {
-    align-items: flex-end;
-}
-
-.anvil-panel-row {
-    align-items: flex-end;
-}
-
-.anvil-role-center-items > .flow-panel-gutter {
-    justify-content: left;
-    align-content: left;
-    min-height: 70vh;  /* 70 view port heights adjust as needed */
-}
-
-
-.anvil-role-PARENT .flow-panel>.flow-panel-gutter {
-  align-items:right;
-}
+    <div class="content">
+      <div anvil-slot-repeat="default" class="anvil-measure-this"></div>
+      <div class="placeholder drop-here" anvil-if-slot-empty="default" anvil-drop-slot="default">Drop a ColumnPanel here.</div>
+    </div>
+  </div>
+  <div class="nav-shield"></div>
+</div>
+<div anvil-drop-default anvil-drop-redirect=".placeholder" anvil-drop-container=".anvil-container"></div>
+ 
+<script>
+  function hideSidebar() {
+    var ln = $('.structure > .nav-holder > .right-nav');
+    ln.animate({right: -ln.outerWidth()}, function() {
+      ln.removeClass("in-transition shown").addClass("hidden");
+      $('.nav-shield').removeClass("shown");
+      $(window).trigger('resize');
+    });
+  }
+  function showSidebar() {
+    var ln = $('.structure > .nav-holder > .right-nav');
+    $('.nav-shield').addClass("shown");
+    ln.addClass("shown").removeClass("hidden").css({right: "-100%"}).css({right: -ln.outerWidth()}).animate({right: 0}, function() {
+      ln.removeClass("in-transition");
+    });
+    $(window).trigger('resize');
+  }
+  $('.sidebar-toggle, .nav-shield').off('click').on('click', function() {
+    var ln = $('.structure > .nav-holder > .right-nav');
+    if (ln.is(":visible") || $('.nav-shield').is(".shown")) {
+      hideSidebar();
+    } else if(!ln.is(":empty")) {
+      showSidebar();
+    }
+  });
+  $('.right-nav').off('click').on('click', 'a, button', function() {
+    if ($('.nav-shield').is(":visible")) {
+      $('.nav-shield').trigger('click');
+    }
+  });
+</script>

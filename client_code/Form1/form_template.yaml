@@ -97,12 +97,15 @@ components:
     type: ColumnPanel
   layout_properties: {slot: footer-slot}
   name: column_panel_1
-  properties: {col_widths: '{"HUVEXR":40}', wrap_on: never}
+  properties: {col_widths: '{"HUVEXR":35,"TKWUCJ":35}', wrap_on: never}
   type: ColumnPanel
 - components:
   - layout_properties: {grid_position: 'NERWXC,RTDHOU'}
     name: image_3
-    properties: {height: 348, source: _/theme/dashboard.png}
+    properties:
+      height: 478
+      margin: [null, '0', null, null]
+      source: _/theme/dashboard.png
     type: Image
   - components:
     - layout_properties: {grid_position: 'ZLLOVP,UNEVBV'}
@@ -110,7 +113,7 @@ components:
       properties:
         align: left
         bold: false
-        font_size: 72
+        font_size: 144
         spacing:
           margin: [16, null, 0, null]
         spacing_below: none
@@ -148,7 +151,7 @@ components:
   - layout_properties: {grid_position: 'QJUESH,JHZLRM'}
     name: label_6
     properties:
-      font_size: 26
+      font_size: 52
       text: |-
         Business Trends is committed to transforming consumer comments into useful
         information so that nearby companies may prosper. In order to provide a more
@@ -162,7 +165,10 @@ components:
     type: Label
   layout_properties: {slot: default}
   name: column_panel_3
-  properties: {}
+  properties:
+    col_widths: '{"RTDHOU":30,"HIZVYD":30}'
+    spacing:
+      padding: [null, '0', null, 0]
   type: ColumnPanel
 - components:
   - components:

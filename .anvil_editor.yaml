@@ -1,21 +1,41 @@
 unique_ids:
   assets:
+    admin_dashboard.html: '174120612747799633445583.6374'
+    admin_theme.css: '1741424164391586372336029.075'
     app-logo.png: '1740912227243649047957758.8593'
+    approved-requests-logo.png: '1741537332579513609753593.9079'
     competitor-logo.png: '1740967818818717067886560.7389'
     dashboard.png: '1740965042262747033793726.6853'
     data-driven-logo.png: '1740967916709546894915231.5519'
     payment-card.png: '1740969740314548152137129.7697'
+    person-logo.png: '1741536601526863539033068.9761'
+    rejected-requests-logo.png: '1741537368943372299542156.6611'
+    requests-logo.png: '1741537270635836611581018.4916'
+    review-logo.png: '1741536699261986298448213.0676'
     segment-icon.png: '1740967394500953549130954.8485'
+    settings-logo.png: '1741536857191621224136259.91'
     standard-page.html: TRDRHPY4CSWC3KA23PB72POVVBRI4V4O
     theme.css: ZWW7VATNPJC6EW44YDZGE6NB7BH6NLO6
   forms:
     Form1: LR77GVF4ZPAA7GDOARCWB6PZPP2ENG6B
+    PasswordResetDialog: '1741912330788532643588375.108'
+    admin_dashboard: '1741206064806614367936179.5667'
+    admin_dashboard.ItemTemplate1: '1741206434819826095701173.237'
+    admin_dashboard.ItemTemplate2: '1741422929907878541660660.4489'
+    admin_dashboard.ItemTemplate3: '1741513636253695440651734.7065'
+    admin_dashboard.ItemTemplate4: '1741513683749879578281702.8994'
+    admin_dashboard.ItemTemplate5: '1741537699500601378732836.9152'
+    admin_dashboard.RowTemplate2: '1741537881981847800342869.6895'
+    clients_page: '1741584637350386863643942.7433'
+    clients_page.RowTemplate3: '1741584952968872750778273.7236'
     forgetPassword: '1740991313630418700649056.9611'
     login: '1740990352874450834725710.7965'
     register: '1740966406577684578282274.6436'
     signUpReqquestStatus: '1741050310718990670727519.8452'
     signUpReqquestStatus.RowTemplate1: '1741050515724163555611539.66348'
-  modules: {}
+  modules:
+    authh_module: '1741912639131463119449749.90247'
+    login_flow: '1741203643657545999267965.6556'
   scripts: {}
   server_modules:
     authFlow: '1741160093867387440407659.11383'

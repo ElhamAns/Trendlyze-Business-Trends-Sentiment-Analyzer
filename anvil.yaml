@@ -46,15 +46,18 @@ db_schema:
     - admin_ui: {order: 13, width: 200}
       name: requested_at
       type: datetime
-    - admin_ui: {order: 14, width: 200}
-      name: status
-      type: string
     - admin_ui: {order: 15, width: 200}
       name: subscription_package
       type: string
     - admin_ui: {order: 16, width: 200}
       name: link_key
       type: string
+    - admin_ui: {order: 17, width: 200}
+      name: status
+      type: bool
+    - admin_ui: {order: 18, width: 200}
+      name: is_admin
+      type: bool
     server: full
     title: Users
 dependencies: []
@@ -73,5 +76,5 @@ services:
 - client_config: {}
   server_config: {custom_smtp: false, test_mode: false}
   source: /runtime/services/anvil/email.yml
-startup: {module: Form1, type: form}
+startup: {module: authh_module, type: module}
 startup_form: null
