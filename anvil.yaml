@@ -116,5 +116,5 @@ services:
 - client_config: {}
   server_config: {custom_smtp: false, test_mode: false}
   source: /runtime/services/anvil/email.yml
-startup: {module: admin_dashboard, type: form}
+startup: {module: ClientHomePage, type: form}
 startup_form: null
