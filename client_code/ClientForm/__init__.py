@@ -12,5 +12,16 @@ class ClientForm(ClientFormTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.repeating_panel_1.items = anvil.server.call('get_all_clients')
-
+    self.repeating_panel_2.items = anvil.server.call('get_notifaicatons')
+ 
     # Any code you write here will run when the form opens.
+
+  def button_5_click(self, **event_args):
+    open_form('admin_dashboard')
+
+  def button_3_click(self, **event_args):
+    open_form('Settings')
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.users.logout()

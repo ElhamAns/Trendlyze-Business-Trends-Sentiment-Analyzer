@@ -1,27 +1,54 @@
 components:
 - components:
+  - layout_properties: {grid_position: 'ERDBBP,JHNBTA'}
+    name: label_1
+    properties:
+      font_size: 24
+      spacing:
+        margin: [null, null, null, '50']
+      text: Welcome, Admin
+    type: Label
   - components:
-    - layout_properties: {grid_position: 'ZJRIIL,UXQACF'}
+    - layout_properties: {grid_position: 'FJJNLI,CSBOJH'}
       name: label_2
-      properties: {bold: true, font_size: 36, text: Registered Clients}
-      type: Label
-    - components:
-      - name: repeating_panel_1
-        properties: {item_template: ClientForm.RowTemplate4}
-        type: RepeatingPanel
-      layout_properties: {grid_position: 'YPHIVL,PSEINB'}
-      name: data_grid_1
       properties:
-        columns:
-        - {data_key: column_1, expand: false, id: JKSDUP, title: Business Name, width: 267}
-        - {data_key: column_2, expand: false, id: VJQQOR, title: Location, width: 202}
-        - {data_key: column_3, expand: false, id: OJLQEN, title: Email, width: 257}
-        - {data_key: column_4, id: UNMIVG, title: Type}
-        - {data_key: column_5, id: NGPOGO, title: Account Status}
-      type: DataGrid
-    layout_properties: {grid_position: 'DNHPNW,HRIMBC'}
+        align: center
+        spacing:
+          margin: [null, '150', null, '150']
+          padding: [null, '0', null, null]
+        text: email
+      type: Label
+    - layout_properties: {grid_position: 'ZHKIOI,BTNZLG'}
+      name: text_box_1
+      properties:
+        align: center
+        background: white
+        enabled: false
+        foreground: black
+        margin: [null, 0, null, '0']
+      type: TextBox
+    - event_bindings: {click: button_1_click}
+      layout_properties: {grid_position: 'ZMZYUC,IUVUBT'}
+      name: button_1
+      properties:
+        align: center
+        background: black
+        bold: true
+        foreground: white
+        spacing:
+          margin: [null, '150', null, '150']
+          padding: [null, null, null, null]
+        text: Reset Password
+      type: Button
+    layout_properties: {grid_position: 'AABLFH,KMUFCK'}
     name: card_1
-    properties: {role: card}
+    properties:
+      background: theme:Primary 700
+      col_spacing: large
+      foreground: ''
+      role: card
+      spacing:
+        margin: [null, '50', null, '50']
     type: ColumnPanel
   layout_properties: {slot: default}
   name: content_panel
@@ -38,7 +65,8 @@ components:
           margin: ['18', null, null, null]
         text: Home
       type: Button
-    - layout_properties: {grid_position: 'ZSBJJE,STIRKJ'}
+    - event_bindings: {click: button_4_click}
+      layout_properties: {grid_position: 'ZSBJJE,STIRKJ'}
       name: button_4
       properties:
         foreground: black
@@ -46,8 +74,7 @@ components:
           margin: ['18', null, null, null]
         text: Clients
       type: Button
-    - event_bindings: {click: button_3_click}
-      layout_properties: {grid_position: 'ZSBJJE,UVKFFB'}
+    - layout_properties: {grid_position: 'ZSBJJE,UVKFFB'}
       name: button_3
       properties:
         foreground: black
@@ -143,19 +170,6 @@ components:
   name: image_1
   properties: {height: 75, source: _/theme/app-logo.png}
   type: Image
-- components:
-  - layout_properties: {grid_position: 'RIQBVY,BJXVDC'}
-    name: label_1
-    properties: {font_size: 24, text: Notifications}
-    type: Label
-  - layout_properties: {grid_position: 'LPIWDD,RKSQHZ'}
-    name: repeating_panel_2
-    properties: {item_template: admin_dashboard.ItemTemplate3}
-    type: RepeatingPanel
-  layout_properties: {slot: right-nav}
-  name: column_panel_6
-  properties: {}
-  type: ColumnPanel
 container:
   properties: {html: '@theme:admin_dashboard.html'}
   type: HtmlTemplate

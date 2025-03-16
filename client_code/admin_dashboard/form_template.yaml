@@ -64,7 +64,8 @@ components:
         margin: ['18', null, null, null]
       text: Clients
     type: Button
-  - layout_properties: {grid_position: 'ZSBJJE,UVKFFB'}
+  - event_bindings: {click: button_3_click}
+    layout_properties: {grid_position: 'ZSBJJE,UVKFFB'}
     name: button_3
     properties:
       foreground: black
@@ -138,7 +139,8 @@ components:
     name: spacer_13
     properties: {height: 32}
     type: Spacer
-  - layout_properties: {grid_position: 'ZSBJJE,MPBZQG'}
+  - event_bindings: {click: button_2_click}
+    layout_properties: {grid_position: 'ZSBJJE,MPBZQG'}
     name: button_2
     properties:
       font_size: 25
@@ -284,8 +286,8 @@ components:
         - {data_key: column_2, expand: false, id: VJQQOR, title: Location, width: 153}
         - {data_key: column_3, expand: false, id: OJLQEN, title: Date - Time, width: 129}
         - {data_key: column_1, expand: false, id: DSSULS, title: Type, width: 89}
-        - {data_key: column_2, expand: false, id: RVTQMO, title: Action, width: 155}
-        - {data_key: column_3, expand: false, id: DURDNQ, title: Status, width: 66}
+        - {data_key: column_2, expand: false, id: RVTQMO, title: Action, width: 152}
+        - {data_key: column_3, expand: false, id: DURDNQ, title: Status, width: 78}
         foreground: ''
         rows_per_page: 5
       type: DataGrid
