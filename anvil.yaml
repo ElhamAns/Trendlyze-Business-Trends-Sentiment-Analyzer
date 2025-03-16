@@ -42,8 +42,14 @@ db_schema:
     server: full
     title: Clients
   notifications:
-    client: none
-    columns: []
+    client: full
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: text
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: created_at
+      type: datetime
     server: full
     title: Notifications
   subscription_types:
@@ -94,7 +100,12 @@ metadata: {logo_img: 'asset:app-logo.png'}
 name: business-trend
 package_name: Material_Design_with_Stick_Footer
 renamed: true
-runtime_options: {client_version: '3', server_spec: null, server_version: python3-sandbox, version: 2}
+runtime_options:
+  client_version: '3'
+  server_spec: null
+  server_spec_disabled: {base: python310-minimal, requirements: ''}
+  server_version: python3-sandbox
+  version: 2
 services:
 - client_config: {}
   server_config: {}

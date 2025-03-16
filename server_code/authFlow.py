@@ -138,6 +138,7 @@ def _confirm_email_address(email, confirm_key):
     user['confirmed_email'] = True
     user['link_key'] = None
     user['enabled'] = True
+    app_tables.notifications.add_row(text="New user registered", created_at=datetime.now())
     anvil.users.force_login(user)
     return True
 

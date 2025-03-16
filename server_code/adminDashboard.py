@@ -30,7 +30,7 @@ def get_admin_requests(month=None):
   
 @anvil.server.callable
 def get_all_clients():
-  return app_tables.clients.search(tables.order_by('requested_at'),status=True)
+  return app_tables.clients.search(tables.order_by('requested_at'), status=True)
 
 @anvil.server.callable
 def get_all_clients_count():

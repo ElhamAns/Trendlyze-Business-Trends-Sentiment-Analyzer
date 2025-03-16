@@ -1,0 +1,46 @@
+components:
+- components:
+  - data_bindings:
+    - {code: 'self.item[''logo'']', property: source, writeback: false}
+    layout_properties: {grid_position: 'QUNKJP,BTGTWI'}
+    name: image_1
+    properties: {height: 38}
+    type: Image
+  - data_bindings:
+    - {code: 'self.item[''business_name'']', property: text, writeback: false}
+    layout_properties: {grid_position: 'QUNKJP,MKPWIH'}
+    name: label_1_copy
+    properties: {}
+    type: Label
+  layout_properties: {column: JKSDUP}
+  name: column_panel_1_copy
+  properties: {col_spacing: none, col_widths: '{"BTGTWI":13,"MKPWIH":47}', wrap_on: never}
+  type: ColumnPanel
+- data_bindings:
+  - {code: 'f"{self.item[''country'']} {self.item[''city'']}"', property: text, writeback: false}
+  layout_properties: {column: VJQQOR}
+  name: label_1
+  properties:
+    spacing:
+      margin: ['8', null, null, null]
+  type: Label
+- data_bindings:
+  - {code: 'self.item[''user''][''email'']', property: text, writeback: false}
+  layout_properties: {column: OJLQEN}
+  name: label_2
+  properties: {}
+  type: Label
+- data_bindings:
+  - {code: 'self.item[''business_type'']', property: text, writeback: false}
+  layout_properties: {column: UNMIVG}
+  name: label_3
+  properties: {}
+  type: Label
+- data_bindings:
+  - {code: self.get_status(), property: text, writeback: false}
+  layout_properties: {column: NGPOGO}
+  name: label_4
+  properties: {}
+  type: Label
+container: {type: DataRowPanel}
+is_package: true
