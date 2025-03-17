@@ -12,21 +12,21 @@ from plotly import graph_objects as go
 class ClientHomePage(ClientHomePageTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
+    self.current_client = anvil.server.call('get_current_client')
     self.init_components(**properties)
-    self.plot_1.layout.plot_bgcolor='rgba(0,0,0,0)'  # Transparent plot background
-    # paper_bgcolor='rgba(0,0,0,0)',  # Transparent paper background
-# )
-    self.plot_1.data = go.Pie(
-      labels=['Oxygen','Hydrogen','Carbon_Dioxide','Nitrogen'],
-      values=[4500, 2500, 1053, 500],
-      paper_bgcolor='rgba(0,0,0,0)',
-      hole=.5,
-      width=800,
-    )
-    self.plot_1.layout={
-'plot_bgcolor': 'rgba(0, 0, 0, 0)',
-'paper_bgcolor': 'rgba(0, 0, 0, 0)',
-'width': 1200,
-}
-
+    self.plot_1.figure = anvil.server.call('get_ratings_chart')
+    self.label_5.text = f"Welcome Back {self.current_client['business_name'].split(" ")[0]}"
+    self.label_6.text = self.current_client['business_name']
+    self.label_4.text = self.current_client['business_name']
+    self.image_3.source = self.current_client['logo']
+    self.text_area_1.text = self.current_client['description']
+    self.repeating_panel_1.items = anvil.server.call('get_client_compitetors')
     # Any code you write here will run when the form opens.
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.users.logout()
+
+  def button_4_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('ClientDashBoard')

@@ -1,66 +1,50 @@
 components:
 - components:
-  - layout_properties: {grid_position: 'ONVLDK,ZCBASM'}
-    name: label_5
+  - layout_properties: {grid_position: 'CVEUKG,KLZTWJ'}
+    name: label_1
     properties: {}
     type: Label
   - components:
-    - layout_properties: {grid_position: 'FXXRDX,JGDWTU'}
-      name: label_6
-      properties: {align: center}
-      type: Label
-    - layout_properties: {grid_position: 'AJLXWK,VANQZR'}
-      name: text_area_1
+    - layout_properties: {grid_position: 'MCKKHF,CBIOQE MPXQHC,LWMRSR'}
+      name: label_2
       properties: {}
-      type: TextArea
-    layout_properties: {grid_position: 'AIJHEM,QMQFRL'}
-    name: card_1
-    properties: {background: 'theme:Primary 700', role: card}
-    type: ColumnPanel
-  - layout_properties: {grid_position: 'MEGLCZ,RPATRJ'}
-    name: spacer_1
-    properties: {height: 49}
-    type: Spacer
-  - components:
-    - layout_properties: {grid_position: 'QZJLGZ,QODHNG'}
-      name: label_1
-      properties: {bold: true, font_size: 24, text: Products Analysis}
       type: Label
-    - layout_properties: {grid_position: 'QZJLGZ,QJTICH'}
-      name: button_1
-      properties: {align: right, background: 'theme:Primary 500', foreground: gray, text: View Full Dashboard}
-      type: Button
-    - data_bindings: []
-      layout_properties: {grid_position: 'TZTBIY,PLSXYG', row_background: 'theme:Primary 700'}
-      name: plot_1
-      properties:
-        height: 323
-        interactive: true
-        margin: [null, '150', null, '150']
-      type: Plot
-    layout_properties: {grid_position: 'ATQXJC,SBWXGS'}
-    name: card_2
-    properties: {background: 'theme:Primary 700', role: card}
+    - layout_properties: {grid_position: 'MCKKHF,CBIOQE HGGIHP,TLQHHF'}
+      name: text_box_1
+      properties: {}
+      type: TextBox
+    - layout_properties: {grid_position: 'MCKKHF,CBIOQE IIPTRC,JPTNXB'}
+      name: label_5
+      properties: {}
+      type: Label
+    - layout_properties: {grid_position: 'MCKKHF,CBIOQE KFDLFJ,PTTASU'}
+      name: drop_down_1
+      properties: {}
+      type: DropDown
+    - layout_properties: {grid_position: 'MCKKHF,CBIOQE DRMTAS,IBVZSO'}
+      name: label_7
+      properties: {}
+      type: Label
+    - layout_properties: {grid_position: 'MCKKHF,UGZSLB XCEPVN,DXOGNB'}
+      name: label_3
+      properties: {}
+      type: Label
+    - layout_properties: {grid_position: 'MCKKHF,UGZSLB UWWBOK,YZHVNC'}
+      name: text_box_2
+      properties: {}
+      type: TextBox
+    - layout_properties: {grid_position: 'MCKKHF,UGZSLB QFZXEL,GZKDHQ'}
+      name: label_6
+      properties: {}
+      type: Label
+    - layout_properties: {grid_position: 'MCKKHF,UGZSLB OYWKJT,UWUJSP'}
+      name: drop_down_2
+      properties: {}
+      type: DropDown
+    layout_properties: {grid_position: 'RENROA,VIIZLP'}
+    name: card_1
+    properties: {role: card}
     type: ColumnPanel
-  - layout_properties: {grid_position: 'ZPFOTG,THNLKK'}
-    name: label_2
-    properties: {align: center, bold: true, text: List of Competitors}
-    type: Label
-  - components:
-    - layout_properties: {}
-      name: repeating_panel_1
-      properties: {border: '', item_template: ClientHomePage.RowTemplate5}
-      type: RepeatingPanel
-    layout_properties: {grid_position: 'MHZJTR,KVCARC'}
-    name: data_grid_1
-    properties:
-      border: solid 1px
-      columns:
-      - {data_key: column_1, expand: false, id: JKSDUP, title: NO., width: 83}
-      - {data_key: column_2, expand: false, id: VJQQOR, title: COMPETITORS, width: 180}
-      - {data_key: column_3, expand: false, id: OJLQEN, title: CONTACT INFORMATION, width: 235}
-      - {data_key: column_4, id: OXLMOO, title: LOCATION}
-    type: DataGrid
   layout_properties: {slot: default}
   name: content_panel
   properties: {}
@@ -129,7 +113,6 @@ components:
           margin: ['14', null, null, null]
         text: ''
       type: Button
-    layout_properties: {}
     name: column_panel_1_copy
     properties: {col_widths: '{"IOCADU":11,"STIRKJ":14,"UVKFFB":12,"MPBZQG":7,"UEYMAN":11,"HRHVPB":3,"LOWRVV":4,"YRTDKS":3}'}
     type: ColumnPanel
@@ -142,6 +125,6 @@ components:
   properties: {height: 75, source: _/theme/app-logo.png}
   type: Image
 container:
-  properties: {html: '@theme:standard-page.html'}
+  properties: {html: '@theme:admin_dashboard.html'}
   type: HtmlTemplate
 is_package: true
