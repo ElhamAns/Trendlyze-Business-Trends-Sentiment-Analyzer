@@ -19,3 +19,16 @@ class ClientDashBoard(ClientDashBoardTemplate):
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.users.logout()
+    open_form('Form1')
+
+  def button_5_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('ClientHomePage')
+    
+  def button_4_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass
+
+  def button_3_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('ClientSettings')
