@@ -8,10 +8,12 @@ from anvil.tables import app_tables
 from .PasswordResetDialog import PasswordResetDialog
 
 def do_email_confirm_or_reset():
+  print("hereeeee")
   """Check whether the user has arrived from an email-confirmation link or a password reset, and pop up any necessary dialogs.
      Call this function from the 'show' event on your startup form.
   """
   h = anvil.get_url_hash()
+  print("hhh", h)
   if isinstance(h, dict) and 'email' in h:
     if 'pwreset' in h:
       if not anvil.server.call('_is_password_key_correct', h['email'], h['pwreset']):
