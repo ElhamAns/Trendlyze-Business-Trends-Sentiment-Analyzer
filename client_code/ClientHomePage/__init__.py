@@ -15,7 +15,7 @@ class ClientHomePage(ClientHomePageTemplate):
     self.current_client = anvil.server.call('get_current_client')
     self.init_components(**properties)
     self.plot_1.figure = anvil.server.call('get_ratings_chart')
-    self.label_5.text = f"Welcome Back {self.current_client['business_name'].split(" ")[0]}"
+    self.label_5.text = f"Welcome Back {self.current_client['business_name']}"
     self.label_6.text = self.current_client['business_name']
     self.label_4.text = self.current_client['business_name']
     self.image_3.source = self.current_client['logo']

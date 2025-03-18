@@ -104,7 +104,7 @@ runtime_options:
   client_version: '3'
   server_spec: null
   server_spec_disabled: {base: python310-minimal, requirements: ''}
-  server_version: python3-sandbox
+  server_version: python3-full
   version: 2
 services:
 - client_config: {}
@@ -116,5 +116,5 @@ services:
 - client_config: {}
   server_config: {custom_smtp: false, test_mode: false}
   source: /runtime/services/anvil/email.yml
-startup: {module: ClientHomePage, type: form}
+startup: {module: Form1, type: form}
 startup_form: null

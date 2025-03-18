@@ -34,6 +34,7 @@ def do_email_confirm_or_reset():
 
         
     elif 'confirm' in h:
+      print("hereeee")
       if anvil.server.call('_confirm_email_address', h['email'], h['confirm']):
         alert("Thanks for confirming your email address. You are now logged in.")
         
