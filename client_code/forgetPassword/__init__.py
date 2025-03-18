@@ -16,5 +16,6 @@ class forgetPassword(forgetPasswordTemplate):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
+    anvil.server.call('_send_password_reset')
     open_form("register")
     pass
