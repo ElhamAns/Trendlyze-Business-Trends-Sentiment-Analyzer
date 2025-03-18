@@ -49,6 +49,7 @@ components:
       name: password_text_box
       properties:
         background: white
+        hide_text: true
         margin: [null, null, null, '168']
         placeholder: must be 8 characters
       type: TextBox

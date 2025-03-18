@@ -56,5 +56,5 @@ class admin_dashboard(admin_dashboardTemplate):
 
   def button_2_click(self, **event_args):
     anvil.users.logout()
-    open_form('login')
+    open_form('Form1')
     
