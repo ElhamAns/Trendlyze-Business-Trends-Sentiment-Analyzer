@@ -19,7 +19,7 @@ class ClientHomePage(ClientHomePageTemplate):
     self.label_6.text = self.current_client['business_name']
     self.label_4.text = self.current_client['business_name']
     self.image_3.source = self.current_client['logo']
-    self.text_area_1.text = self.current_client['description']
+    self.label_3.text = self.current_client['description']
     self.repeating_panel_1.items = anvil.server.call('get_client_compitetors')
     # Any code you write here will run when the form opens.
 
