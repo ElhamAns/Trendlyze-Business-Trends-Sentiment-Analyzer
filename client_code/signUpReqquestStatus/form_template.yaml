@@ -40,6 +40,7 @@ components:
           type: Label
         - data_bindings:
           - {code: 'self.item[''status'']', property: enabled, writeback: false}
+          event_bindings: {click: button_1_click}
           layout_properties: {column: ZJDIIC}
           name: button_1
           properties: {text: Pay now}

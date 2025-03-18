@@ -30,3 +30,6 @@ class signUpReqquestStatus(signUpReqquestStatusTemplate):
     else:
       return 'orange'
 
+  def button_1_click(self, **event_args):
+    open_form('ClientHomePage')
+
