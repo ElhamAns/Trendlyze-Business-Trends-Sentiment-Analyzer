@@ -55,6 +55,6 @@ class admin_dashboard(admin_dashboardTemplate):
     open_form('Settings')
 
   def button_2_click(self, **event_args):
-    """This method is called when the button is clicked"""
     anvil.users.logout()
+    open_form('login')
     
