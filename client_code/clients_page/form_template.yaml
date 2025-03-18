@@ -126,7 +126,8 @@ components:
     name: spacer_13
     properties: {height: 32}
     type: Spacer
-  - layout_properties: {grid_position: 'ZSBJJE,MPBZQG'}
+  - event_bindings: {click: button_2_click}
+    layout_properties: {grid_position: 'ZSBJJE,MPBZQG'}
     name: button_2
     properties:
       font_size: 25

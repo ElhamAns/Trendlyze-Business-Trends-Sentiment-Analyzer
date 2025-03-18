@@ -17,3 +17,8 @@ class clients_page(clients_pageTemplate):
   def button_5_click(self, **event_args):
     """This method is called when the button is clicked"""
     pass
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.users.logout()
+    open_form('Form1')
