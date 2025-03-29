@@ -52,6 +52,32 @@ db_schema:
       type: datetime
     server: full
     title: Notifications
+  reviews:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: client_name
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: stars
+      type: number
+    - admin_ui: {order: 2, width: 200}
+      name: published_at
+      type: datetime
+    - admin_ui: {order: 3, width: 200}
+      name: city
+      type: string
+    - admin_ui: {order: 4, width: 200}
+      name: phone
+      type: string
+    - admin_ui: {order: 5, width: 200}
+      name: review_text
+      type: string
+    - admin_ui: {order: 6, width: 200}
+      name: label
+      type: number
+    server: full
+    title: reviews
   subscription_types:
     client: none
     columns:
@@ -66,6 +92,17 @@ db_schema:
       type: number
     server: full
     title: Subscription_types
+  test_csv:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: data_file
+      type: media
+    - admin_ui: {order: -1, width: 200}
+      name: name
+      type: string
+    server: full
+    title: test_csv
   users:
     client: none
     columns:
@@ -116,5 +153,5 @@ services:
 - client_config: {}
   server_config: {custom_smtp: false, test_mode: false}
   source: /runtime/services/anvil/email.yml
-startup: {module: authh_module, type: module}
+startup: {module: ClientHomePage, type: form}
 startup_form: null
