@@ -55,29 +55,38 @@ db_schema:
   reviews:
     client: none
     columns:
-    - admin_ui: {order: 0, width: 200}
-      name: client_name
-      type: string
     - admin_ui: {order: 1, width: 200}
       name: stars
       type: number
     - admin_ui: {order: 2, width: 200}
       name: published_at
       type: datetime
-    - admin_ui: {order: 3, width: 200}
-      name: city
-      type: string
-    - admin_ui: {order: 4, width: 200}
-      name: phone
-      type: string
     - admin_ui: {order: 5, width: 200}
       name: review_text
       type: string
     - admin_ui: {order: 6, width: 200}
       name: label
       type: number
+    - admin_ui: {order: 7, width: 200}
+      name: shop
+      target: shops
+      type: link_single
     server: full
     title: reviews
+  shops:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: client_name
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: city
+      type: string
+    - admin_ui: {order: 2, width: 200}
+      name: phone
+      type: string
+    server: full
+    title: shops
   subscription_types:
     client: none
     columns:
