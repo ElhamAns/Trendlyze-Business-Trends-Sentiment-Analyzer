@@ -20,7 +20,8 @@ class ClientHomePage(ClientHomePageTemplate):
     self.label_4.text = self.current_client['business_name']
     self.image_3.source = self.current_client['logo']
     self.label_3.text = self.current_client['description']
-    self.repeating_panel_1.items = anvil.server.call('get_client_compitetors')
+    client = app_tables.clients.search()[0]
+    self.repeating_panel_1.items = anvil.server.call('get_client_compitetors', client)
     # Any code you write here will run when the form opens.
 
   def button_2_click(self, **event_args):

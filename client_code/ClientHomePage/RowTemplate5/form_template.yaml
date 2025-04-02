@@ -6,19 +6,19 @@ components:
   properties: {}
   type: Label
 - data_bindings:
-  - {code: 'self.item[''Competitor'']', property: text, writeback: false}
+  - {code: 'self.item[''row''][''client_name'']', property: text, writeback: false}
   layout_properties: {column: VJQQOR}
   name: label_2
   properties: {}
   type: Label
 - data_bindings:
-  - {code: 'self.item[''Contact Information'']', property: text, writeback: false}
+  - {code: 'self.item[''row''][''phone'']', property: text, writeback: false}
   layout_properties: {column: OJLQEN}
   name: label_3
   properties: {}
   type: Label
 - data_bindings:
-  - {code: 'self.item[''Location'']', property: text, writeback: false}
+  - {code: 'self.item[''row''][''city'']', property: text, writeback: false}
   layout_properties: {column: OXLMOO}
   name: label_4
   properties: {}

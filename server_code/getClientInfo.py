@@ -5,12 +5,46 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 import plotly.graph_objects as go
+import datetime
+from collections import Counter
+from operator import itemgetter
+
 
 @anvil.server.callable
 def get_competitor_plot():
-    months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"]
-    last_year = [9000, 7000, 12000, 18000, 25000, 21000, 23000]
-    this_year = [10000, 14000, 9000, 16000, 22000, 24000, 26000]
+    months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]
+
+    current_year = datetime.datetime.now().year
+    previous_year = current_year - 1
+    
+    # Initialize a dictionary to store the count of reviews per month
+    monthly_counts = {}
+    
+    # Loop through each year (current year and previous year)
+    for year in [previous_year, current_year]:
+        data = []
+        # Loop through each month (1 to 12)
+        for month in range(1, 13):
+            # Create the start and end date for the month
+            start_date = datetime.datetime(year, month, 1)
+            
+            # For months other than December, set the end date to the last day of the month
+            if month == 12:
+                end_date = datetime.datetime(year, month, 31)
+            else:
+                # For months with 31 days
+                end_date = datetime.datetime(year, month + 1, 1) - datetime.timedelta(days=1)
+    
+            # Query the reviews table for reviews published within this month
+            reviews = app_tables.reviews.search(published_at=q.between(start_date, end_date)
+            )
+            
+            # Store the count of reviews for this month in the dictionary
+            data.append(len(reviews))
+        monthly_counts[year] = data
+    
+    last_year = monthly_counts[current_year]
+    this_year = monthly_counts[previous_year]
 
     # Create traces as separate Scatter objects
     last_year_trace = go.Scatter(
@@ -50,8 +84,11 @@ def get_competitor_plot():
 @anvil.server.callable
 def get_ratings_chart():
     # Data
-    labels = ["Andes", "Hassad", "Rateel", "Saje"]
-    values = [52.1, 22.8, 13.9, 11.2]  # Percentages
+    user = app_tables.users.get(email="me.mansoor006@gmail.com")
+    client = app_tables.clients.search()[0]
+    values = anvil.server.call('get_client_home_page', client)
+    labels = [key for key, value in values]
+    values = [value for key, value in values]
     colors = ["black", "lightblue", "lightgreen", "#d4e4fa"]  # Custom colors
 
     # Create Donut Chart
@@ -85,8 +122,18 @@ def get_ratings_chart():
 @anvil.server.callable
 def get_reviews_chart():
     # Data
-    categories = ["OWL", "Rateel", "Andes", "Hassad", "Saje", "Line"]
-    values = [15000, 30000, 20000, 32000, 12000, 22000]  # Number of reviews
+
+    reviews = app_tables.reviews.search()
+    
+    # Count reviews per client
+    client_review_counts = Counter(review['shop']['client_name'] for review in reviews)
+    
+    # Get top 5 clients sorted by review count
+    top_clients = sorted(client_review_counts.items(), key=itemgetter(1), reverse=True)[:6]
+
+
+    categories = [key for key,value in top_clients]
+    values = [value for key,value in top_clients]
     colors = ["#A5A7FB", "#8EE2DA", "black", "#7DB9FF", "#AFC7E3", "#97E69A"]  # Custom colors
 
     # Create Bar Chart
@@ -124,13 +171,3 @@ def get_current_client():
   # user = anvil.users.get_user()
   client = app_tables.clients.get(user=user)
   return client
-
-@anvil.server.callable
-def get_client_compitetors():
-  return [
-    {"No": 1, "Competitor": "OWL", "Contact Information": "+966 50 441 5467", "Location": "Khobar, King Khaled St."},
-    {"No": 2, "Competitor": "ANDES", "Contact Information": "+966 54 460 7313", "Location": "Khobar, Prince Talal St."},
-    {"No": 3, "Competitor": "LINE", "Contact Information": "+966 51 061 5946", "Location": "Khobar, 21st St."},
-    {"No": 4, "Competitor": "RATEEL", "Contact Information": "+966 56 434 2883", "Location": "Khobar, Prince Naif St."},
-    {"No": 5, "Competitor": "SAJE", "Contact Information": "+966 54 070 7691", "Location": "Khobar, 13th St."}
-]

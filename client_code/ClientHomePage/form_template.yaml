@@ -60,6 +60,7 @@ components:
       - {data_key: column_2, expand: false, id: VJQQOR, title: COMPETITORS, width: 180}
       - {data_key: column_3, expand: false, id: OJLQEN, title: CONTACT INFORMATION, width: 235}
       - {data_key: column_4, id: OXLMOO, title: LOCATION}
+      rows_per_page: 10
     type: DataGrid
   layout_properties: {slot: default}
   name: content_panel
