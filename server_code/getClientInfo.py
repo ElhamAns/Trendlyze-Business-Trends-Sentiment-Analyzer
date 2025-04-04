@@ -8,11 +8,13 @@ import plotly.graph_objects as go
 import datetime
 from collections import Counter
 from operator import itemgetter
-
+import time
 
 @anvil.server.callable
 def get_competitor_plot():
+    a = time.time()
     months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]
+    top_clients = app_tables.shops.search(anvil.tables.order_by('reviews_count', ascending=False))
 
     current_year = datetime.datetime.now().year
     previous_year = current_year - 1
@@ -36,8 +38,7 @@ def get_competitor_plot():
                 end_date = datetime.datetime(year, month + 1, 1) - datetime.timedelta(days=1)
     
             # Query the reviews table for reviews published within this month
-            reviews = app_tables.reviews.search(published_at=q.between(start_date, end_date)
-            )
+            reviews = app_tables.reviews.search(published_at=q.between(start_date, end_date), shop=q.any_of(*top_clients[:6]))
             
             # Store the count of reviews for this month in the dictionary
             data.append(len(reviews))
@@ -68,7 +69,7 @@ def get_competitor_plot():
 
     # Update Layout
     fig.update_layout(
-        title="Total Competitors in Market",
+        title="Total reviews count over years",
         xaxis=dict(showgrid=False, zeroline=False),
         yaxis=dict(showgrid=False, zeroline=False),
         legend=dict(
@@ -78,12 +79,13 @@ def get_competitor_plot():
         ),
         plot_bgcolor="white"
     )
-
+    print("time taken a: ", time.time() - a)
     return fig
 
 @anvil.server.callable
 def get_ratings_chart():
     # Data
+    b = time.time()
     user = app_tables.users.get(email="me.mansoor006@gmail.com")
     client = app_tables.clients.search()[0]
     values = anvil.server.call('get_client_home_page', client)
@@ -116,27 +118,16 @@ def get_ratings_chart():
     paper_bgcolor="rgba(0,0,0,0)"
 )
 
-
+    print("time taken b: ", time.time() - b)
     return fig
 
 @anvil.server.callable
 def get_reviews_chart():
-    # Data
-
-    reviews = app_tables.reviews.search()
-    
-    # Count reviews per client
-    client_review_counts = Counter(review['shop']['client_name'] for review in reviews)
-    
-    # Get top 5 clients sorted by review count
-    top_clients = sorted(client_review_counts.items(), key=itemgetter(1), reverse=True)[:6]
-
-
-    categories = [key for key,value in top_clients]
-    values = [value for key,value in top_clients]
+    c = time.time()
+    top_clients = app_tables.shops.search(anvil.tables.order_by('reviews_count', ascending=False))
+    categories = [client['shop_name'] for client in top_clients[:6]]
+    values = [client['reviews_count'] for client in top_clients[:6]]
     colors = ["#A5A7FB", "#8EE2DA", "black", "#7DB9FF", "#AFC7E3", "#97E69A"]  # Custom colors
-
-    # Create Bar Chart
     fig = go.Figure(
         data=[go.Bar(
             x=categories,
@@ -145,7 +136,6 @@ def get_reviews_chart():
             width=0.3,  # Adjust bar width
         )]
     )
-
     # Update Layout
     fig.update_layout(
         title="Total Reviews",
@@ -154,6 +144,7 @@ def get_reviews_chart():
         plot_bgcolor="white",
         margin=dict(l=40, r=40, t=40, b=40)
     )
+    print("time taken c: ", time.time() - c)
 
     return fig
 
@@ -171,3 +162,52 @@ def get_current_client():
   # user = anvil.users.get_user()
   client = app_tables.clients.get(user=user)
   return client
+
+
+@anvil.server.callable
+def get_home_page_rating(client=None):
+    # Data
+    b = time.time()
+    if client:
+      shop = app_tables.shops.search(shop_name=client)[0]
+    else:
+      user = app_tables.users.get(email="me.mansoor006@gmail.com")
+      client = app_tables.clients.search()[0]
+      shop = client['shop']
+    
+    bad_reviews = len(app_tables.reviews.search(shop=shop, label=0))
+    satisfactory_reviews = len(app_tables.reviews.search(shop=shop, label=1))
+    good_reviews = len(app_tables.reviews.search(shop=shop, label=2))
+    print("time taken before: ", time.time() - b)
+    
+    labels = ["Bad", "Satisfactory" , "Good"]
+    values = [bad_reviews, good_reviews, satisfactory_reviews]
+    colors = ["black", "lightblue", "lightgreen"]  # Custom colors
+
+    # Create Donut Chart
+    fig = go.Figure(
+        data=[go.Pie(
+            labels=labels,
+            values=values,
+            marker=dict(colors=colors),
+            hole=0.5,  # Donut effect
+            textinfo="none",  # Hide percentage labels on the chart
+        )]
+    )
+
+    # Update Layout
+    fig.update_layout(
+    title="Top Ratings",
+    showlegend=True,
+    legend=dict(
+        orientation="v",
+        x=1.1,
+        y=1
+    ),
+    margin=dict(l=0, r=120, t=40, b=20),
+    plot_bgcolor="rgba(0,0,0,0)",
+    paper_bgcolor="rgba(0,0,0,0)"
+)
+
+    print("time taken b: ", time.time() - b)
+    return fig

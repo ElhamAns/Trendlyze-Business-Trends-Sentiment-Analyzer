@@ -6,7 +6,7 @@ components:
   properties: {}
   type: Label
 - data_bindings:
-  - {code: 'self.item[''row''][''client_name'']', property: text, writeback: false}
+  - {code: 'self.item[''row''][''shop_name'']', property: text, writeback: false}
   layout_properties: {column: VJQQOR}
   name: label_2
   properties: {}

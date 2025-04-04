@@ -14,7 +14,7 @@ class ClientHomePage(ClientHomePageTemplate):
     # Set Form properties and Data Bindings.
     self.current_client = anvil.server.call('get_current_client')
     self.init_components(**properties)
-    self.plot_1.figure = anvil.server.call('get_ratings_chart')
+    self.plot_1.figure = anvil.server.call('get_home_page_rating')
     self.label_5.text = f"Welcome Back {self.current_client['business_name']}"
     self.label_6.text = self.current_client['business_name']
     self.label_4.text = self.current_client['business_name']

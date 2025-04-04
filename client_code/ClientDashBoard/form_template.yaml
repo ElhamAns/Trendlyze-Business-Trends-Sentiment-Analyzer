@@ -1,25 +1,29 @@
 components:
 - components:
   - components:
-    - layout_properties: {grid_position: 'AULUVB,DQJQJB'}
-      name: drop_down_1
-      properties: {}
-      type: DropDown
+    - layout_properties: {grid_position: 'AULUVB,GYEEQJ'}
+      name: label_3
+      properties: {text: Filter By}
+      type: Label
     - layout_properties: {grid_position: 'AULUVB,CLIANQ'}
       name: drop_down_2
-      properties: {}
+      properties:
+        include_placeholder: true
+        items: []
+        placeholder: Year
       type: DropDown
-    - layout_properties: {grid_position: 'AULUVB,VWDSKV'}
+    - event_bindings: {change: drop_down_3_change}
+      layout_properties: {grid_position: 'AULUVB,VWDSKV'}
       name: drop_down_3
-      properties: {}
+      properties: {include_placeholder: true, placeholder: Coffee Shop}
       type: DropDown
     - layout_properties: {grid_position: 'AULUVB,UJRMLH'}
       name: button_1
-      properties: {text: button_1}
+      properties: {text: Download report}
       type: Button
     layout_properties: {grid_position: 'BQGZYH,VOHUEU'}
     name: card_1
-    properties: {role: card}
+    properties: {col_widths: '{"GYEEQJ":10,"CLIANQ":15,"VWDSKV":15,"UJRMLH":20}', role: card}
     type: ColumnPanel
   - layout_properties: {grid_position: 'RZKMLS,DQVBGV BJPEUL,PFEGJA'}
     name: card_2

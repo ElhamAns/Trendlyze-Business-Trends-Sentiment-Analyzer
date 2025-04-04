@@ -140,6 +140,9 @@ def _confirm_email_address(email, confirm_key):
     user['link_key'] = None
     user['enabled'] = True
     app_tables.notifications.add_row(text="New user registered", created_at=datetime.now())
+    client = app_tables.clients.get(user=user)
+    shop = app_tables.shops.get(shop_name=client['business_name'])
+    client['shop'] = shop
     anvil.users.force_login(user)
     return True
 

@@ -23,18 +23,20 @@ from collections import Counter
 def get_client_home_page(user_client):
   
   client_name = user_client['business_name']
-  client = app_tables.shops.get(client_name=client_name)
+  client = app_tables.shops.get(shop_name=client_name)
   shops = app_tables.reviews.search(label=2, shop=q.not_(client))
-  shop_name = [shop['shop']['client_name'] for shop in shops]
+  shop_name = [shop['shop']['shop_name'] for shop in shops]
   name_count = Counter(shop_name).most_common(4)
   return name_count
 
 @anvil.server.callable
 def get_client_compitetors(user_client):
-  search_results = app_tables.shops.search(client_name=q.not_(user_client['business_name']))
+  search_results = app_tables.shops.search(shop_name=q.not_(user_client['business_name']))
   final_result = []
   number = 0
   for result in search_results:
     number+=1
     final_result.append({"No": number, "row": result})
   return final_result
+
+

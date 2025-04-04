@@ -39,6 +39,10 @@ db_schema:
     - admin_ui: {order: -0.25, width: 200}
       name: status
       type: bool
+    - admin_ui: {order: 7, width: 200}
+      name: shop
+      target: shops
+      type: link_single
     server: full
     title: Clients
   notifications:
@@ -77,7 +81,7 @@ db_schema:
     client: none
     columns:
     - admin_ui: {order: 0, width: 200}
-      name: client_name
+      name: shop_name
       type: string
     - admin_ui: {order: 1, width: 200}
       name: city
@@ -85,6 +89,9 @@ db_schema:
     - admin_ui: {order: 2, width: 200}
       name: phone
       type: string
+    - admin_ui: {order: 3, width: 200}
+      name: reviews_count
+      type: number
     server: full
     title: shops
   subscription_types:
