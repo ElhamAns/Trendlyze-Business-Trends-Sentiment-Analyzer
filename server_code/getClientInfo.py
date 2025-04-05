@@ -180,7 +180,7 @@ def get_home_page_rating(client=None):
     good_reviews = len(app_tables.reviews.search(shop=shop, label=2))
     print("time taken before: ", time.time() - b)
     
-    labels = ["Bad", "Satisfactory" , "Good"]
+    labels = ["Unsatisfied", "Partially Satisfied" , "Satisfied"]
     values = [bad_reviews, good_reviews, satisfactory_reviews]
     colors = ["black", "lightblue", "lightgreen"]  # Custom colors
 

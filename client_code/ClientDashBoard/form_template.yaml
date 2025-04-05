@@ -5,13 +5,6 @@ components:
       name: label_3
       properties: {text: Filter By}
       type: Label
-    - layout_properties: {grid_position: 'AULUVB,CLIANQ'}
-      name: drop_down_2
-      properties:
-        include_placeholder: true
-        items: []
-        placeholder: Year
-      type: DropDown
     - event_bindings: {change: drop_down_3_change}
       layout_properties: {grid_position: 'AULUVB,VWDSKV'}
       name: drop_down_3
