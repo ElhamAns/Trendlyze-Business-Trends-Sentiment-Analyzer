@@ -39,6 +39,7 @@ class ClientDashBoard(ClientDashBoardTemplate):
     """This method is called when an item is selected"""
     self.plot_1.figure = anvil.server.call('get_home_page_rating', self.drop_down_3.selected_value)
     self.plot_2.figure = anvil.server.call('get_shop_reviews', self.drop_down_3.selected_value)
+    self.plot_3.figure = anvil.server.call('get_shop_sentiments', self.drop_down_3.selected_value)
 
   def drop_down_1_change(self, **event_args):
     """This method is called when an item is selected"""

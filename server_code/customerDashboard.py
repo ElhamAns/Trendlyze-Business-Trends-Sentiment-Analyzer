@@ -121,3 +121,51 @@ def get_shop_reviews(shop_name):
     )
     print("time taken a: ", time.time() - a)
     return fig
+
+@anvil.server.callable
+def get_shop_sentiments(shop_name=None):
+    c = time.time()
+    shop = app_tables.shops.get(shop_name=shop_name)
+    group_labels = ["Satisfied", "Satisfied", "Partially Satisfied", "Partially Satisfied", "Unsatisfied", "Unsatisfied"]
+    categories = ["Real Sentiment", "Rating on Google Maps", "Real Sentiment","Rating on Google Maps", "Real Sentiment", "Rating on Google Maps"]
+    satisfied_sentiment = len(app_tables.reviews.search(label=2, shop=shop))
+    partially_satisfied_sentiment = len(app_tables.reviews.search(label=1, shop=shop))
+    un_satisfied_sentiment = len(app_tables.reviews.search(label=0, shop=shop))
+
+    satisfied_rating = len(app_tables.reviews.search(stars=q.any_of(*[4,5]), shop=shop))
+    partially_satisfied_rating = len(app_tables.reviews.search(stars=3, shop=shop))
+    un_satisfied_rating = len(app_tables.reviews.search(stars=q.any_of(*[2,1]), shop=shop))
+  
+    values = [satisfied_sentiment, satisfied_rating, partially_satisfied_sentiment, partially_satisfied_rating, un_satisfied_sentiment, un_satisfied_rating]
+    colors = ["#A5A7FB", "#8EE2DA", "black", "#7DB9FF", "#AFC7E3", "#97E69A"]
+    fig = go.Figure()
+    for i in range(6):
+        fig.add_trace(go.Bar(
+            x=[group_labels[i]],
+            y=[values[i]],
+            name=categories[i],
+            marker=dict(color=colors[i]),
+            width=0.3,
+            text=categories[i],
+            hoverinfo="text+y"
+        ))
+    # fig = go.Figure(
+    #     data=[go.Bar(
+    #         x=categories,
+    #         y=values,
+    #         marker=dict(color=colors, line=dict(width=0)),
+    #         width=0.3,  # Adjust bar width
+    #     )]
+    # )
+    # Update Layout
+    fig.update_layout(
+        title="Total Reviews",
+        xaxis=dict(showgrid=False),
+        yaxis=dict(showgrid=False),
+        plot_bgcolor="white",
+        barmode='group',
+        margin=dict(l=40, r=40, t=40, b=40)
+    )
+    print("time taken c: ", time.time() - c)
+
+    return fig
