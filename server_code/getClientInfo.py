@@ -197,7 +197,7 @@ def get_home_page_rating(client=None):
 
     # Update Layout
     fig.update_layout(
-    title="Top Ratings",
+    title="Customer satisfaction",
     showlegend=True,
     legend=dict(
         orientation="v",
