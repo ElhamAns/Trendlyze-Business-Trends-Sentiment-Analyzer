@@ -29,6 +29,22 @@ components:
     name: spacer_1
     properties: {height: 49}
     type: Spacer
+  - layout_properties: {grid_position: 'DALACL,HJEWZW'}
+    name: label_7
+    properties: {text: Classify any Review}
+    type: Label
+  - layout_properties: {grid_position: 'WYLWYD,REJYFC'}
+    name: text_area_1
+    properties: {text: validation (only arabic and only text)}
+    type: TextArea
+  - layout_properties: {grid_position: 'WYLWYD,SCJMKG'}
+    name: button_6
+    properties: {background: 'theme:Primary 500', foreground: gray, text: Classify}
+    type: Button
+  - layout_properties: {grid_position: 'UJJXJE,FFIWTJ'}
+    name: label_8
+    properties: {align: center, text: Satisfied}
+    type: Label
   - components:
     - layout_properties: {grid_position: 'QZJLGZ,QODHNG'}
       name: label_1
@@ -72,7 +88,7 @@ components:
     type: DataGrid
   layout_properties: {slot: default}
   name: content_panel
-  properties: {}
+  properties: {col_widths: '{"REJYFC":45,"SCJMKG":15}'}
   type: ColumnPanel
 - components:
   - components:
