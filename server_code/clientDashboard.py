@@ -21,12 +21,16 @@ from collections import Counter
 
 @anvil.server.callable
 def get_client_home_page(user_client):
-  
+  import time
+  a = time.time()
   client_name = user_client['business_name']
   client = app_tables.shops.get(shop_name=client_name)
   shops = app_tables.reviews.search(label=2, shop=q.not_(client))
+  print(time.time() - a)
   shop_name = [shop['shop']['shop_name'] for shop in shops]
+  print(time.time() - a)
   name_count = Counter(shop_name).most_common(4)
+  print(time.time() - a)
   return name_count
 
 @anvil.server.callable

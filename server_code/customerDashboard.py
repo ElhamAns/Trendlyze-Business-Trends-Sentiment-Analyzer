@@ -53,11 +53,7 @@ def get_total_review_counts(year=2025):
             line=dict(color=config['color'], width=config['width'], dash=config['dash'])
         )
         traces.append(trace)
-
-    # Create Figure and pass traces in the `data` argument
     fig = go.Figure(data=traces)
-
-    # Update Layout
     fig.update_layout(
         title="Total reviews count over years",
         xaxis=dict(showgrid=False, zeroline=False),
@@ -81,36 +77,21 @@ def get_shop_reviews(shop_name):
 
     current_year = datetime.datetime.now().year
     previous_year = current_year - 1
-    
-    # Initialize a dictionary to store the count of reviews per month
     monthly_counts = {}
-    
-    # Loop through each year (current year and previous year)
     for year in [previous_year, current_year]:
         data = []
-        # Loop through each month (1 to 12)
         for month in range(1, 13):
-            # Create the start and end date for the month
             start_date = datetime.datetime(year, month, 1)
-            
-            # For months other than December, set the end date to the last day of the month
             if month == 12:
                 end_date = datetime.datetime(year, month, 31)
             else:
-                # For months with 31 days
                 end_date = datetime.datetime(year, month + 1, 1) - datetime.timedelta(days=1)
-    
-            # Query the reviews table for reviews published within this month
             reviews = app_tables.reviews.search(published_at=q.between(start_date, end_date), shop=shop)
-            
-            # Store the count of reviews for this month in the dictionary
             data.append(len(reviews))
         monthly_counts[year] = data
     
     last_year = monthly_counts[current_year]
     this_year = monthly_counts[previous_year]
-
-    # Create traces as separate Scatter objects
     last_year_trace = go.Scatter(
         x=months,
         y=last_year,
@@ -126,11 +107,7 @@ def get_shop_reviews(shop_name):
         name='This year',
         line=dict(color='lightblue', width=2, dash='dot')
     )
-
-    # Create Figure and pass traces in the `data` argument
     fig = go.Figure(data=[last_year_trace, this_year_trace])
-
-    # Update Layout
     fig.update_layout(
         title="Total reviews count over years",
         xaxis=dict(showgrid=False, zeroline=False),
