@@ -11,15 +11,53 @@ from operator import itemgetter
 import time
 
 @anvil.server.callable
-def get_total_review_counts(year=2025):
+def get_total_review_counts(year=2024, shop=None):
     a = time.time()
     months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]
-    top_clients = app_tables.shops.search(anvil.tables.order_by('reviews_count', ascending=False))
-
     year = int(year)
-    monthly_counts = {}
-    for clinet in top_clients[:6]:
-        data = []
+    traces = []
+    line_data = {}
+
+    if not shop:
+        top_clients = app_tables.shops.search(anvil.tables.order_by('reviews_count', ascending=False))
+    
+        monthly_counts = {}
+        for clinet in top_clients[:6]:
+            data = []
+            for month in range(1, 13):
+                start_date = datetime.datetime(year, month, 1)
+                if month == 12:
+                    end_date = datetime.datetime(year, month, 31)
+                else:
+                    end_date = datetime.datetime(year, month + 1, 1) - datetime.timedelta(days=1)
+                reviews = app_tables.reviews.search(published_at=q.between(start_date, end_date), shop=clinet)
+                data.append(len(reviews))
+            monthly_counts[clinet['shop_name']] = data
+    
+
+        colors = ['red', 'blue', 'green', 'purple', 'orange', 'brown'] 
+        for i, client in enumerate(top_clients[:6]):
+            shop_name = client['shop_name']
+            color_index = i % len(colors)
+            line_data[shop_name] = {
+                'data': monthly_counts[shop_name],
+                'color': colors[color_index],
+                'width': 2,
+                'dash': None
+            }
+    
+    
+        for name, config in line_data.items():
+            trace = go.Scatter(
+                x=months,
+                y=config['data'],
+                mode='lines',
+                name=name,
+                line=dict(color=config['color'], width=config['width'], dash=config['dash'])
+            )
+            traces.append(trace)
+    else:
+        shop = app_tables.shops.get(shop_name=shop)
         for month in range(1, 13):
             start_date = datetime.datetime(year, month, 1)
             if month == 12:
@@ -29,30 +67,7 @@ def get_total_review_counts(year=2025):
             reviews = app_tables.reviews.search(published_at=q.between(start_date, end_date), shop=clinet)
             data.append(len(reviews))
         monthly_counts[clinet['shop_name']] = data
-
-    line_data = {}
-    colors = ['red', 'blue', 'green', 'purple', 'orange', 'brown'] 
-    for i, client in enumerate(top_clients[:6]):
-        shop_name = client['shop_name']
-        color_index = i % len(colors)
-        line_data[shop_name] = {
-            'data': monthly_counts[shop_name],
-            'color': colors[color_index],
-            'width': 2,
-            'dash': None
-        }
-
-
-    traces = []
-    for name, config in line_data.items():
-        trace = go.Scatter(
-            x=months,
-            y=config['data'],
-            mode='lines',
-            name=name,
-            line=dict(color=config['color'], width=config['width'], dash=config['dash'])
-        )
-        traces.append(trace)
+        
     fig = go.Figure(data=traces)
     fig.update_layout(
         title="Total reviews count over years",
