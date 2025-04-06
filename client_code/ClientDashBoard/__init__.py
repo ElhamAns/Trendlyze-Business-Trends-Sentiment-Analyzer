@@ -11,12 +11,17 @@ from anvil.tables import app_tables
 class ClientDashBoard(ClientDashBoardTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
+    self.first_coffee_shops = anvil.server.call('get_all_coffee_shop', True)
+    self.first_coffee_shops.append("All Coffee Shops") 
     self.init_components(**properties)
     self.drop_down_1.items = ["2025", "2024", "2023", "2022", "2021", "2020", "2019"]
+    self.drop_down_1.selected_value = "2024"
+    self.drop_down_2.items = self.first_coffee_shops
     self.plot_1.figure = anvil.server.call('get_ratings_chart')
     self.drop_down_3.items = anvil.server.call('get_all_coffee_shop')
-    self.plot_2.figure = anvil.server.call('get_total_review_counts')
+    self.plot_2.figure = anvil.server.call('get_total_review_counts',2024, self.first_coffee_shops[0])
     self.plot_3.figure = anvil.server.call('get_reviews_chart')
+
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -43,6 +48,14 @@ class ClientDashBoard(ClientDashBoardTemplate):
 
   def drop_down_1_change(self, **event_args):
     """This method is called when an item is selected"""
-    self.plot_2.figure = anvil.server.call('get_total_review_counts', year = self.drop_down_1.selected_value)
+    self.plot_2.figure = anvil.server.call('get_total_review_counts', year = self.drop_down_1.selected_value, shop=self.first_coffee_shops[0])
+    self.drop_down_2.selected_value = self.first_coffee_shops[0]
+
+  def drop_down_2_change(self, **event_args):
+    """This method is called when an item is selected"""
+    if self.drop_down_2.selected_value == "All Coffee Shops":
+        self.plot_2.figure = anvil.server.call('get_total_review_counts', self.drop_down_1.selected_value)
+    else:
+        self.plot_2.figure = anvil.server.call('get_total_review_counts', self.drop_down_1.selected_value, shop=self.drop_down_2.selected_value)
     
     

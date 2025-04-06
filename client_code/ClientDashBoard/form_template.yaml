@@ -46,6 +46,11 @@ components:
       items: []
       placeholder: Year
     type: DropDown
+  - event_bindings: {change: drop_down_2_change}
+    layout_properties: {grid_position: 'KTSPXQ,GAIYEZ MWDZZA,RBOMWE'}
+    name: drop_down_2
+    properties: {}
+    type: DropDown
   - layout_properties: {grid_position: 'KTSPXQ,GAIYEZ QPAMTZ,QTVEMT'}
     name: plot_2
     properties: {height: '550'}

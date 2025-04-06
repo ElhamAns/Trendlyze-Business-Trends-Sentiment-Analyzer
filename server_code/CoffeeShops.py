@@ -19,6 +19,9 @@ import anvil.server
 #
 
 @anvil.server.callable
-def get_all_coffee_shop():
+def get_all_coffee_shop(first_six=False):
+  if first_six:
+    coffee_shops = app_tables.shops.search(anvil.tables.order_by('reviews_count', ascending=False))
+    return [coffee_shop['shop_name'] for coffee_shop in coffee_shops[:6]]
   coffee_shops = app_tables.shops.search(tables.order_by('shop_name'))
   return [coffee_shop['shop_name'] for coffee_shop in coffee_shops]

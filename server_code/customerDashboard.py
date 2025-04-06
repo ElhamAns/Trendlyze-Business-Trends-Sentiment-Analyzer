@@ -47,16 +47,10 @@ def get_total_review_counts(year=2024, shop=None):
             }
     
     
-        for name, config in line_data.items():
-            trace = go.Scatter(
-                x=months,
-                y=config['data'],
-                mode='lines',
-                name=name,
-                line=dict(color=config['color'], width=config['width'], dash=config['dash'])
-            )
-            traces.append(trace)
+
     else:
+        data = []
+        monthly_counts = {}
         shop = app_tables.shops.get(shop_name=shop)
         for month in range(1, 13):
             start_date = datetime.datetime(year, month, 1)
@@ -64,9 +58,26 @@ def get_total_review_counts(year=2024, shop=None):
                 end_date = datetime.datetime(year, month, 31)
             else:
                 end_date = datetime.datetime(year, month + 1, 1) - datetime.timedelta(days=1)
-            reviews = app_tables.reviews.search(published_at=q.between(start_date, end_date), shop=clinet)
+            reviews = app_tables.reviews.search(published_at=q.between(start_date, end_date), shop=shop)
             data.append(len(reviews))
-        monthly_counts[clinet['shop_name']] = data
+        monthly_counts[shop['shop_name']] = data
+        line_data[shop['shop_name']] = {
+                  'data': monthly_counts[shop['shop_name']],
+                  'color': 'black',
+                  'width': 2,
+                  'dash': None
+              }
+
+    for name, config in line_data.items():
+        trace = go.Scatter(
+            x=months,
+            y=config['data'],
+            mode='lines',
+            name=name,
+            line=dict(color=config['color'], width=config['width'], dash=config['dash'])
+        )
+        traces.append(trace)
+      
         
     fig = go.Figure(data=traces)
     fig.update_layout(
