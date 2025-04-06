@@ -4,6 +4,8 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
+import anvil.pdf
+
 
 # This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
@@ -25,3 +27,8 @@ def get_all_coffee_shop(first_six=False):
     return [coffee_shop['shop_name'] for coffee_shop in coffee_shops[:6]]
   coffee_shops = app_tables.shops.search(tables.order_by('shop_name'))
   return [coffee_shop['shop_name'] for coffee_shop in coffee_shops]
+
+@anvil.server.callable
+def create_zaphod_pdf():
+  media_object = anvil.pdf.render_form('ClientDashBoard')
+  return media_object

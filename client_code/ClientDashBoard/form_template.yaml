@@ -10,7 +10,8 @@ components:
       name: drop_down_3
       properties: {include_placeholder: true, placeholder: Coffee Shop}
       type: DropDown
-    - layout_properties: {grid_position: 'AULUVB,UJRMLH'}
+    - event_bindings: {click: button_1_click}
+      layout_properties: {grid_position: 'AULUVB,UJRMLH'}
       name: button_1
       properties: {text: Download report}
       type: Button

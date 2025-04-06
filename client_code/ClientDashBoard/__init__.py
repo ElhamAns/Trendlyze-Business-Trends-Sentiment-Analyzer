@@ -57,5 +57,10 @@ class ClientDashBoard(ClientDashBoardTemplate):
         self.plot_2.figure = anvil.server.call('get_total_review_counts', self.drop_down_1.selected_value)
     else:
         self.plot_2.figure = anvil.server.call('get_total_review_counts', self.drop_down_1.selected_value, shop=self.drop_down_2.selected_value)
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    media_object = anvil.server.call('create_zaphod_pdf')
+    anvil.media.download(media_object)
     
     
