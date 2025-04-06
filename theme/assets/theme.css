@@ -844,3 +844,7 @@ footer a, .footer .anvil-component {
   align-items:right;
 }
 
+.anvil-role-page-break {
+  page-break-before: always;
+  height: 1px;
+}

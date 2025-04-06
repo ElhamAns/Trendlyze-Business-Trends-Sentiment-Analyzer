@@ -5,6 +5,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 import anvil.pdf
+from anvil.pdf import PDFRenderer
 
 
 # This is a server module. It runs on the Anvil server,
@@ -30,5 +31,5 @@ def get_all_coffee_shop(first_six=False):
 
 @anvil.server.callable
 def create_zaphod_pdf():
-  media_object = anvil.pdf.render_form('ClientDashBoard')
+  media_object = PDFRenderer(page_size='A4', filename="Dashboard").render_form('ClientDashBoard')
   return media_object

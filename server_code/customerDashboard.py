@@ -96,15 +96,15 @@ def get_total_review_counts(year=2024, shop=None):
 
 
 @anvil.server.callable
-def get_shop_reviews(shop_name):
+def get_shop_reviews(shop_name, start_year=2024, end_year=2025):
     a = time.time()
+    start_year = int(start_year)
+    end_year = int(end_year)
     months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]
     shop = app_tables.shops.get(shop_name=shop_name)
 
-    current_year = datetime.datetime.now().year
-    previous_year = current_year - 1
     monthly_counts = {}
-    for year in [previous_year, current_year]:
+    for year in [end_year, start_year]:
         data = []
         for month in range(1, 13):
             start_date = datetime.datetime(year, month, 1)
@@ -116,13 +116,13 @@ def get_shop_reviews(shop_name):
             data.append(len(reviews))
         monthly_counts[year] = data
     
-    last_year = monthly_counts[current_year]
-    this_year = monthly_counts[previous_year]
+    last_year = monthly_counts[start_year]
+    this_year = monthly_counts[end_year]
     last_year_trace = go.Scatter(
         x=months,
         y=last_year,
         mode='lines',
-        name='Last year',
+        name=start_year,
         line=dict(color='black', width=2)
     )
 
@@ -130,7 +130,7 @@ def get_shop_reviews(shop_name):
         x=months,
         y=this_year,
         mode='lines',
-        name='This year',
+        name=end_year,
         line=dict(color='lightblue', width=2, dash='dot')
     )
     fig = go.Figure(data=[last_year_trace, this_year_trace])
@@ -140,7 +140,7 @@ def get_shop_reviews(shop_name):
         yaxis=dict(showgrid=False, zeroline=False),
         legend=dict(
             orientation="h",
-            x=0.02,
+            x=1,
             y=1.15,
         ),
         plot_bgcolor="white"
@@ -163,7 +163,7 @@ def get_shop_sentiments(shop_name=None):
     un_satisfied_rating = len(app_tables.reviews.search(stars=q.any_of(*[2,1]), shop=shop))
   
     values = [satisfied_sentiment, satisfied_rating, partially_satisfied_sentiment, partially_satisfied_rating, un_satisfied_sentiment, un_satisfied_rating]
-    colors = ["#A5A7FB", "#8EE2DA", "black", "#7DB9FF", "#AFC7E3", "#97E69A"]
+    colors = ["#A5A7FB", "#8EE2DA", "#A5A7FB", "#8EE2DA", "#A5A7FB", "#8EE2DA"]
     fig = go.Figure()
     for i in range(6):
         fig.add_trace(go.Bar(
@@ -173,16 +173,9 @@ def get_shop_sentiments(shop_name=None):
             marker=dict(color=colors[i]),
             width=0.3,
             text=categories[i],
-            hoverinfo="text+y"
+            hoverinfo="text+y",
+            showlegend=(i < 2)
         ))
-    # fig = go.Figure(
-    #     data=[go.Bar(
-    #         x=categories,
-    #         y=values,
-    #         marker=dict(color=colors, line=dict(width=0)),
-    #         width=0.3,  # Adjust bar width
-    #     )]
-    # )
     # Update Layout
     fig.update_layout(
         title="Total Reviews",

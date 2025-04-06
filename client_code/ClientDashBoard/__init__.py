@@ -14,7 +14,7 @@ class ClientDashBoard(ClientDashBoardTemplate):
     self.first_coffee_shops = anvil.server.call('get_all_coffee_shop', True)
     self.first_coffee_shops.append("All Coffee Shops") 
     self.init_components(**properties)
-    self.drop_down_1.items = ["2025", "2024", "2023", "2022", "2021", "2020", "2019"]
+    self.drop_down_1.items = ["2025", "2024", "2023", "2022", "2021", "2020", "2019","2018", "2017", "2016", "2015", "2014" ]
     self.drop_down_1.selected_value = "2024"
     self.drop_down_2.items = self.first_coffee_shops
     self.plot_1.figure = anvil.server.call('get_ratings_chart')
@@ -42,22 +42,30 @@ class ClientDashBoard(ClientDashBoardTemplate):
 
   def drop_down_3_change(self, **event_args):
     """This method is called when an item is selected"""
+    self.drop_down_1.items =  ["2025", "2024", "2023", "2022", "2021", "2020", "2019","2018", "2017", "2016", "2015", "2014" ]
+    self.drop_down_1.selected_value = "2024"
+    self.drop_down_2.selected_value = "2025"
+    self.drop_down_2.items =  ["2025", "2024", "2023", "2022", "2021", "2020", "2019","2018", "2017", "2016", "2015", "2014" ]
     self.plot_1.figure = anvil.server.call('get_home_page_rating', self.drop_down_3.selected_value)
     self.plot_2.figure = anvil.server.call('get_shop_reviews', self.drop_down_3.selected_value)
     self.plot_3.figure = anvil.server.call('get_shop_sentiments', self.drop_down_3.selected_value)
 
   def drop_down_1_change(self, **event_args):
     """This method is called when an item is selected"""
-    self.plot_2.figure = anvil.server.call('get_total_review_counts', year = self.drop_down_1.selected_value, shop=self.first_coffee_shops[0])
-    self.drop_down_2.selected_value = self.first_coffee_shops[0]
+    if self.drop_down_3.selected_value==None:
+        self.plot_2.figure = anvil.server.call('get_total_review_counts', year = self.drop_down_1.selected_value, shop=self.first_coffee_shops[0])
+        self.drop_down_2.selected_value = self.first_coffee_shops[0]
 
   def drop_down_2_change(self, **event_args):
     """This method is called when an item is selected"""
-    if self.drop_down_2.selected_value == "All Coffee Shops":
-        self.plot_2.figure = anvil.server.call('get_total_review_counts', self.drop_down_1.selected_value)
+    if not self.drop_down_3.selected_value:
+        if self.drop_down_2.selected_value == "All Coffee Shops":
+            self.plot_2.figure = anvil.server.call('get_total_review_counts', self.drop_down_1.selected_value)
+        else:
+            self.plot_2.figure = anvil.server.call('get_total_review_counts', self.drop_down_1.selected_value, shop=self.drop_down_2.selected_value)
     else:
-        self.plot_2.figure = anvil.server.call('get_total_review_counts', self.drop_down_1.selected_value, shop=self.drop_down_2.selected_value)
-
+        self.plot_2.figure = anvil.server.call('get_shop_reviews', shop_name=self.first_coffee_shops[0], start_year=self.drop_down_1.selected_value, end_year=self.drop_down_2.selected_value)
+      
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     media_object = anvil.server.call('create_zaphod_pdf')

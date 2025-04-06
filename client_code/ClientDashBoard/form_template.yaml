@@ -60,6 +60,10 @@ components:
     name: plot_1
     properties: {height: '550'}
     type: Plot
+  - layout_properties: {grid_position: 'FFOGIO,VEZVQU'}
+    name: label_5
+    properties: {role: page-break}
+    type: Label
   - layout_properties: {grid_position: 'AUGPEP,KHFYUF'}
     name: label_2
     properties: {text: Total Reviews}
