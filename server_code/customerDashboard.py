@@ -80,15 +80,33 @@ def get_total_review_counts(year=2024, shop=None):
       
         
     fig = go.Figure(data=traces)
+# fig = go.Figure(data=traces)
+
     fig.update_layout(
-        title="Total reviews count over years",
-        xaxis=dict(showgrid=False, zeroline=False),
-        yaxis=dict(showgrid=False, zeroline=False),
-        legend=dict(
-            orientation="h",
-            x=0.02,
-            y=1.15,
+        title=dict(
+            text="Total Reviews Count Over Years",
+            x=0.5,  # center the title
+            xanchor="center",
+            font=dict(size=18)
         ),
+        xaxis=dict(
+            title="Month",
+            showgrid=False,
+            zeroline=False
+        ),
+        yaxis=dict(
+            title="Number of Reviews",
+            showgrid=False,
+            zeroline=False
+        ),
+        legend=dict(
+            orientation="v",
+            x=1.05,
+            y=1,
+            bordercolor="lightgray",
+            borderwidth=1
+        ),
+        margin=dict(r=180),
         plot_bgcolor="white"
     )
     print("time taken a: ", time.time() - a)
@@ -172,13 +190,12 @@ def get_shop_sentiments(shop_name=None):
             name=categories[i],
             marker=dict(color=colors[i]),
             width=0.3,
-            text=categories[i],
-            hoverinfo="text+y",
+            hoverinfo="name+y",
             showlegend=(i < 2)
         ))
     # Update Layout
     fig.update_layout(
-        title="Total Reviews",
+        title="Real Customer Sentiments",
         xaxis=dict(showgrid=False),
         yaxis=dict(showgrid=False),
         plot_bgcolor="white",
@@ -188,3 +205,19 @@ def get_shop_sentiments(shop_name=None):
     print("time taken c: ", time.time() - c)
 
     return fig
+
+@anvil.server.callable
+def get_dahsboard_data(shop_name=None):
+  if not shop_name:
+    reviews_count = len(app_tables.reviews.search())
+    satisfied_rating = len(app_tables.reviews.search(label=2))
+    partially_satisfied_rating = len(app_tables.reviews.search(label=1))
+    un_satisfied_rating = len(app_tables.reviews.search(label=0))
+  else:
+    shop = app_tables.shops.get(shop_name=shop_name)
+    reviews_count = len(app_tables.reviews.search(shop=shop))
+    satisfied_rating = len(app_tables.reviews.search(label=2, shop=shop))
+    partially_satisfied_rating = len(app_tables.reviews.search(label=1, shop=shop))
+    un_satisfied_rating = len(app_tables.reviews.search(label=0, shop=shop))
+  compitetors = len(app_tables.shops.search()) - 1
+  return [reviews_count, satisfied_rating, partially_satisfied_rating, un_satisfied_rating, compitetors]

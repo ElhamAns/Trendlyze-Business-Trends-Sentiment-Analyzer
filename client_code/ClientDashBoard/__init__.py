@@ -13,7 +13,13 @@ class ClientDashBoard(ClientDashBoardTemplate):
     # Set Form properties and Data Bindings.
     self.first_coffee_shops = anvil.server.call('get_all_coffee_shop', True)
     self.first_coffee_shops.append("All Coffee Shops") 
+    self.dashboard_data = anvil.server.call('get_dahsboard_data')
     self.init_components(**properties)
+    self.label_7.text = self.dashboard_data[0]
+    self.label_9.text = self.dashboard_data[1]
+    self.label_11.text = self.dashboard_data[2]
+    self.label_15.text = self.dashboard_data[3]
+    self.label_13.text = self.dashboard_data[4]
     self.drop_down_1.items = ["2025", "2024", "2023", "2022", "2021", "2020", "2019","2018", "2017", "2016", "2015", "2014" ]
     self.drop_down_1.selected_value = "2024"
     self.drop_down_2.items = self.first_coffee_shops
@@ -42,11 +48,18 @@ class ClientDashBoard(ClientDashBoardTemplate):
 
   def drop_down_3_change(self, **event_args):
     """This method is called when an item is selected"""
+    self.dashboard_data = anvil.server.call('get_dahsboard_data', self.drop_down_3.selected_value)
+    self.label_7.text = self.dashboard_data[0]
+    self.label_9.text = self.dashboard_data[1]
+    self.label_11.text = self.dashboard_data[2]
+    self.label_15.text = self.dashboard_data[3]
+    self.label_13.text = self.dashboard_data[4]
+    self.label_2.text = "Real Customer Sentiments"
     self.drop_down_1.items =  ["2025", "2024", "2023", "2022", "2021", "2020", "2019","2018", "2017", "2016", "2015", "2014" ]
     self.drop_down_1.selected_value = "2024"
     self.drop_down_2.selected_value = "2025"
     self.drop_down_2.items =  ["2025", "2024", "2023", "2022", "2021", "2020", "2019","2018", "2017", "2016", "2015", "2014" ]
-    self.plot_1.figure = anvil.server.call('get_home_page_rating', self.drop_down_3.selected_value)
+    # self.plot_1.figure = anvil.server.call('get_home_page_rating', self.drop_down_3.selected_value)
     self.plot_2.figure = anvil.server.call('get_shop_reviews', self.drop_down_3.selected_value)
     self.plot_3.figure = anvil.server.call('get_shop_sentiments', self.drop_down_3.selected_value)
 
