@@ -8,7 +8,7 @@ from datetime import datetime
 
 @anvil.server.callable
 def get_admin_requests(month=None):
-    users = app_tables.users.search(confirmed_email=True)
+    users = app_tables.users.search(confirmed_email=True, is_admin=q.not_(True))
     clients = app_tables.clients.search(user=q.any_of(*users))
     
     if not month:

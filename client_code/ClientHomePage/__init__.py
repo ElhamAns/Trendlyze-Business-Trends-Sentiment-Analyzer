@@ -14,7 +14,7 @@ class ClientHomePage(ClientHomePageTemplate):
     # Set Form properties and Data Bindings.
     self.current_client = anvil.server.call('get_current_client')
     self.init_components(**properties)
-    if self.current_client:
+    if self.current_client['shop']:
       self.plot_1.figure = anvil.server.call('get_home_page_rating')
     else:
       self.plot_1.figure = anvil.server.call('get_ratings_chart')
@@ -22,7 +22,7 @@ class ClientHomePage(ClientHomePageTemplate):
     self.label_6.text = self.current_client['business_name']
     self.label_4.text = self.current_client['business_name']
     self.image_3.source = self.current_client['logo']
-    if self.current_client:
+    if self.current_client['shop']:
       self.label_3.text = self.current_client['description']
     
     self.repeating_panel_1.items = anvil.server.call('get_client_compitetors', self.current_client)
