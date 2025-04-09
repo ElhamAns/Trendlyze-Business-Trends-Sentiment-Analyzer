@@ -10,7 +10,9 @@ from anvil.tables import app_tables
 class clients_page(clients_pageTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
+    self.user = anvil.users.get_user()
     self.init_components(**properties)
+    self.label_3.text = f"{self.user['admin_name']} Admin"
 
     # Any code you write here will run when the form opens.
 

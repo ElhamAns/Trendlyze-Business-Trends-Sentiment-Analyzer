@@ -11,7 +11,6 @@ class signUpReqquestStatus(signUpReqquestStatusTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    print("in signup: ", self.item)
     # Any code you write here will run before the form opens.
 
   def get_status(self):
@@ -31,5 +30,6 @@ class signUpReqquestStatus(signUpReqquestStatusTemplate):
       return 'orange'
 
   def button_1_click(self, **event_args):
+    anvil.server.call('enable_payment', self.item)
     open_form('ClientHomePage')
 

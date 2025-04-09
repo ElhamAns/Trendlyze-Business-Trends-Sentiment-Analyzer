@@ -11,10 +11,10 @@ class register(registerTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.type_drop_down.items = ['Pakistan', 'Sudia Arabia', 'UAE']
-    self.country_drop_down.items = ['Pakistan', 'Sudia Arabia', 'UAE']
-    self.city_drop_down.items = ['Pakistan', 'Sudia Arabia', 'UAE']
-    self.area_drop_down.items = ['Pakistan', 'Sudia Arabia', 'UAE']
+    self.type_drop_down.items = ['Coffee Shop']
+    self.country_drop_down.items = ['Saudia Arabia']
+    self.city_drop_down.items = ['Al-Khobar']
+    self.area_drop_down.items = ['North Alkhobar', 'West Alkhobar', 'South Alkhobar', 'Rakah','Thoqbah']
 
     # Any code you write here will run before the form opens.
 

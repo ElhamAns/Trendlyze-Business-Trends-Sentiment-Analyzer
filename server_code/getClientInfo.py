@@ -154,14 +154,15 @@ def get_user_cleint(user):
 
 @anvil.server.callable
 def get_notifaicatons():
-  return app_tables.notifications.search(tables.order_by('created_at'))
+  return app_tables.notifications.search(tables.order_by('created_at', ascending=False))
 
 @anvil.server.callable
 def get_current_client():
-  user = app_tables.users.get(email="me.mansoor006@gmail.com")
-  # user = anvil.users.get_user()
+  user = anvil.users.get_user()
   client = app_tables.clients.get(user=user)
-  return client
+  if client:
+    return client
+  return None
 
 
 @anvil.server.callable
@@ -211,3 +212,8 @@ def get_home_page_rating(client=None):
 
     print("time taken b: ", time.time() - b)
     return fig
+
+@anvil.server.callable
+def enable_payment(user):
+  payment = app_tables.subscription_types.search()[0]
+  user['subscription_package'] = payment

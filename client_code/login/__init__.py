@@ -34,7 +34,10 @@ class login(loginTemplate):
         open_form('admin_dashboard')
         return
       client = anvil.server.call('get_user_cleint', user)
-      open_form(signUpReqquestStatus(item=client))
+      if client['subscription_package']:
+        open_form('ClientHomePage')
+      else:
+        open_form(signUpReqquestStatus(item=client))
     except anvil.users.AuthenticationFailed as e:
       alert(f"{e}")
     # user = anvil.users.login_with_email(self.email_text_box, self.password_text_box)

@@ -9,8 +9,10 @@ from anvil.tables import app_tables
 class admin_dashboard(admin_dashboardTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
+    self.user = anvil.users.get_user()
     self.clients_count = anvil.server.call('get_all_clients_count')
     self.init_components(**properties)
+    self.label_3.text = f"{self.user['admin_name']} Admin"
     self.repeating_panel_3.items = anvil.server.call('get_admin_requests')
     self.all_clients = anvil.server.call('get_all_clients')
     self.repeating_panel_1.items = self.all_clients

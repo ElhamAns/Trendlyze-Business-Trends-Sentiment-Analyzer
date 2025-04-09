@@ -119,9 +119,7 @@ components:
       spacing:
         margin: [null, null, null, 4]
         padding: [null, null, null, '0']
-      text: |-
-        mansoor
-        admin
+      text: ''
     type: Label
   - layout_properties: {grid_position: 'ZSBJJE,SELPCA'}
     name: spacer_11

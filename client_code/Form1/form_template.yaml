@@ -113,7 +113,7 @@ components:
       properties:
         align: left
         bold: false
-        font_size: 144
+        font_size: 104
         spacing:
           margin: [16, null, 0, null]
         spacing_below: none
@@ -151,7 +151,8 @@ components:
   - layout_properties: {grid_position: 'QJUESH,JHZLRM'}
     name: label_6
     properties:
-      font_size: 52
+      align: center
+      font_size: 26
       text: |-
         Business Trends is committed to transforming consumer comments into useful
         information so that nearby companies may prosper. In order to provide a more

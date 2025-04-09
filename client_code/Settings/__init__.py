@@ -14,6 +14,7 @@ class Settings(SettingsTemplate):
     
     self.init_components(**properties)
     self.text_box_1.text = "test"
+    self.label_3.text = f"{self.user['admin_name']} Admin"
     # self.user['email']
 
     # Any code you write here will run when the form opens.
@@ -25,6 +26,7 @@ class Settings(SettingsTemplate):
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.server.call('_send_password_reset', self.user['email'])
+    alert(f"Reset password Email has been sent to {self.user['email']}")
 
   def button_5_click(self, **event_args):
     """This method is called when the button is clicked"""

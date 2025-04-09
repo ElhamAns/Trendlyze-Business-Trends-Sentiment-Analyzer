@@ -59,7 +59,7 @@ class ClientDashBoard(ClientDashBoardTemplate):
     self.drop_down_1.selected_value = "2024"
     self.drop_down_2.selected_value = "2025"
     self.drop_down_2.items =  ["2025", "2024", "2023", "2022", "2021", "2020", "2019","2018", "2017", "2016", "2015", "2014" ]
-    # self.plot_1.figure = anvil.server.call('get_home_page_rating', self.drop_down_3.selected_value)
+    self.plot_1.figure = anvil.server.call('get_home_page_rating', self.drop_down_3.selected_value)
     self.plot_2.figure = anvil.server.call('get_shop_reviews', self.drop_down_3.selected_value)
     self.plot_3.figure = anvil.server.call('get_shop_sentiments', self.drop_down_3.selected_value)
 
@@ -81,7 +81,7 @@ class ClientDashBoard(ClientDashBoardTemplate):
       
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    media_object = anvil.server.call('create_zaphod_pdf')
+    media_object = anvil.server.call('create_zaphod_pdf', self.drop_down_3.selected_value,general_year=self.drop_down_1.selected_value, top_shop_name=self.drop_down_2.selected_value)
     anvil.media.download(media_object)
     
     

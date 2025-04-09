@@ -30,6 +30,6 @@ def get_all_coffee_shop(first_six=False):
   return [coffee_shop['shop_name'] for coffee_shop in coffee_shops]
 
 @anvil.server.callable
-def create_zaphod_pdf():
-  media_object = PDFRenderer(page_size='A4', filename="Dashboard").render_form('ClientDashBoard')
+def create_zaphod_pdf(cofee_shop=None, general_year=None, top_shop_name=None, start_year=None, end_year=None):
+  media_object = PDFRenderer(page_size='A4', filename="Dashboard").render_form('Report', coffee_name=cofee_shop, general_year=general_year, top_shop=top_shop_name)
   return media_object

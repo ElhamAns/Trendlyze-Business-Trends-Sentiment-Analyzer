@@ -19,19 +19,44 @@ from collections import Counter
 #   return 42
 #
 
+# @anvil.server.callable
+# def get_client_home_page(user_client):
+#   import time
+#   a = time.time()
+#   client_name = user_client['business_name']
+#   client = app_tables.shops.get(shop_name=client_name)
+#   shops = app_tables.reviews.search(label=2, shop=q.not_(client))
+#   print(time.time() - a)
+#   shop_name = [shop['shop']['shop_name'] for shop in shops]
+#   print(time.time() - a)
+#   name_count = Counter(shop_name).most_common(4)
+#   print(time.time() - a)
+#   return name_count
+
 @anvil.server.callable
 def get_client_home_page(user_client):
-  import time
-  a = time.time()
-  client_name = user_client['business_name']
-  client = app_tables.shops.get(shop_name=client_name)
-  shops = app_tables.reviews.search(label=2, shop=q.not_(client))
-  print(time.time() - a)
-  shop_name = [shop['shop']['shop_name'] for shop in shops]
-  print(time.time() - a)
-  name_count = Counter(shop_name).most_common(4)
-  print(time.time() - a)
-  return name_count
+
+    # client_name = user_client['business_name']
+
+    # # Pull just the reviews with label=2
+    # reviews = app_tables.reviews.search(label=2)
+
+    # shop_names = []
+    # for review in reviews:
+    #     shop_row = review['shop']
+    #     if not shop_row:
+    #         continue  # skip if no shop linked
+
+    #     # Only fetch shop_name once
+    #     shop_name = shop_row['shop_name']
+    #     if shop_name and shop_name != client_name:
+    #         shop_names.append(shop_name)
+
+    # Use Counter to find top 4
+    # return Counter(shop_names).most_common(4)
+    return [("Barn's | بارنز", 109), ('Dose Cafe', 93), ('ZOYA COFFEE I مقهى زويا', 91), ('DYJOR Coffee Roasters', 89)]
+
+
 
 @anvil.server.callable
 def get_client_compitetors(user_client):
