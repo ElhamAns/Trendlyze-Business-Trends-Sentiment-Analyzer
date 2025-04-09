@@ -40,6 +40,10 @@ components:
     name: image_2
     properties: {height: 59, source: _/theme/app-logo.png}
     type: Image
+  - layout_properties: {grid_position: 'PMYBAG,TKWUCJ PFPBQA,QJHQUY'}
+    name: label_27
+    properties: {align: center, foreground: black, icon: 'fa:envelope', text: ' testemail.com'}
+    type: Label
   - layout_properties: {grid_position: 'PMYBAG,TKWUCJ WZBIRT,YVBRPW'}
     name: label_3
     properties: {font_size: 18, foreground: black, text: © 2025 All Rights Reserved}
@@ -67,33 +71,17 @@ components:
       name: spacer_1
       properties: {height: 32}
       type: Spacer
-    - layout_properties: {grid_position: 'ZSIUQO,BKQMLK'}
+    - layout_properties: {grid_position: 'ZSIUQO,BKQMLK ANBNLU,JHCNGM'}
       name: spacer_3
       properties: {height: 32}
       type: Spacer
-    - layout_properties: {grid_position: 'ZSIUQO,EGTCAK'}
+    - layout_properties: {grid_position: 'ZSIUQO,BKQMLK DCSASU,NZAMLP'}
       name: spacer_4
       properties: {height: 32}
       type: Spacer
-    - layout_properties: {grid_position: 'ZSIUQO,EHPGUB'}
-      name: button_11
-      properties: {align: right, foreground: black, icon: 'fa:facebook', icon_align: right, text: ''}
-      type: Button
-    - layout_properties: {grid_position: 'ZSIUQO,VOZTNQ'}
-      name: button_10
-      properties: {align: right, foreground: black, icon: 'fa:instagram', icon_align: right, text: ''}
-      type: Button
-    - layout_properties: {grid_position: 'ZSIUQO,GHXAMC'}
-      name: button_9
-      properties: {align: right, foreground: black, icon: 'fa:tumblr', text: ''}
-      type: Button
-    - layout_properties: {grid_position: 'ZSIUQO,WRTGCO'}
-      name: button_8
-      properties: {align: right, foreground: black, icon: 'fa:twitter', text: ''}
-      type: Button
     layout_properties: {grid_position: 'IEGONG,BQCDNU'}
     name: column_panel_2
-    properties: {col_spacing: none, col_widths: '{"HHKVHF":8,"UVEZSA":8,"BKQMLK":8,"EGTCAK":8,"EHPGUB":13,"VOZTNQ":5,"GHXAMC":5,"WRTGCO":5}'}
+    properties: {col_spacing: none, col_widths: '{"HHKVHF":8,"UVEZSA":8,"BKQMLK":8}'}
     type: ColumnPanel
   layout_properties: {slot: footer-slot}
   name: column_panel_1
