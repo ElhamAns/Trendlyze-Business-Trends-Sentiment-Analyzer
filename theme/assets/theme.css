@@ -151,7 +151,7 @@ a:hover, a:active {
 
 .nav-holder {
   flex-grow: 1;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 /* Mobile and desktop margins for content */
@@ -173,8 +173,8 @@ a:hover, a:active {
    This can create unwanted scrollbars; we compensate for this at the top level with .nav-holder .content {overflow-x: hidden;}
 */
 .anvil-container-overflow {
-  overflow-x: visible;
-  overflow-y: visible;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 
@@ -240,7 +240,7 @@ a:hover, a:active {
   font-weight: 500;
   color: rgba(0,0,0,0.87);
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 .left-nav-placeholder {
@@ -269,13 +269,13 @@ a:hover, a:active {
   margin: 0 16px;
   width: initial;
   max-width: 1500px%;
-  overflow-x: visible;
+  overflow-x: hidden;
 }
 .left-nav > .column-panel > .anvil-panel-section:first-child > .anvil-panel-section-container.full-width-row {
   margin-top: -24px;
 }
 .left-nav > .column-panel > .anvil-panel-section > .anvil-panel-section-container > .anvil-panel-section-gutter > .anvil-panel-row > .anvil-panel-col {
-  overflow-x: visible;
+  overflow-x: hidden;
 }
 
 /* Make all the sidebar icons look nice */
@@ -302,6 +302,7 @@ a:hover, a:active {
   right: 16px;
   top: 0;
   padding-top: 2px;
+  overflow: hidden;
 }
 
 /* Sidebar links (and labels with edge icons) go +16px wider
@@ -776,7 +777,6 @@ https://stackoverflow.com/questions/30533055/calculating-shadow-values-for-all-m
 
 /* Footer bar */
 .footer {
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -789,6 +789,7 @@ https://stackoverflow.com/questions/30533055/calculating-shadow-values-for-all-m
   padding: 0 72px 0 72px;
    z-index: 1;
   box-shadow: 0 -4px 5px 0 rgba(0, 0, 0, 0.14), 0 -1px 10px 0 rgba(0, 0, 0, 0.12), 0 -2px 4px -1px rgba(0, 0, 0, 0.2);    
+  overflow: hidden;
 }
 
 .footer > .footer-slot > .placeholder { outline: 1px dotted; padding-left: 16px; padding-right: 16px; margin-top: 12px; display:none; }

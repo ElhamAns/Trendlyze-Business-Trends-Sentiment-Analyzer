@@ -8,13 +8,16 @@ components:
     name: button_6
     properties: {foreground: black, text: About}
     type: Button
-  - name: button_5
+  - event_bindings: {click: button_5_click}
+    name: button_5
     properties: {align: center, foreground: black, text: Features}
     type: Button
-  - name: button_4
+  - event_bindings: {click: button_4_click}
+    name: button_4
     properties: {foreground: black, text: Users}
     type: Button
-  - name: button_3
+  - event_bindings: {click: button_3_click}
+    name: button_3
     properties: {foreground: black, text: Payment}
     type: Button
   - event_bindings: {click: button_2_click}
@@ -370,12 +373,17 @@ components:
         name: label_25
         properties:
           font_size: 20
-          text: "Each payment is handled safely via bank transfer,\nwith a monthly fee of 300 SAR. \L\nOnce the money has been made, please email us\nthe receipt so we can confirm it. When the payment\nis received, we will start your service instantly. \L\L\nIf you want help with the payment process or have\nany problems, please do not hesitate to contact us."
+          text: |-
+            Each payment is handled safely via PayPal, with a different subscription plan.
+            - Gold plan (50$ / Month)
+            - Platinum Plan (80$ / 3 Months
+            With a free Trial Plan that lasts for 1 week!
+            When the payment is received, we will start your service instantly. If you need any help with the payment process or have any problems, please do not hesitate to contact us!
         type: Label
-      - layout_properties: {grid_position: 'UNMCWA,PLJRQX NUCLYO,KYFLGT'}
-        name: label_26
-        properties: {font_size: 20, icon: 'fa:envelope', text: contact@businesstrends.com}
-        type: Label
+      - layout_properties: {grid_position: 'UNMCWA,PLJRQX OPCIBE,AZKGFV'}
+        name: link_1
+        properties: {font_size: 20, foreground: black, icon: 'fa:envelope', text: Seniorprojectbtsa@gmail.com, underline: true, url: 'mailto:Seniorprojectbtsa@gmail.com'}
+        type: Link
       - layout_properties: {grid_position: 'UNMCWA,XVLEUF FBUVCB,OESIBL'}
         name: spacer_8
         properties: {height: 32}
@@ -386,7 +394,7 @@ components:
         type: Image
       layout_properties: {grid_position: 'VOOIBY,SLONYW'}
       name: card_9
-      properties: {border: '5px solid ,#b3d5ff', col_widths: '{"PLJRQX":35,"XVLEUF":25}', role: card}
+      properties: {border: '5px solid ,#b3d5ff', col_widths: '{"PLJRQX":40,"XVLEUF":20}', role: card}
       type: ColumnPanel
     layout_properties: {grid_position: 'BDLMRF,FBDBIO'}
     name: column_panel_9
@@ -396,10 +404,6 @@ components:
   name: column_panel_7
   properties: {}
   type: ColumnPanel
-- layout_properties: {slot: default}
-  name: spacer_9
-  properties: {height: 200}
-  type: Spacer
 container:
   properties: {background: '', border: '', foreground: '', html: '@theme:standard-page.html', role: secondary-app-bar, tooltip: '', visible: true}
   type: HtmlTemplate
