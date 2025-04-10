@@ -18,21 +18,28 @@ def mk_token():
 
 @anvil.server.callable
 def _send_password_reset(email):
-  """Send a password reset email to the specified user"""
-  user = app_tables.users.get(email=email)
-  if user is not None:
-    user['link_key'] = mk_token()
-    anvil.email.send(to=user['email'], subject="Reset your password", text=f"""
-Hi,
+    """Send a password reset email with 6-digit code to the specified user"""
+    user = app_tables.users.get(email=email)
+    if user is not None:
+        # Generate a 6-digit code
+        reset_code = str(random.randint(100000, 999999))
+#         anvil.email.send(
+#             to=user['email'],
+#             subject="Your password reset code",
+#             text=f"""
+# Hi,
 
-Someone has requested a password reset for your account. If this wasn't you, just delete this email.
-If you do want to reset your password, click here:
+# Your password reset code for Business-Trend is: {reset_code}
 
-{anvil.server.get_app_origin('published')}#?email={url_encode(user['email'])}&pwreset={url_encode(user['link_key'])}
+# If you didn't request this, please ignore this email.
 
-Thanks!
-""")
-    return True
+# Thanks!
+# """
+        # )
+        print(reset_code)
+        return reset_code
+      
+    return None
 
 
 @anvil.server.callable
@@ -121,9 +128,9 @@ def _is_password_key_correct(email, link_key):
   return get_user_if_key_correct(email, link_key) is not None
 
 @anvil.server.callable
-def _perform_password_reset(email, reset_key, new_password):
+def _perform_password_reset(email, new_password):
   """Perform a password reset if the key matches; return True if it did."""
-  user = get_user_if_key_correct(email, reset_key)
+  user = app_tables.users.get(email=email)
   if user is not None:
     user['password_hash'] = hash_password(new_password, bcrypt.gensalt())
     user['link_key'] = None

@@ -5,7 +5,7 @@ components:
     properties:
       height: 76
       margin: [null, 183, null, 182]
-      source: _/theme/app-logo.png
+      source: _/theme/app-logo.svg
     type: Image
   - layout_properties: {grid_position: 'DCEUDS,LCYEAZ'}
     name: label_1
@@ -60,6 +60,11 @@ components:
       layout_properties: {grid_position: 'AHEGNP,CEOCLT'}
       name: button_1
       properties: {background: black, bold: true, foreground: white, text: Send Otp Code}
+      type: Button
+    - event_bindings: {click: button_2_click}
+      layout_properties: {grid_position: 'GXYQCV,NHKJNS'}
+      name: button_2
+      properties: {bold: true, foreground: black, text: Enter Password to Login}
       type: Button
     layout_properties: {grid_position: 'YAYZQK,ZATKLL'}
     name: card_1

@@ -152,7 +152,7 @@ db_schema:
     server: full
     title: Users
 dependencies: []
-metadata: {logo_img: 'asset:app-logo.png'}
+metadata: {logo_img: 'asset:app-logo1.png'}
 name: business-trend
 package_name: Material_Design_with_Stick_Footer
 renamed: true

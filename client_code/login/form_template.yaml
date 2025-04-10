@@ -5,7 +5,7 @@ components:
     properties:
       height: 76
       margin: [null, 183, null, 182]
-      source: _/theme/app-logo.png
+      source: _/theme/app-logo.svg
     type: Image
   - layout_properties: {grid_position: 'DCEUDS,LCYEAZ'}
     name: label_1
