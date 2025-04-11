@@ -19,6 +19,7 @@ def get_total_review_counts(year=2024, shop=None):
     line_data = {}
 
     if not shop:
+        label = "Total Review Count over a year"
         top_clients = app_tables.shops.search(anvil.tables.order_by('reviews_count', ascending=False))
     
         monthly_counts = {}
@@ -51,6 +52,7 @@ def get_total_review_counts(year=2024, shop=None):
     else:
         data = []
         monthly_counts = {}
+        label = "Total Review Count a year"
         shop = app_tables.shops.get(shop_name=shop)
         for month in range(1, 13):
             start_date = datetime.datetime(year, month, 1)
@@ -84,7 +86,7 @@ def get_total_review_counts(year=2024, shop=None):
 
     fig.update_layout(
         title=dict(
-            text="Total Reviews Count Over Years",
+            text=label,
             x=0.5,  # center the title
             xanchor="center",
             font=dict(size=18)
@@ -92,7 +94,10 @@ def get_total_review_counts(year=2024, shop=None):
         xaxis=dict(
             title="Month",
             showgrid=False,
-            zeroline=False
+            zeroline=False,
+            tickangle=-45,
+            automargin=True,
+            tickfont=dict(size=12)
         ),
         yaxis=dict(
             title="Number of Reviews",
@@ -154,7 +159,9 @@ def get_shop_reviews(shop_name, start_year=2024, end_year=2025):
     fig = go.Figure(data=[last_year_trace, this_year_trace])
     fig.update_layout(
         title="Total reviews count over years",
-        xaxis=dict(showgrid=False, zeroline=False),
+        xaxis=dict(showgrid=False, zeroline=False, tickangle=-45,
+            automargin=True,
+            tickfont=dict(size=12)),
         yaxis=dict(showgrid=False, zeroline=False),
         legend=dict(
             orientation="h",

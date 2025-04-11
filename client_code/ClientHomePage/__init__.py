@@ -16,7 +16,7 @@ class ClientHomePage(ClientHomePageTemplate):
     self.init_components(**properties)
     if self.current_client['shop']:
       print("here")
-      self.plot_1.figure = anvil.server.call('get_home_page_rating', self.current_client)
+      self.plot_1.figure = anvil.server.call('get_home_page_rating', self.current_client['shop']['shop_name'])
     else:
       print("else")
       self.plot_1.figure = anvil.server.call('get_ratings_chart')

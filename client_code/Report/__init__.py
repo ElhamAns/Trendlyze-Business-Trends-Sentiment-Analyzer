@@ -8,18 +8,23 @@ from anvil.tables import app_tables
 
 
 class Report(ReportTemplate):
-  def __init__(self, coffee_name=None,general_year=None,top_shop=None, **properties):
+  def __init__(self, coffee_name=None,general_year=None,top_shop=None,start_year=None,end_year=None, **properties):
     # Set Form properties and Data Bindings.
     self.first_coffee_shops = anvil.server.call('get_all_coffee_shop', True)
     if coffee_name:
       self.drop_down_1.items =  ["2025", "2024", "2023", "2022", "2021", "2020", "2019","2018", "2017", "2016", "2015", "2014" ]
+      self.drop_down_2.items =  ["2025", "2024", "2023", "2022", "2021", "2020", "2019","2018", "2017", "2016", "2015", "2014" ]
       self.label_3.text = f"{coffee_name}"
+      self.drop_down_1.selected_value = start_year
+      self.drop_down_2.selected_value = end_year
       self.label_2.text = "Real Customer Sentiments"
       self.plot_1.figure = anvil.server.call('get_home_page_rating', coffee_name)
-      self.plot_2.figure = anvil.server.call('get_shop_reviews', coffee_name)
+      self.plot_2.figure = anvil.server.call('get_shop_reviews', coffee_name, start_year, end_year)
       self.plot_3.figure = anvil.server.call('get_shop_sentiments', coffee_name)
       self.dashboard_data = anvil.server.call('get_dahsboard_data', coffee_name)
+      self.label_1.text = "Total Reviews count over a year"
     else:
+      self.label_1.text = "Total Reviews count over two years"
       self.drop_down_2.items =  ["2025", "2024", "2023", "2022", "2021", "2020", "2019","2018", "2017", "2016", "2015", "2014" ]
       self.drop_down_1.items = ["2025", "2024", "2023", "2022", "2021", "2020", "2019","2018", "2017", "2016", "2015", "2014" ]
       self.drop_down_2.items = self.first_coffee_shops
