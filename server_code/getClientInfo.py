@@ -86,7 +86,6 @@ def get_competitor_plot():
 def get_ratings_chart():
     # Data
     b = time.time()
-    user = app_tables.users.get(email="me.mansoor006@gmail.com")
     client = app_tables.clients.search()[0]
     values = anvil.server.call('get_client_home_page', client)
     labels = [key for key, value in values]
@@ -172,7 +171,6 @@ def get_home_page_rating(client=None):
     if client:
       shop = app_tables.shops.search(shop_name=client)[0]
     else:
-      user = app_tables.users.get(email="me.mansoor006@gmail.com")
       client = app_tables.clients.search()[0]
       shop = client['shop']
     

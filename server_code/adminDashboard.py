@@ -33,6 +33,19 @@ def get_all_clients():
   return app_tables.clients.search(tables.order_by('requested_at'), status=True)
 
 @anvil.server.callable
-def get_all_clients_count():
-  return len(app_tables.clients.search())
+def get_admin_dashboard_data():
+  users = app_tables.users.search(confirmed_email=True, is_admin=q.not_(True))
+  clients_count = len(app_tables.clients.search(user=q.any_of(*users)))
+
+  reviews_count = len(app_tables.reviews.search())
+
+  admins_count = len(app_tables.users.search(is_admin=True))
+
+  total_requests = len(app_tables.clients.search())
+
+  accepted_requests = len(app_tables.clients.search(status=True))
+  
+  rejected_requests = len(app_tables.clients.search(status=False))
+  
+  return clients_count, reviews_count, admins_count, total_requests, accepted_requests, rejected_requests
   

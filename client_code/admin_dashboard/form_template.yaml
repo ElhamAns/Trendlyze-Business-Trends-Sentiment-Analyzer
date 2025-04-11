@@ -155,7 +155,7 @@ components:
 - components:
   - components:
     - data_bindings:
-      - {code: self.get_clients_count(), property: text, writeback: false}
+      - {code: '', property: text, writeback: false}
       layout_properties: {grid_position: 'AHFXCE,BSOYGS'}
       name: label_4
       properties: {align: center, bold: true, font_size: 20, italic: false, text: 100+}

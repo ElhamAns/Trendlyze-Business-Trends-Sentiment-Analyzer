@@ -13,7 +13,7 @@ class Settings(SettingsTemplate):
     self.user = anvil.users.get_user()
     
     self.init_components(**properties)
-    self.text_box_1.text = "test"
+    self.text_box_1.text = self.user['email']
     self.label_3.text = f"{self.user['admin_name']} Admin"
     # self.user['email']
 
@@ -22,7 +22,8 @@ class Settings(SettingsTemplate):
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.users.logout()
-
+    alert("Users logged out successfully")
+    open_form('Form1')
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.server.call('_send_password_reset', self.user['email'])

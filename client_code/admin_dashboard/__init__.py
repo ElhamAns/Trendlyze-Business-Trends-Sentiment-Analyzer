@@ -10,7 +10,7 @@ class admin_dashboard(admin_dashboardTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.user = anvil.users.get_user()
-    self.clients_count = anvil.server.call('get_all_clients_count')
+    self.label_4.text, self.label_7.text, self.label_10.text, self.label_13.text, self.label_16.text, self.label_19.text = anvil.server.call('get_admin_dashboard_data')
     self.init_components(**properties)
     self.label_3.text = f"{self.user['admin_name']} Admin"
     self.repeating_panel_3.items = anvil.server.call('get_admin_requests')
@@ -39,13 +39,6 @@ class admin_dashboard(admin_dashboardTemplate):
     self.repeating_panel_3.items = anvil.server.call('get_admin_requests', self.drop_down_1.selected_value)
     self.refresh_data_bindings()
 
-    # self.clients_count = anvil.server.call('get_all_clients_count')
-
-  def get_clients_count(self):
-    return self.clients_count
-
-  def get_admins_count(self):
-    return self.clients_count
 
   def button_1_click(self, **event_args):
     open_form('ClientForm')

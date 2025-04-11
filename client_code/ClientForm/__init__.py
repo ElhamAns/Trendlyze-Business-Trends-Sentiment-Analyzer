@@ -10,7 +10,9 @@ from anvil.tables import app_tables
 class ClientForm(ClientFormTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
+    self.user = anvil.users.get_user()
     self.init_components(**properties)
+    self.label_3.text = f"{self.user['admin_name']} Admin"
     self.repeating_panel_1.items = anvil.server.call('get_all_clients')
     self.repeating_panel_2.items = anvil.server.call('get_notifaicatons')
  
@@ -25,3 +27,5 @@ class ClientForm(ClientFormTemplate):
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.users.logout()
+    alert("Users logged out successfully")
+    open_form('Form1')
