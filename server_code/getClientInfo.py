@@ -169,7 +169,7 @@ def get_home_page_rating(client=None):
     # Data
     b = time.time()
     if client:
-      shop = app_tables.shops.search(shop_name=client)[0]
+      shop = client['shop']
     else:
       client = app_tables.clients.search()[0]
       shop = client['shop']
