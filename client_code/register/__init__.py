@@ -6,7 +6,9 @@ from anvil.tables import app_tables
 import anvil.users
 import anvil.server
 
+from anvil_extras import routing
 
+@routing.route('register', title="register | BusinessTrend")
 class register(registerTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.

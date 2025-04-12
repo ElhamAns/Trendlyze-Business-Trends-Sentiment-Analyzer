@@ -8,7 +8,9 @@ import anvil.server
 import anvil
 from ..signUpReqquestStatus import signUpReqquestStatus
 
+from anvil_extras import routing
 
+@routing.route('login', title="login | BusinessTrend")
 class login(loginTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.

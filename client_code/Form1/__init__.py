@@ -6,7 +6,9 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.users
 
-from ..Form1_copy import Form1_copy
+from ..Form1t import Form1t
+from ..login import login
+from ..register import register
 
 from anvil_extras import routing
 
@@ -39,7 +41,7 @@ class Form1(Form1Template):
 
   def button_6_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.label_5.scroll_into_view(smooth=True)
+    self.raise_event_on_children(self.label_5.scroll_into_view(smooth=True))
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
