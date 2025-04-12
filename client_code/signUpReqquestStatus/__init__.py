@@ -30,8 +30,7 @@ class signUpReqquestStatus(signUpReqquestStatusTemplate):
       return 'orange'
 
   def button_1_click(self, **event_args):
-    anvil.server.call('enable_payment', self.item)
-    open_form('ClientHomePage')
+    open_form('PaymentForm')
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
