@@ -19,7 +19,9 @@ def do_email_confirm_or_reset():
     client = app_tables.clients.get(user=user)
     if client['status'] == False or client['status'] == None:
       anvil.open_form(signUpReqquestStatus(item=client))
-    if client['status'] == True:
+    if client['status'] == True and not client['subscription_package']:
+      anvil.open_form(signUpReqquestStatus(item=client))
+    if client['status'] == True and client['subscription_package']:
       anvil.open_form('ClientHomePage')
       
     
