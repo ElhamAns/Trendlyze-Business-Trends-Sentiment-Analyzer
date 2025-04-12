@@ -40,6 +40,7 @@ class PaymentForm(PaymentFormTemplate):
     """This method is called when the button is clicked"""
     if self.radio_button_1.selected:
       anvil.server.call('update_user_payment', True)
+      alert("Trail Plan in activated Successfully!")
       open_form('ClientHomePage')
       return
     if self.radio_button_2.selected:
