@@ -2,12 +2,39 @@ components:
 - components:
   - layout_properties: {grid_position: 'CVEUKG,KLZTWJ'}
     name: label_1
-    properties: {}
+    properties: {bold: true, font_size: 24}
     type: Label
   - components:
-    - layout_properties: {grid_position: 'MCKKHF,CBIOQE MPXQHC,LWMRSR'}
-      name: label_2
-      properties: {text: Business Name}
+    - components:
+      - layout_properties: {grid_position: 'MNDVGV,CTBGHM'}
+        name: image_2
+        properties:
+          height: 58.5555419921875
+          margin: [null, null, 19, null]
+        type: Image
+      - layout_properties: {grid_position: 'MNDVGV,MGXGAG SWVVTL,TJGODD'}
+        name: label_2
+        properties: {}
+        type: Label
+      - layout_properties: {grid_position: 'MNDVGV,MGXGAG NGCDYC,GUNNUJ'}
+        name: label_8
+        properties: {}
+        type: Label
+      layout_properties: {grid_position: 'ZCFIGD,AFSHYN'}
+      name: card_2
+      properties:
+        background: theme:Primary 500
+        col_widths: '{"CTBGHM":15,"MGXGAG":45}'
+        role: card
+        spacing:
+          padding: [null, null, '0', null]
+      type: ColumnPanel
+    - layout_properties: {grid_position: 'MCKKHF,CBIOQE AOMATU,WTUUAD'}
+      name: label_9
+      properties:
+        spacing:
+          margin: [0, null, null, null]
+        text: Business Name
       type: Label
     - layout_properties: {grid_position: 'MCKKHF,CBIOQE HGGIHP,TLQHHF'}
       name: text_box_1
@@ -15,7 +42,7 @@ components:
       type: TextBox
     - layout_properties: {grid_position: 'MCKKHF,CBIOQE IIPTRC,JPTNXB'}
       name: label_5
-      properties: {}
+      properties: {text: Country}
       type: Label
     - layout_properties: {grid_position: 'MCKKHF,CBIOQE KFDLFJ,PTTASU'}
       name: drop_down_1
@@ -23,27 +50,42 @@ components:
       type: DropDown
     - layout_properties: {grid_position: 'MCKKHF,CBIOQE DRMTAS,IBVZSO'}
       name: label_7
-      properties: {}
+      properties: {text: Area}
       type: Label
-    - layout_properties: {grid_position: 'MCKKHF,UGZSLB XCEPVN,DXOGNB'}
-      name: label_3
+    - layout_properties: {grid_position: 'MCKKHF,CBIOQE XLTXGL,SVWIUW'}
+      name: drop_down_2
       properties: {}
+      type: DropDown
+    - layout_properties: {grid_position: 'MCKKHF,UGZSLB UTAQZV,XVQNIL'}
+      name: label_10
+      properties:
+        spacing:
+          margin: [0, null, 13, null]
+        text: Business Type
       type: Label
-    - layout_properties: {grid_position: 'MCKKHF,UGZSLB UWWBOK,YZHVNC'}
+    - layout_properties: {grid_position: 'MCKKHF,UGZSLB WRVXRG,WDAUJI'}
       name: text_box_2
       properties: {}
       type: TextBox
+    - layout_properties: {grid_position: 'MCKKHF,UGZSLB PYNCDM,WMSCZN'}
+      name: label_3
+      properties: {text: City}
+      type: Label
     - layout_properties: {grid_position: 'MCKKHF,UGZSLB QFZXEL,GZKDHQ'}
       name: label_6
       properties: {}
       type: Label
-    - layout_properties: {grid_position: 'MCKKHF,UGZSLB OYWKJT,UWUJSP'}
-      name: drop_down_2
+    - layout_properties: {grid_position: 'MCKKHF,UGZSLB SGODAB,XGDZKF'}
+      name: label_11
       properties: {}
-      type: DropDown
+      type: Label
+    - layout_properties: {grid_position: 'MCKKHF,UGZSLB CMCGCG,YDRDTR'}
+      name: label_12
+      properties: {}
+      type: Label
     layout_properties: {grid_position: 'RENROA,VIIZLP'}
     name: card_1
-    properties: {role: card}
+    properties: {background: '#e1edfc', role: card}
     type: ColumnPanel
   layout_properties: {slot: default}
   name: content_panel
