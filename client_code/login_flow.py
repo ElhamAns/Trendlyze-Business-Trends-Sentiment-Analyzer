@@ -15,8 +15,12 @@ def do_email_confirm_or_reset():
   if user:
     if user['is_admin']:
       anvil.open_form('admin_dashboard')
-    else:
+    if user['status'] == False or user['status'] == None:
+      anvil.open_form('signUpReqquestStatus')
+    if user['status'] == True:
       anvil.open_form('ClientHomePage')
+      
+    
   h = anvil.get_url_hash()
   if isinstance(h, dict) and 'email' in h:
     if 'pwreset' in h:
