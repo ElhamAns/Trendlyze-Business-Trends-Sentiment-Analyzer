@@ -1,12 +1,14 @@
 components:
 - components:
   - event_bindings: {click: nav_link_click}
+    layout_properties: {}
     name: button_7
-    properties: {foreground: black, text: Home}
+    properties: {foreground: black, text: Home, tooltip: Welcome Page}
     type: Button
   - event_bindings: {click: button_6_click}
+    layout_properties: {}
     name: button_6
-    properties: {foreground: black, text: About}
+    properties: {foreground: black, icon: '', text: About, tooltip: About us section}
     type: Button
   - event_bindings: {click: button_5_click}
     name: button_5
@@ -39,9 +41,9 @@ components:
   properties: {height: 78.11109924316406, source: _/theme/app-logo.svg}
   type: Image
 - components:
-  - layout_properties: {grid_position: 'PMYBAG,TKWUCJ'}
+  - layout_properties: {grid_position: 'PMYBAG,TKWUCJ GEQYOJ,SUSFOW'}
     name: image_2
-    properties: {height: 102.5555419921875, source: _/theme/app-logo.svg}
+    properties: {display_mode: shrink_to_fit, height: 102.5555419921875, horizontal_align: center, source: _/theme/app-logo.svg, vertical_align: center}
     type: Image
   - layout_properties: {grid_position: 'PMYBAG,TKWUCJ FHMBYW,DWZISR'}
     name: link_1_copy
@@ -349,7 +351,7 @@ components:
               text: |-
                 Each payment is handled safely via PayPal, with a different subscription plan.
                 - Gold plan (50$ / Month)
-                - Platinum Plan (80$ / 3 Months
+                - Platinum Plan (120$ / 3 Months)
                 With a free Trial Plan that lasts for 1 week!
                 When the payment is received, we will start your service instantly. If you need any help with the payment process or have any problems, please do not hesitate to contact us!
             type: Label

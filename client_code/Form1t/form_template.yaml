@@ -268,7 +268,7 @@ components:
             text: |-
               Each payment is handled safely via PayPal, with a different subscription plan.
               - Gold plan (50$ / Month)
-              - Platinum Plan (80$ / 3 Months
+              - Platinum Plan (120$ / 3 Months)
               With a free Trial Plan that lasts for 1 week!
               When the payment is received, we will start your service instantly. If you need any help with the payment process or have any problems, please do not hesitate to contact us!
           type: Label
