@@ -1,4 +1,4 @@
-from ._anvil_designer import signUpReqquestStatusTemplate
+from ._anvil_designer import signUpReqquestStatus5Template
 from anvil import *
 import anvil.tables as tables
 import anvil.tables.query as q
@@ -7,7 +7,7 @@ import anvil.users
 import anvil.server
 
 
-class signUpReqquestStatus(signUpReqquestStatusTemplate):
+class signUpReqquestStatus5(signUpReqquestStatus5Template):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
@@ -32,10 +32,4 @@ class signUpReqquestStatus(signUpReqquestStatusTemplate):
   def button_1_click(self, **event_args):
     anvil.server.call('enable_payment', self.item)
     open_form('ClientHomePage')
-
-  def button_2_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    anvil.users.logout()
-    alert("Users logged out successfully")
-    open_form('Form1')
 

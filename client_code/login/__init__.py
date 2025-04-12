@@ -38,6 +38,8 @@ class login(loginTemplate):
         return
       print("user: ", user)
       client = anvil.server.call('get_user_cleint', user)
+      if not client['status']:
+        open_form(signUpReqquestStatus(item=client))
       if client['subscription_package'] and (client['subsribed_at']+ timedelta(days=client['subscription_package']['time_period'])) > datetime.now(anvil.tz.tzutc()):
         open_form('ClientHomePage')
       # elif (client['subsribed_at']+ timedelta(days=client['subscription_package']['time_period'])) > datetime.now():

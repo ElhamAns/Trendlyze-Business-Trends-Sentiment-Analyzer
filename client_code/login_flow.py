@@ -6,6 +6,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from .PasswordResetDialog import PasswordResetDialog
+from .signUpReqquestStatus import signUpReqquestStatus
 
 def do_email_confirm_or_reset():
   """Check whether the user has arrived from an email-confirmation link or a password reset, and pop up any necessary dialogs.
@@ -15,10 +16,10 @@ def do_email_confirm_or_reset():
   if user:
     if user['is_admin']:
       anvil.open_form('admin_dashboard')
-    clinet = app_tables.clients.get(user=user)
-    if clinet['status'] == False or clinet['status'] == None:
-      anvil.open_form('signUpReqquestStatus',item=clinet)
-    if clinet['status'] == True:
+    client = app_tables.clients.get(user=user)
+    if client['status'] == False or client['status'] == None:
+      anvil.open_form(signUpReqquestStatus(item=client))
+    if client['status'] == True:
       anvil.open_form('ClientHomePage')
       
     
