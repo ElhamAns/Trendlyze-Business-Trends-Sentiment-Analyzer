@@ -26,7 +26,7 @@ class Settings(SettingsTemplate):
     open_form('Form1')
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.server.call('_send_password_reset', self.user['email'])
+    anvil.server.call('_send_password_reset', self.user['email'], True)
     alert(f"Reset password Email has been sent to {self.user['email']}")
 
   def button_5_click(self, **event_args):
