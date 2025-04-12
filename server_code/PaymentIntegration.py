@@ -1,16 +1,14 @@
 import anvil.server
 import anvil.http
 import json
+import requests
+import base64
 
 # Configure with your PayPal credentials
 PAYPAL_CLIENT_ID = "AYyCqWPxgAwALbUI3nzjfDdGmJQoY4nvnKitD9UsqMzZ7h4aw4H905M8n2SRueEuu3pXzclUC4lMNIBU"
 PAYPAL_SECRET = "EFXEaY9axulWHy6LFlsOIhDy-jazYoPLZijnIVrWcRFfk1qOxbiLljkQIaIP5k5AXsH8Egr1TXxe393c"
 PAYPAL_BASE_URL = "https://api-m.sandbox.paypal.com"  # Change to https://api.paypal.com for live
 
-import anvil.server
-import anvil.http
-import json
-import base64
 
 def _get_auth_token():
     """Get OAuth2 token from PayPal"""
@@ -23,57 +21,26 @@ def _get_auth_token():
     }
     
     try:
-        response = anvil.http.request(
+        print("in try")
+        response = requests.post(
             url=f"{PAYPAL_BASE_URL}/v1/oauth2/token",
-            method="POST",
             headers=headers,
             data="grant_type=client_credentials"
         )
-        return response['access_token']
+        return response.json()['access_token']
     except anvil.http.HttpError as e:
         raise Exception(f"Failed to get auth token: {str(e)}")
 
 @anvil.server.callable
 def create_payment(amount, currency="USD", description=""):
     """Create a PayPal payment"""
-    import requests
-
-
-    order_response = requests.post(
-        f"{PAYPAL_BASE_URL}/v2/checkout/orders",
-        headers={
-            "Content-Type": "application/json",
-            "Authorization": f"Bearer {'A21AAJ4tNNbs59iiCR60gXbkTzWQR9fiKaO3sHS9kFd3eB-63WaJdbYfhTaO3hJc-iYlPTluzbt-xQfX9BiNxD4Yq1xh5PL4g'}"
-        },
-        json={
-            "intent": "CAPTURE",
-            "purchase_units": [
-                {
-                    "amount": {
-                        "currency_code": currency,
-                        "value": str(5)
-                    }
-                }
-            ]
-        }
-    )
-    print("order respoinseL ", order_response)
-    print("linkss  ",order_response.json()['links'])
-    auth_response = requests.post(
-            f"{PAYPAL_BASE_URL}/v1/oauth2/token",
-            auth=(PAYPAL_CLIENT_ID, PAYPAL_SECRET),
-            headers={"Content-Type": "application/x-www-form-urlencoded"},
-            data={"grant_type": "client_credentials"}
-        )
-    print("Auth: ", auth_response)
-    print("Auth token: ", auth_response.json()["access_token"])
     try:
+        print("here")
         access_token = _get_auth_token()
-        
+        print("here")
         headers = {
             "Content-Type": "application/json",
-            "Authorization": f"Bearer {access_token}",
-            "PayPal-Request-Id": anvil.server.context.get_client_ip_address()
+            "Authorization": f"Bearer {access_token}"
         }
         
         payload = {
@@ -86,20 +53,19 @@ def create_payment(amount, currency="USD", description=""):
                 "description": description
             }],
             "application_context": {
-                "return_url": anvil.server.get_api_origin() + "/paypal/success",
-                "cancel_url": anvil.server.get_api_origin() + "/paypal/cancel",
+                "return_url": anvil.server.get_app_origin() + "/paypal/success",
+                "cancel_url": anvil.server.get_app_origin() + "/paypal/cancel",
                 "brand_name": "Your Business Name"  # Customize this
             }
         }
         
-        response = anvil.http.request(
+        response = requests.post(
             url=f"{PAYPAL_BASE_URL}/v2/checkout/orders",
-            method="POST",
             headers=headers,
-            data=json.dumps(payload))
-        
+            data=json.dumps(payload)
+        )
         # Find approval URL in response
-        for link in response['links']:
+        for link in response.json()['links']:
             if link['rel'] == 'approve':
                 return {'status': 'success', 'approval_url': link['href']}
         
@@ -122,7 +88,7 @@ def paypal_success(**params):
     }
     
     try:
-        execute_response = anvil.http.request(
+        execute_response = requests.post(
             url=f"{PAYPAL_BASE_URL}/v1/payments/payment/{payment_id}/execute",
             method="POST",
             headers=headers,
@@ -139,4 +105,12 @@ def paypal_success(**params):
 @anvil.server.http_endpoint("/paypal/cancel")
 def paypal_cancel(**params):
     """Handle cancelled PayPal payment"""
+    print("Payment cancelled with params:", params)
     return anvil.server.HttpResponse(302, headers={"Location": "/payment-cancelled"})
+
+@anvil.server.callable
+def test_cancel_endpoint():
+    """Test the cancel endpoint directly"""
+    return anvil.server.call('paypal_cancel')
+
+

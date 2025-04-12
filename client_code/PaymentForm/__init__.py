@@ -47,5 +47,12 @@ class PaymentForm(PaymentFormTemplate):
     else:
         alert(f"Error creating payment: {result['message']}")
 
+  def handle_navigation(url, **kwargs):
+    if url.contains("/payment-cancelled"):
+        # Extract the reason from query parameters
+        reason = kwargs.get('reason', 'Payment was cancelled')
+        # Open the cancelled form with the reason
+        return PaymentCancelledForm(cancellation_reason=reason)
+
 
 
