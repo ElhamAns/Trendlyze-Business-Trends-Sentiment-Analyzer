@@ -16,9 +16,17 @@ def mk_token():
   return "".join([random.choice("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789") for i in range(14)])
 
 @anvil.server.callable
-def _send_password_reset(email):
+def _send_password_reset(email, is_admin=False):
     """Send a password reset email with 6-digit code to the specified user"""
     user = app_tables.users.get(email=email)
+    if is_admin:
+      user['link_key'] = mk_token()
+      anvil.email.send(to=user['email'], subject="Reset your password", text=f"""
+  Hi,Someone has requested a password reset for your account. If this wasn't you, just delete this email.
+  If you do want to reset your password, click here: {anvil.server.get_app_origin('published')}#?email={url_encode(user['email'])}&pwreset={url_encode(user['link_key'])}
+  Thanks!
+  """)
+      return True
     if user is not None:
         # Generate a 6-digit code
         reset_code = str(random.randint(100000, 999999))
@@ -35,7 +43,6 @@ If you didn't request this, please ignore this email.
 Thanks!
 """
         )
-        print(reset_code)
         return reset_code
       
     return None
