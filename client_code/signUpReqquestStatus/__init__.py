@@ -27,7 +27,9 @@ class signUpReqquestStatus(signUpReqquestStatusTemplate):
     elif self.item['status'] == False:
       return 'red'
     else:
-      return 'orange'  def button_1_click(self, **event_args):
+      return 'orange'
+
+  def button_1_click(self, **event_args):
     anvil.server.call('enable_payment', self.item)
     open_form('ClientHomePage')
 
