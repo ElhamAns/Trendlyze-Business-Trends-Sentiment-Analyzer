@@ -57,10 +57,6 @@ class PaymentForm(PaymentFormTemplate):
     else:
         alert(f"Error creating payment: {result['message']}")
 
-  def radio_button_1_clicked(self, **event_args):
-    """This method is called when this radio button is selected"""
-    pass
-
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.users.logout()
