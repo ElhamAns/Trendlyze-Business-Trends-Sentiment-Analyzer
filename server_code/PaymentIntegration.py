@@ -4,7 +4,7 @@ import json
 import requests
 import base64
 from anvil.tables import app_tables
-
+from datetime import datetime
 # Configure with your PayPal credentials
 PAYPAL_CLIENT_ID = "AYyCqWPxgAwALbUI3nzjfDdGmJQoY4nvnKitD9UsqMzZ7h4aw4H905M8n2SRueEuu3pXzclUC4lMNIBU"
 PAYPAL_SECRET = "EFXEaY9axulWHy6LFlsOIhDy-jazYoPLZijnIVrWcRFfk1qOxbiLljkQIaIP5k5AXsH8Egr1TXxe393c"
@@ -101,4 +101,13 @@ def update_user_payment(token):
     subscription_package = app_tables.subscription_types.get(amount=amount)
     if client and subscription_package:
       client['subscription_package'] = subscription_package
-    
+      client['subsribed_at'] = datetime.now()
+      
+
+
+@anvil.server.callable
+def update_users_trail_payment():
+  client = anvil.server.call('get_current_client')
+  subscription_package = app_tables.subscription_types.get(type='Trial')
+  client['subscription_package'] = subscription_package
+  client['subsribed_at'] = datetime.now()

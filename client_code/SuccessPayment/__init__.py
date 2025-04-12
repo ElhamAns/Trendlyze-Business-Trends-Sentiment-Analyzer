@@ -9,7 +9,7 @@ import anvil.js
 
 from anvil_extras import routing
 
-@routing.route('success', title="payment | BusinessTrend")
+@routing.route('success', title="BusinessTrend")
 @routing.route(
   "success-payment",
   url_keys=["token", routing.ANY],

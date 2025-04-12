@@ -72,3 +72,13 @@ class ClientSettings(ClientSettingsTemplate):
       alert("Your profile is edited successfully")
     else:
       alert("You don't have any thiing to edit")
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('PaymentForm')
+
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.users.logout()
+    open_form('Form1')
+    

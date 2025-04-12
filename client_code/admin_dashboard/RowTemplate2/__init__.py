@@ -5,6 +5,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from datetime import datetime
 
 
 class RowTemplate2(RowTemplate2Template):
@@ -17,8 +18,6 @@ class RowTemplate2(RowTemplate2Template):
   def button_1_click(self, **event_args):
     self.item['status'] = True
     self.refresh_data_bindings()
-    """This method is called when the button is clicked"""
-    pass
 
   def button_2_click(self, **event_args):
     self.item['status'] = False

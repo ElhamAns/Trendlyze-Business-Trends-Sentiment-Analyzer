@@ -9,7 +9,7 @@ import anvil.js
 
 from anvil_extras import routing
 
-@routing.route('payment', title="payment | BusinessTrend")
+@routing.route('payment', title="BusinessTrend")
 @routing.route('cancel-payment', url_keys=['token', routing.ANY], title="cancel-payment | RoutingExample")
 class PaymentForm(PaymentFormTemplate):
   def __init__(self, **properties):
@@ -34,7 +34,12 @@ class PaymentForm(PaymentFormTemplate):
     open_form("ClientDashBoard")
 
   def button_6_click(self, **event_args):
+    if self.current_client['subscription_package'] and self.current_client['subscription_package']['type'] == 'Trial':
+      alert("You already subscibed Trail plan you can't select trail plan again")
+      return
     """This method is called when the button is clicked"""
+    if self.radio_button_1.selected:
+      anvil.server.call('update_user_payment', True)
     if self.radio_button_2.selected:
       amount = 50
     elif self.radio_button_3.selected:
@@ -48,6 +53,10 @@ class PaymentForm(PaymentFormTemplate):
         anvil.js.window.location.href = result['approval_url']
     else:
         alert(f"Error creating payment: {result['message']}")
+
+  def radio_button_1_clicked(self, **event_args):
+    """This method is called when this radio button is selected"""
+    pass
 
 
 

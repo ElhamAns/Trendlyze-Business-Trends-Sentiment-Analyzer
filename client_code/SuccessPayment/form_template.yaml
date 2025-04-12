@@ -1,23 +1,7 @@
 components:
-- components:
-  - layout_properties: {grid_position: 'CVEUKG,KLZTWJ'}
-    name: label_1
-    properties: {bold: true, font_size: 24, text: 'Payment Successfully completed '}
-    type: Label
-  layout_properties: {slot: default}
-  name: content_panel
-  properties: {}
-  type: ColumnPanel
-- components: []
-  layout_properties: {slot: nav-right}
-  name: navbar_links
-  properties: {}
-  type: FlowPanel
-- layout_properties: {slot: title}
-  name: image_1
-  properties: {height: 75, source: _/theme/app-logo.svg}
-  type: Image
-container:
-  properties: {html: '@theme:admin_dashboard.html'}
-  type: HtmlTemplate
+- layout_properties: {grid_position: 'CZWHZB,OCJCQK'}
+  name: label_1
+  properties: {text: Payment Successfully succeded}
+  type: Label
+container: {type: ColumnPanel}
 is_package: true

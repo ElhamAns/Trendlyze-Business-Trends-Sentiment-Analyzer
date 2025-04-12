@@ -95,7 +95,8 @@ components:
           margin: [null, null, 26, null]
           padding: ['0', null, '0', null]
       type: Label
-    - layout_properties: {grid_position: 'MCKKHF,UGZSLB CMCGCG,LVAUMT'}
+    - event_bindings: {click: button_1_click}
+      layout_properties: {grid_position: 'MCKKHF,UGZSLB CMCGCG,LVAUMT'}
       name: button_1
       properties: {align: right, background: black, text: Manage Payment}
       type: Button

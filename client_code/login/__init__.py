@@ -5,12 +5,13 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.users
 import anvil.server
-# import anvil
+from datetime import datetime, timedelta
+import anvil.tz
 from ..signUpReqquestStatus import signUpReqquestStatus
 
 from anvil_extras import routing
 
-@routing.route('login', title="login | BusinessTrend")
+@routing.route('login', title="BusinessTrend")
 class login(loginTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
@@ -37,8 +38,11 @@ class login(loginTemplate):
         return
       print("user: ", user)
       client = anvil.server.call('get_user_cleint', user)
-      if client['subscription_package']:
+      if client['subscription_package'] and (client['subsribed_at']+ timedelta(days=client['subscription_package']['time_period'])) > datetime.now(anvil.tz.tzutc()):
         open_form('ClientHomePage')
+      elif (client['subsribed_at']+ timedelta(days=client['subscription_package']['time_period'])) > datetime.now():
+        alert("Your subscription ended please pay again to use this app")
+        open_form('PaymentForm')
       else:
         open_form(signUpReqquestStatus(item=client))
     except anvil.users.AuthenticationFailed as e:
