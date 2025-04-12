@@ -115,3 +115,17 @@ def test_cancel_endpoint():
     return anvil.server.call('paypal_cancel')
 
 
+
+
+@anvil.server.callable
+def update_user_payment(token):
+  url = f"https://api-m.sandbox.paypal.com/v2/checkout/orders/{token}"
+  auth_str = f"{PAYPAL_CLIENT_ID}:{PAYPAL_SECRET}"
+  auth_bytes = base64.b64encode(auth_str.encode('ascii')).decode('ascii')
+    
+  headers = {
+        "Authorization": f"Basic {auth_bytes}",
+        "Content-Type": "application/x-www-form-urlencoded"
+    }
+  response = requests.get(url, headers=headers)
+  if response.json().get('status') and response.json().get('status') == 'APPROVED'
