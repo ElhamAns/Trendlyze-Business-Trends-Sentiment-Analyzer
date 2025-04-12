@@ -11,13 +11,24 @@ class ClientSettings(ClientSettingsTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.current_client = anvil.server.call('get_current_client')
-    self.init_components(**properties)
     self.label_1.text = f"Welcome, {self.current_client['business_name']}"
     self.label_4.text = f"{self.current_client['business_name']} User"
     self.label_2.text = f"{self.current_client['business_name']}"
     self.label_8.text = f"{self.current_client['user']['email']}"
     self.image_2.source = self.current_client['logo']
     self.image_3.source = self.current_client['logo']
+    self.type_drop_down.items = ['Coffee Shop']
+    self.country_drop_down.items = ['Saudia Arabia']
+    self.city_drop_down.items = ['Al-Khobar']
+    self.area_drop_down.items = ['North Alkhobar', 'West Alkhobar', 'South Alkhobar', 'Rakah','Thoqbah']
+    self.text_box_1.text = self.current_client['business_name']
+    self.type_drop_down.selected_value = self.current_client['business_type']
+    self.country_drop_down.selected_value = self.current_client['country']
+    self.city_drop_down.selected_value = self.current_client['city']
+    self.area_drop_down.selected_value = self.current_client['area']
+    self.label_12.text = self.current_client['subscription_package']['type']
+    print("in int")
+    self.init_components(**properties)
     
 
     # Any code you write here will run when the form opens.
@@ -29,3 +40,35 @@ class ClientSettings(ClientSettingsTemplate):
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('ClientDashBoard')
+
+  def button_7_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    response = alert("Are you sure you want to delete your profile?", buttons=["Yes", "No"])
+    if response == "Yes":
+        # Call a server function or handle user deletion here
+        anvil.server.call('delete_user_account')  # example server function
+        alert("Your profile has been deleted.")
+        # Optionally, log out or redirect the user
+        anvil.users.logout()
+        open_form('Form1')  # Replace with your login form
+
+  def button_8_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('forgetPassword')
+
+  def button_6_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    print("kkkk: ", self.text_box_1.text)
+    if not self.text_box_1.text or self.text_box_1.text == " ":
+      alert("Business Name Cannot be Empty")
+      return
+    edited = anvil.server.call('edit_profile', self.text_box_1.text, self.type_drop_down.selected_value, self.country_drop_down.selected_value, self.city_drop_down.selected_value, self.area_drop_down.selected_value)
+    if edited:
+      self.refresh_data_bindings()
+      self.current_client = anvil.server.call('get_current_client')
+      self.label_2.text = self.current_client['business_name']
+      self.label_4.text = f"{self.current_client['business_name']} User"
+      self.label_1.text = f"Welcome, {self.current_client['business_name']}"
+      alert("Your profile is edited successfully")
+    else:
+      alert("You don't have any thiing to edit")

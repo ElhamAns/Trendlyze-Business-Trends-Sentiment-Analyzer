@@ -217,3 +217,29 @@ def get_home_page_rating(client=None):
 def enable_payment(user):
   payment = app_tables.subscription_types.search()[0]
   user['subscription_package'] = payment
+
+
+@anvil.server.callable
+def edit_profile(business_name, business_type, country, city, area):
+  clinet = get_current_client()
+  if clinet['business_name'] == business_name and clinet['business_type'] == business_type and clinet['country'] == country and clinet['city'] == city and clinet['area'] == area:
+    return False
+  if clinet['business_name'] != business_name:
+    shop = app_tables.shops.get(shop_name=business_name)
+    if shop:
+      clinet['shop'] = shop
+    else:
+      clinet['shop'] = None
+  clinet['business_name'] = business_name
+  clinet['business_type'] = business_type
+  clinet['country'] = country
+  clinet['city'] = city
+  clinet['area'] = area
+  return True
+
+@anvil.server.callable
+def delete_user_account():
+  user = anvil.users.get_user()
+  client = app_tables.clients.get(user=user)
+  user.delete()
+  client.delete()

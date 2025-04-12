@@ -36,87 +36,107 @@ components:
         spacing:
           padding: [null, null, '0', null]
       type: ColumnPanel
-    - layout_properties: {grid_position: 'MCKKHF,CBIOQE AOMATU,WTUUAD'}
+    - layout_properties: {grid_position: 'VBSBWZ,OOJNZM'}
       name: label_9
       properties:
         bold: true
         spacing:
           margin: [0, null, null, null]
-        text: Business Name
+        text: Manage Membership
       type: Label
-    - layout_properties: {grid_position: 'MCKKHF,CBIOQE HGGIHP,TLQHHF'}
-      name: text_box_1
-      properties: {}
-      type: TextBox
-    - layout_properties: {grid_position: 'MCKKHF,CBIOQE IIPTRC,JPTNXB'}
-      name: label_5
-      properties: {bold: true, text: Country}
+    - layout_properties: {grid_position: ',undefined'}
+      name: label_6
+      properties: {foreground: 'theme:Gray 600', text: Get all access and an extra 20% off when you subscribe for 3 months}
       type: Label
-    - layout_properties: {grid_position: 'MCKKHF,CBIOQE KFDLFJ,PTTASU'}
-      name: country_drop_down
-      properties: {}
-      type: DropDown
-    - layout_properties: {grid_position: 'MCKKHF,CBIOQE DRMTAS,IBVZSO'}
+    - layout_properties: {grid_position: 'JCPKAG,ROWCWO'}
       name: label_7
-      properties: {bold: true, text: Area}
-      type: Label
-    - layout_properties: {grid_position: 'MCKKHF,CBIOQE XLTXGL,SVWIUW'}
-      name: area_drop_down
       properties: {}
-      type: DropDown
-    - layout_properties: {grid_position: 'MCKKHF,UGZSLB UTAQZV,XVQNIL'}
-      name: label_10
-      properties:
-        bold: true
-        spacing:
-          margin: [0, null, '0', null]
-        text: Business Type
       type: Label
-    - layout_properties: {grid_position: 'MCKKHF,UGZSLB IFQHBS,RDQXNC'}
-      name: type_drop_down
-      properties: {}
-      type: DropDown
-    - layout_properties: {grid_position: 'MCKKHF,UGZSLB PYNCDM,WMSCZN'}
-      name: label_3
-      properties: {bold: true, text: City}
-      type: Label
-    - layout_properties: {grid_position: 'MCKKHF,UGZSLB UHHTKQ,YHQOFB'}
-      name: city_drop_down
-      properties: {}
-      type: DropDown
-    - layout_properties: {grid_position: 'MCKKHF,UGZSLB SGODAB,XGDZKF'}
-      name: label_11
-      properties: {bold: true, text: Subscription Details}
-      type: Label
-    - layout_properties: {grid_position: 'MCKKHF,UGZSLB CMCGCG,YDRDTR'}
-      name: label_12
-      properties:
-        spacing:
-          margin: [null, null, 26, null]
-          padding: ['0', null, '0', null]
-      type: Label
-    - layout_properties: {grid_position: 'MCKKHF,UGZSLB CMCGCG,LVAUMT'}
-      name: button_1
-      properties: {align: right, background: black, text: Manage Payment}
-      type: Button
+    - components:
+      - layout_properties: {grid_position: 'MBXGEE,XBHDHA'}
+        name: radio_button_1
+        properties:
+          spacing:
+            padding: [null, null, '0', null]
+          text: Trail Plan
+        type: RadioButton
+      - layout_properties: {grid_position: 'BBJEVU,GPYGOB'}
+        name: label_3
+        properties:
+          foreground: theme:Gray 600
+          spacing:
+            margin: ['0', null, 0, null]
+            padding: ['0', null, '0', null]
+          text: '      $0 / 1 week free'
+        type: Label
+      layout_properties: {grid_position: 'KCIXFM,EHYPDD'}
+      name: trail_plan
+      properties: {role: card}
+      type: ColumnPanel
+    - layout_properties: {grid_position: 'KCIXFM,ZDQCHY'}
+      name: spacer_2
+      properties: {height: 32}
+      type: Spacer
+    - components:
+      - layout_properties: {grid_position: 'MBXGEE,XBHDHA'}
+        name: radio_button_2
+        properties:
+          spacing:
+            padding: [null, null, '0', null]
+          text: Gold Plan
+        type: RadioButton
+      - layout_properties: {grid_position: 'YRACPD,RTWZCP'}
+        name: label_3_copy
+        properties:
+          spacing:
+            margin: ['0', null, 0, null]
+            padding: ['0', null, '0', null]
+          text: '      $50 / Month'
+        type: Label
+      layout_properties: {grid_position: 'WXGGBR,SVIMGF'}
+      name: gold_plan
+      properties: {role: card}
+      type: ColumnPanel
+    - layout_properties: {grid_position: 'WXGGBR,AIIWHV'}
+      name: spacer_1
+      properties: {height: 32}
+      type: Spacer
+    - components:
+      - layout_properties: {grid_position: 'ZUCPDF,DGIJRC MBXGEE,XBHDHA'}
+        name: radio_button_3
+        properties:
+          spacing:
+            padding: [null, null, '0', null]
+          text: Platinum Plan
+        type: RadioButton
+      - layout_properties: {grid_position: 'ZUCPDF,TKUGNT'}
+        name: label_5
+        properties: {text: Save 20%}
+        type: Label
+      - layout_properties: {grid_position: 'ZUCPDF,DGIJRC YRACPD,RTWZCP'}
+        name: label_3_copy_2
+        properties:
+          spacing:
+            margin: ['0', null, 0, null]
+            padding: ['0', null, '0', null]
+          text: '      $120 /3 months'
+        type: Label
+      layout_properties: {grid_position: 'MXVOFT,GEOYEH'}
+      name: platinum_plan
+      properties: {role: card}
+      type: ColumnPanel
+    - layout_properties: {grid_position: 'MXVOFT,UFEEPC'}
+      name: spacer_3
+      properties: {height: 32}
+      type: Spacer
     - event_bindings: {click: button_6_click}
       layout_properties: {grid_position: 'UQTTZA,TBJTLA'}
       name: button_6
-      properties: {background: black, text: Edit Profile}
-      type: Button
-    - event_bindings: {click: button_8_click}
-      layout_properties: {grid_position: 'UQTTZA,LXLETQ'}
-      name: button_8
-      properties: {background: black, text: Reset password}
-      type: Button
-    - event_bindings: {click: button_7_click}
-      layout_properties: {grid_position: 'UQTTZA,LHZIFJ'}
-      name: button_7
-      properties: {background: black, text: Delete Profile}
+      properties: {background: black, text: buy}
       type: Button
     layout_properties: {grid_position: 'RENROA,VIIZLP'}
     name: card_1
-    properties: {background: '#e1edfc', col_widths: '{"YDRDTR":20,"LVAUMT":40}', role: card}
+    properties: {background: '#e1edfc', col_widths: '{}', role: card}
     type: ColumnPanel
   layout_properties: {slot: default}
   name: content_panel
