@@ -10,7 +10,6 @@ from anvil.http import url_encode
 import bcrypt
 from random import SystemRandom
 from datetime import datetime
-from login import login
 random = SystemRandom()
 def mk_token():
   """Generate a random 14-character token"""

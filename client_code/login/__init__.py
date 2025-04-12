@@ -5,7 +5,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.users
 import anvil.server
-import anvil
+# import anvil
 from ..signUpReqquestStatus import signUpReqquestStatus
 
 from anvil_extras import routing
@@ -35,6 +35,7 @@ class login(loginTemplate):
       if user['is_admin']:
         open_form('admin_dashboard')
         return
+      print("user: ", user)
       client = anvil.server.call('get_user_cleint', user)
       if client['subscription_package']:
         open_form('ClientHomePage')

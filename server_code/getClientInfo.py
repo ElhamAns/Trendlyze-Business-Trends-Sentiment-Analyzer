@@ -149,6 +149,7 @@ def get_reviews_chart():
 
 @anvil.server.callable
 def get_user_cleint(user):
+  print("in fin")
   return app_tables.clients.get(user=user)
 
 @anvil.server.callable
