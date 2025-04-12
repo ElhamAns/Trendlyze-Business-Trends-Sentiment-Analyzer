@@ -40,6 +40,8 @@ class PaymentForm(PaymentFormTemplate):
     """This method is called when the button is clicked"""
     if self.radio_button_1.selected:
       anvil.server.call('update_user_payment', True)
+      open_form('ClientHomePage')
+      return
     if self.radio_button_2.selected:
       amount = 50
     elif self.radio_button_3.selected:
