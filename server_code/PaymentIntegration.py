@@ -92,7 +92,6 @@ def paypal_success(**params):
     try:
         execute_response = requests.post(
             url=f"{PAYPAL_BASE_URL}/v1/payments/payment/{payment_id}/execute",
-            method="POST",
             headers=headers,
             data=json.dumps({"payer_id": payer_id}))
         

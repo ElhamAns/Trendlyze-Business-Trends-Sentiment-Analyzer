@@ -19,6 +19,8 @@ class SuccessPayment(SuccessPaymentTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     print("success")
+    print("token: ", self.url_dict['token'])
+    print("token: ", self.url_dict['payid'])
     self.current_client = anvil.server.call("get_current_client")
     self.label_4.text = f"{self.current_client['business_name']} User"
     self.label_2.text = f"{self.current_client['business_name']}"
