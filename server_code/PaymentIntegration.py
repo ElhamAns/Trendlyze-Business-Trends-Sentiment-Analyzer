@@ -54,16 +54,18 @@ def create_payment(amount, currency="USD", description=""):
             }],
             "application_context": {
                 "return_url": anvil.server.get_app_origin() + "/paypal/success",
-                "cancel_url": anvil.server.get_app_origin() + "/paypal/cancel",
-                "brand_name": "Your Business Name"  # Customize this
+                # "cancel_url": anvil.server.get_app_origin() + "/#cancel-payment",
+                "brand_name": "Business Trend"  # Customize this
             }
         }
-        
+        print("origin: ", anvil.server.get_app_origin())
+        print("header: ", headers)
         response = requests.post(
             url=f"{PAYPAL_BASE_URL}/v2/checkout/orders",
             headers=headers,
             data=json.dumps(payload)
         )
+        print("response: ", response)
         # Find approval URL in response
         for link in response.json()['links']:
             if link['rel'] == 'approve':
@@ -102,11 +104,11 @@ def paypal_success(**params):
     except anvil.http.HttpError as e:
         return anvil.server.HttpResponse(302, headers={"Location": f"/payment-error?message={str(e.content)}"})
 
-@anvil.server.http_endpoint("/paypal/cancel")
-def paypal_cancel(**params):
-    """Handle cancelled PayPal payment"""
-    print("Payment cancelled with params:", params)
-    return anvil.server.HttpResponse(302, headers={"Location": "/payment-cancelled"})
+# @anvil.server.http_endpoint("/paypal/cancel")
+# def paypal_cancel(**params):
+#     """Handle cancelled PayPal payment"""
+#     print("Payment cancelled with params:", params)
+#     return anvil.server.HttpResponse(302, headers={"Location": "/payment-cancelled"})
 
 @anvil.server.callable
 def test_cancel_endpoint():

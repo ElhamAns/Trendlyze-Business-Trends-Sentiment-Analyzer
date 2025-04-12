@@ -9,8 +9,10 @@ import anvil.users
 from ..Form1t import Form1t
 from ..login import login
 from ..register import register
+from ..PaymentForm import PaymentForm
 
 from anvil_extras import routing
+
 
 @routing.main_router
 class Form1(Form1Template):
@@ -21,6 +23,7 @@ class Form1(Form1Template):
     self.button_7.tag.url_hash  = 'home'
     self.button_2.tag.url_hash = 'login'
     self.button_1.tag.url_hash   = 'register'
+    self.button_3.tag.url_hash   = 'payment'
 
   def nav_link_click(self, **event_args):
     """This method is called when a navigation link is clicked"""

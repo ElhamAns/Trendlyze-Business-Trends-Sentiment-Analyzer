@@ -16,7 +16,7 @@ components:
     name: button_4
     properties: {foreground: black, text: Users}
     type: Button
-  - event_bindings: {click: button_3_click}
+  - event_bindings: {click: nav_link_click}
     name: button_3
     properties: {foreground: black, text: Payment}
     type: Button
