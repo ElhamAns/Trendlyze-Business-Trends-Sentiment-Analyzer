@@ -1,4 +1,4 @@
-from ._anvil_designer import PaymentFormTemplate
+from ._anvil_designer import SuccessPaymentTemplate
 from anvil import *
 import anvil.server
 import anvil.users
@@ -9,13 +9,17 @@ import anvil.js
 
 from anvil_extras import routing
 
-@routing.route('payment', title="payment | BusinessTrend")
-@routing.route('cancel-payment', url_keys=['token', routing.ANY], title="cancel-payment | RoutingExample")
-class PaymentForm(PaymentFormTemplate):
+@routing.route('success', title="payment | BusinessTrend")
+@routing.route(
+  "success-payment",
+  url_keys=["token", routing.ANY],
+  title="cancel-payment | RoutingExample",
+)
+class SuccessPayment(SuccessPaymentTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
+    print("success")
     self.current_client = anvil.server.call("get_current_client")
-    self.label_1.text = f"Welcome, {self.current_client['business_name']}"
     self.label_4.text = f"{self.current_client['business_name']} User"
     self.label_2.text = f"{self.current_client['business_name']}"
     self.label_8.text = f"{self.current_client['user']['email']}"
@@ -38,16 +42,18 @@ class PaymentForm(PaymentFormTemplate):
     if self.radio_button_2.selected:
       amount = 50
     elif self.radio_button_3.selected:
-      amount=120
+      amount = 120
     else:
       alert("Select your payment Plan")
       return
-    result = anvil.server.call('create_payment', amount=amount, description="Your product/service")
-    
-    if result['status'] == 'success':
-        anvil.js.window.location.href = result['approval_url']
+    result = anvil.server.call(
+      "create_payment", amount=amount, description="Your product/service"
+    )
+
+    if result["status"] == "success":
+      anvil.js.window.location.href = result["approval_url"]
     else:
-        alert(f"Error creating payment: {result['message']}")
+      alert(f"Error creating payment: {result['message']}")
 
   # def handle_navigation(url, **kwargs):
   #   if url.contains("/payment-cancelled"):
@@ -55,6 +61,3 @@ class PaymentForm(PaymentFormTemplate):
   #       reason = kwargs.get('reason', 'Payment was cancelled')
   #       # Open the cancelled form with the reason
   #       return PaymentCancelledForm(cancellation_reason=reason)
-
-
-

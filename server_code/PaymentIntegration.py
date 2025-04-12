@@ -53,8 +53,8 @@ def create_payment(amount, currency="USD", description=""):
                 "description": description
             }],
             "application_context": {
-                "return_url": anvil.server.get_app_origin() + "/paypal/success",
-                # "cancel_url": anvil.server.get_app_origin() + "/#cancel-payment",
+                "return_url": anvil.server.get_app_origin() + "/#success-payment",
+                "cancel_url": anvil.server.get_app_origin() + "/#cancel-payment",
                 "brand_name": "Business Trend"  # Customize this
             }
         }
@@ -76,7 +76,7 @@ def create_payment(amount, currency="USD", description=""):
         return {'status': 'error', 'message': str(e)}
 
 
-@anvil.server.http_endpoint("/paypal/success")
+@anvil.server.callable
 def paypal_success(**params):
     """Handle successful PayPal payment"""
     payment_id = params.get('paymentId')

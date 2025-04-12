@@ -1,0 +1,224 @@
+components:
+- components:
+  - layout_properties: {grid_position: 'CVEUKG,KLZTWJ'}
+    name: label_1
+    properties: {bold: true, font_size: 24, text: testtttttttt}
+    type: Label
+  - components:
+    - components:
+      - layout_properties: {grid_position: 'MNDVGV,CTBGHM'}
+        name: image_2
+        properties:
+          height: 58.5555419921875
+          margin: [null, null, 19, null]
+        type: Image
+      - layout_properties: {grid_position: 'MNDVGV,MGXGAG SWVVTL,TJGODD'}
+        name: label_2
+        properties:
+          spacing:
+            padding: [null, null, '0', null]
+        type: Label
+      - layout_properties: {grid_position: 'MNDVGV,MGXGAG NGCDYC,GUNNUJ'}
+        name: label_8
+        properties:
+          foreground: theme:Gray 600
+          spacing:
+            margin: ['0', null, 22, null]
+            padding: ['0', null, '0', null]
+        type: Label
+      layout_properties: {grid_position: 'ZCFIGD,AFSHYN'}
+      name: card_2
+      properties:
+        background: theme:Primary 500
+        border: ''
+        col_widths: '{"CTBGHM":15,"MGXGAG":45}'
+        role: card
+        spacing:
+          padding: [null, null, '0', null]
+      type: ColumnPanel
+    - layout_properties: {grid_position: 'VBSBWZ,OOJNZM'}
+      name: label_9
+      properties:
+        bold: true
+        spacing:
+          margin: [0, null, null, null]
+        text: Manage Membership
+      type: Label
+    - layout_properties: {grid_position: ',undefined'}
+      name: label_6
+      properties: {foreground: 'theme:Gray 600', text: Get all access and an extra 20% off when you subscribe for 3 months}
+      type: Label
+    - layout_properties: {grid_position: 'JCPKAG,ROWCWO'}
+      name: label_7
+      properties: {}
+      type: Label
+    - components:
+      - layout_properties: {grid_position: 'MBXGEE,XBHDHA'}
+        name: radio_button_1
+        properties:
+          spacing:
+            padding: [null, null, '0', null]
+          text: Trail Plan
+        type: RadioButton
+      - layout_properties: {grid_position: 'BBJEVU,GPYGOB'}
+        name: label_3
+        properties:
+          foreground: theme:Gray 600
+          spacing:
+            margin: ['0', null, 0, null]
+            padding: ['0', null, '0', null]
+          text: '      $0 / 1 week free'
+        type: Label
+      layout_properties: {grid_position: 'KCIXFM,EHYPDD'}
+      name: trail_plan
+      properties: {role: card}
+      type: ColumnPanel
+    - layout_properties: {grid_position: 'KCIXFM,ZDQCHY'}
+      name: spacer_2
+      properties: {height: 32}
+      type: Spacer
+    - components:
+      - layout_properties: {grid_position: 'MBXGEE,XBHDHA'}
+        name: radio_button_2
+        properties:
+          spacing:
+            padding: [null, null, '0', null]
+          text: Gold Plan
+        type: RadioButton
+      - layout_properties: {grid_position: 'YRACPD,RTWZCP'}
+        name: label_3_copy
+        properties:
+          spacing:
+            margin: ['0', null, 0, null]
+            padding: ['0', null, '0', null]
+          text: '      $50 / Month'
+        type: Label
+      layout_properties: {grid_position: 'WXGGBR,SVIMGF'}
+      name: gold_plan
+      properties: {role: card}
+      type: ColumnPanel
+    - layout_properties: {grid_position: 'WXGGBR,AIIWHV'}
+      name: spacer_1
+      properties: {height: 32}
+      type: Spacer
+    - components:
+      - layout_properties: {grid_position: 'ZUCPDF,DGIJRC MBXGEE,XBHDHA'}
+        name: radio_button_3
+        properties:
+          spacing:
+            padding: [null, null, '0', null]
+          text: Platinum Plan
+        type: RadioButton
+      - layout_properties: {grid_position: 'ZUCPDF,TKUGNT'}
+        name: label_5
+        properties: {text: Save 20%}
+        type: Label
+      - layout_properties: {grid_position: 'ZUCPDF,DGIJRC YRACPD,RTWZCP'}
+        name: label_3_copy_2
+        properties:
+          spacing:
+            margin: ['0', null, 0, null]
+            padding: ['0', null, '0', null]
+          text: '      $120 /3 months'
+        type: Label
+      layout_properties: {grid_position: 'MXVOFT,GEOYEH'}
+      name: platinum_plan
+      properties: {role: card}
+      type: ColumnPanel
+    - layout_properties: {grid_position: 'MXVOFT,UFEEPC'}
+      name: spacer_3
+      properties: {height: 32}
+      type: Spacer
+    - event_bindings: {click: button_6_click}
+      layout_properties: {grid_position: 'UQTTZA,TBJTLA'}
+      name: button_6
+      properties: {background: black, text: buy}
+      type: Button
+    layout_properties: {grid_position: 'RENROA,VIIZLP'}
+    name: card_1
+    properties: {background: '#e1edfc', col_widths: '{}', role: card}
+    type: ColumnPanel
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {}
+  type: ColumnPanel
+- components:
+  - components:
+    - event_bindings: {click: button_5_click}
+      layout_properties: {grid_position: 'ZSBJJE,IOCADU'}
+      name: button_5
+      properties:
+        foreground: black
+        spacing:
+          margin: ['18', null, null, null]
+        text: Home
+      type: Button
+    - event_bindings: {click: button_4_click}
+      layout_properties: {grid_position: 'ZSBJJE,STIRKJ'}
+      name: button_4
+      properties:
+        foreground: black
+        spacing:
+          margin: ['18', null, null, null]
+        text: Dashboard
+      type: Button
+    - event_bindings: {click: button_3_click}
+      layout_properties: {grid_position: 'ZSBJJE,UVKFFB'}
+      name: button_3
+      properties:
+        foreground: black
+        spacing:
+          margin: ['18', null, null, null]
+        text: Settings
+      type: Button
+    - layout_properties: {grid_position: 'ZSBJJE,HRHVPB'}
+      name: spacer_7
+      properties: {height: 32}
+      type: Spacer
+    - layout_properties: {grid_position: 'ZSBJJE,LOWRVV'}
+      name: spacer_6
+      properties: {height: 32}
+      type: Spacer
+    - layout_properties: {grid_position: 'ZSBJJE,YRTDKS'}
+      name: spacer_5
+      properties: {height: 32}
+      type: Spacer
+    - components:
+      - layout_properties: {grid_position: 'FSQIPE,SNPGIY'}
+        name: image_3
+        properties: {height: 31}
+        type: Image
+      - layout_properties: {grid_position: 'FSQIPE,MTFBGP'}
+        name: label_4
+        properties: {}
+        type: Label
+      layout_properties: {grid_position: 'ZSBJJE,UEYMAN'}
+      name: column_panel_3
+      properties: {col_widths: '{"SNPGIY":20,"MTFBGP":40}'}
+      type: ColumnPanel
+    - event_bindings: {click: button_2_click}
+      layout_properties: {grid_position: 'ZSBJJE,MPBZQG'}
+      name: button_2
+      properties:
+        font_size: 25
+        foreground: black
+        icon: fa:sign-out
+        spacing:
+          margin: ['14', null, null, null]
+        text: ''
+      type: Button
+    name: column_panel_1_copy
+    properties: {col_widths: '{"IOCADU":11,"STIRKJ":14,"UVKFFB":12,"MPBZQG":7,"UEYMAN":11,"HRHVPB":3,"LOWRVV":4,"YRTDKS":3}'}
+    type: ColumnPanel
+  layout_properties: {slot: nav-right}
+  name: navbar_links
+  properties: {}
+  type: FlowPanel
+- layout_properties: {slot: title}
+  name: image_1
+  properties: {height: 75, source: _/theme/app-logo.svg}
+  type: Image
+container:
+  properties: {html: '@theme:admin_dashboard.html'}
+  type: HtmlTemplate
+is_package: true
