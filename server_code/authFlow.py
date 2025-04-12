@@ -22,19 +22,19 @@ def _send_password_reset(email):
     if user is not None:
         # Generate a 6-digit code
         reset_code = str(random.randint(100000, 999999))
-#         anvil.email.send(
-#             to=user['email'],
-#             subject="Your password reset code",
-#             text=f"""
-# Hi,
+        anvil.email.send(
+            to=user['email'],
+            subject="Your password reset code",
+            text=f"""
+Hi,
 
-# Your password reset code for Business-Trend is: {reset_code}
+Your password reset code for Business-Trend is: {reset_code}
 
-# If you didn't request this, please ignore this email.
+If you didn't request this, please ignore this email.
 
-# Thanks!
-# """
-        # )
+Thanks!
+"""
+        )
         print(reset_code)
         return reset_code
       
