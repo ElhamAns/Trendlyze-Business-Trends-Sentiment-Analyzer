@@ -6,5 +6,8 @@ from anvil.tables import app_tables
 from anvil import open_form
 from . import login_flow
 
+from anvil_extras import routing
+
+routing.launch()
 login_flow.do_email_confirm_or_reset()
 open_form('Form1')
