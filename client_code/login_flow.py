@@ -17,7 +17,7 @@ def do_email_confirm_or_reset():
       anvil.open_form('admin_dashboard')
     clinet = app_tables.clients.get(user=user)
     if clinet['status'] == False or clinet['status'] == None:
-      anvil.open_form('signUpReqquestStatus')
+      anvil.open_form('signUpReqquestStatus',item=clinet)
     if clinet['status'] == True:
       anvil.open_form('ClientHomePage')
       
