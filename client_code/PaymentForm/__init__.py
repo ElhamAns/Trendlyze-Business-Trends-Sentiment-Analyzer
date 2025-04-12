@@ -42,19 +42,12 @@ class PaymentForm(PaymentFormTemplate):
     else:
       alert("Select your payment Plan")
       return
-    result = anvil.server.call('create_payment', amount=amount, description="Your product/service")
+    result = anvil.server.call('create_payment', amount=amount, description="Subscription Payment for Business Trend")
     
     if result['status'] == 'success':
         anvil.js.window.location.href = result['approval_url']
     else:
         alert(f"Error creating payment: {result['message']}")
-
-  # def handle_navigation(url, **kwargs):
-  #   if url.contains("/payment-cancelled"):
-  #       # Extract the reason from query parameters
-  #       reason = kwargs.get('reason', 'Payment was cancelled')
-  #       # Open the cancelled form with the reason
-  #       return PaymentCancelledForm(cancellation_reason=reason)
 
 
 

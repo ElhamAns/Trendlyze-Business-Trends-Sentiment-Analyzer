@@ -3,6 +3,7 @@ import anvil.http
 import json
 import requests
 import base64
+from anvil.tables import app_tables
 
 # Configure with your PayPal credentials
 PAYPAL_CLIENT_ID = "AYyCqWPxgAwALbUI3nzjfDdGmJQoY4nvnKitD9UsqMzZ7h4aw4H905M8n2SRueEuu3pXzclUC4lMNIBU"
@@ -44,7 +45,7 @@ def create_payment(amount, currency="USD", description=""):
         }
         
         payload = {
-            "intent": "CAPTURE",  # Changed from "sale" to "CAPTURE" for current API
+            "intent": "CAPTURE", 
             "purchase_units": [{
                 "amount": {
                     "currency_code": currency,
@@ -76,45 +77,11 @@ def create_payment(amount, currency="USD", description=""):
         return {'status': 'error', 'message': str(e)}
 
 
-@anvil.server.callable
-def paypal_success(**params):
-    """Handle successful PayPal payment"""
-    payment_id = params.get('paymentId')
-    payer_id = params.get('PayerID')
-    
-    # Execute the payment
-    auth = anvil.http.basic_auth(user=PAYPAL_CLIENT_ID, password=PAYPAL_SECRET)
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Basic {auth}"
-    }
-    
-    try:
-        execute_response = requests.post(
-            url=f"{PAYPAL_BASE_URL}/v1/payments/payment/{payment_id}/execute",
-            headers=headers,
-            data=json.dumps({"payer_id": payer_id}))
-        
-        # Process the successful payment here
-        # You might want to update your database, send confirmation emails, etc.
-        
-        return anvil.server.HttpResponse(302, headers={"Location": "/payment-success"})
-    
-    except anvil.http.HttpError as e:
-        return anvil.server.HttpResponse(302, headers={"Location": f"/payment-error?message={str(e.content)}"})
-
-# @anvil.server.http_endpoint("/paypal/cancel")
-# def paypal_cancel(**params):
-#     """Handle cancelled PayPal payment"""
-#     print("Payment cancelled with params:", params)
-#     return anvil.server.HttpResponse(302, headers={"Location": "/payment-cancelled"})
 
 @anvil.server.callable
 def test_cancel_endpoint():
     """Test the cancel endpoint directly"""
     return anvil.server.call('paypal_cancel')
-
-
 
 
 @anvil.server.callable
@@ -128,4 +95,10 @@ def update_user_payment(token):
         "Content-Type": "application/x-www-form-urlencoded"
     }
   response = requests.get(url, headers=headers)
-  if response.json().get('status') and response.json().get('status') == 'APPROVED'
+  if response.json().get('status') and response.json().get('status') == 'APPROVED':
+    client = anvil.server.call('get_current_client')
+    amount = response.json()['purchase_units'][0]['amount']['value']
+    subscription_package = app_tables.subscription_types.get(amount=amount)
+    if client and subscription_package:
+      client['subscription_package'] = subscription_package
+    
