@@ -18,7 +18,7 @@ class ClientSettings(ClientSettingsTemplate):
     self.image_2.source = self.current_client['logo']
     self.image_3.source = self.current_client['logo']
     self.type_drop_down.items = ['Coffee Shop']
-    self.country_drop_down.items = ['Saudia Arabia']
+    self.country_drop_down.items = ['Saudi Arabia']
     self.city_drop_down.items = ['Al-Khobar']
     self.area_drop_down.items = ['North Alkhobar', 'West Alkhobar', 'South Alkhobar', 'Rakah','Thoqbah']
     self.text_box_1.text = self.current_client['business_name']
@@ -71,7 +71,7 @@ class ClientSettings(ClientSettingsTemplate):
       self.label_1.text = f"Welcome, {self.current_client['business_name']}"
       alert("Your profile is edited successfully")
     else:
-      alert("You don't have any thiing to edit")
+      alert("You don't have any thing to edit")
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""

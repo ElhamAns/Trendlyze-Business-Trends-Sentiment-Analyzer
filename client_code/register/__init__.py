@@ -14,7 +14,7 @@ class register(registerTemplate):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.type_drop_down.items = ['Coffee Shop']
-    self.country_drop_down.items = ['Saudia Arabia']
+    self.country_drop_down.items = ['Saudi Arabia']
     self.city_drop_down.items = ['Al-Khobar']
     self.area_drop_down.items = ['North Alkhobar', 'West Alkhobar', 'South Alkhobar', 'Rakah','Thoqbah']
 
