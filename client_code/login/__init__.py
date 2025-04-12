@@ -42,7 +42,7 @@ class login(loginTemplate):
         open_form(signUpReqquestStatus(item=client))
       # if client['subscription_package'] and (client['subsribed_at']+ timedelta(days=client['subscription_package']['time_period'])) > datetime.now(anvil.tz.tzutc()):
       #   open_form('ClientHomePage')
-      elif (client['subsribed_at']+ timedelta(days=client['subscription_package']['time_period'])) < datetime.now():
+      elif (client['subsribed_at']+ timedelta(days=client['subscription_package']['time_period'])) <  datetime.now(anvil.tz.tzutc()):
         alert("Your subscription ended please pay again to use this app")
         open_form('PaymentForm')
       else:

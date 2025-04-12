@@ -34,7 +34,7 @@ class PaymentForm(PaymentFormTemplate):
     open_form("ClientDashBoard")
 
   def button_6_click(self, **event_args):
-    if self.current_client['subscription_package'] and self.current_client['subscription_package']['type'] == 'Trial':
+    if self.current_client['subscription_package'] and self.current_client['subscription_package']['type'] == 'Trial' and self.radio_button_1.selected:
       alert("You already subscibed Trail plan you can't select trail plan again")
       return
     """This method is called when the button is clicked"""
