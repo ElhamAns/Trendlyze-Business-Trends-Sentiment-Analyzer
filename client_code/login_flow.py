@@ -18,12 +18,19 @@ def do_email_confirm_or_reset():
       anvil.open_form('admin_dashboard')
       return
     client = app_tables.clients.get(user=user)
-    if client['status'] == False or client['status'] == None:
+    if not client['status']:
       anvil.open_form(signUpReqquestStatus(item=client))
-    if client['status'] == True and not client['subscription_package']:
+      return
+    elif not client['subscription_package']:
       anvil.open_form(signUpReqquestStatus(item=client))
-    if client['status'] == True and client['subscription_package']:
+      return
+    elif client['subscription_package'] and (client['subsribed_at']+ timedelta(days=client['subscription_package']['time_period'])) > datetime.now(anvil.tz.tzutc()):
       anvil.open_form('ClientHomePage')
+    elif (client['subsribed_at']+ timedelta(days=client['subscription_package']['time_period'])) <  datetime.now(anvil.tz.tzutc()):
+      anvil.open_form('PaymentForm')
+      alert("Your subscription ended please pay again to use this app")
+    else:
+      anvil.``````open_form(signUpReqquestStatus(item=client))
       
     
   h = anvil.get_url_hash()

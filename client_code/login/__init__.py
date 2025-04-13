@@ -40,11 +40,15 @@ class login(loginTemplate):
       client = anvil.server.call('get_user_cleint', user)
       if not client['status']:
         open_form(signUpReqquestStatus(item=client))
-      # if client['subscription_package'] and (client['subsribed_at']+ timedelta(days=client['subscription_package']['time_period'])) > datetime.now(anvil.tz.tzutc()):
-      #   open_form('ClientHomePage')
+        return
+      elif not client['subscription_package']:
+        open_form(signUpReqquestStatus(item=client))
+        return
+      elif client['subscription_package'] and (client['subsribed_at']+ timedelta(days=client['subscription_package']['time_period'])) > datetime.now(anvil.tz.tzutc()):
+        open_form('ClientHomePage')
       elif (client['subsribed_at']+ timedelta(days=client['subscription_package']['time_period'])) <  datetime.now(anvil.tz.tzutc()):
-        alert("Your subscription ended please pay again to use this app")
         open_form('PaymentForm')
+        alert("Your subscription ended please pay again to use this app")
       else:
         open_form(signUpReqquestStatus(item=client))
     except anvil.users.AuthenticationFailed as e:
