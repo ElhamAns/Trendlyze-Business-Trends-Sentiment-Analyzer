@@ -14,26 +14,6 @@ def do_email_confirm_or_reset():
   """Check whether the user has arrived from an email-confirmation link or a password reset, and pop up any necessary dialogs.
      Call this function from the 'show' event on your startup form.
   """
-  user = anvil.users.get_user()
-  if user:
-    if user['is_admin']:
-      anvil.open_form('admin_dashboard')
-      return
-    client = app_tables.clients.get(user=user)
-    if not client['status']:
-      anvil.open_form(signUpReqquestStatus(item=client))
-      return
-    elif not client['subscription_package']:
-      anvil.open_form(signUpReqquestStatus(item=client))
-      return
-    elif client['subscription_package'] and (client['subsribed_at']+ timedelta(days=client['subscription_package']['time_period'])) > datetime.now(anvil.tz.tzutc()):
-      anvil.open_form('ClientHomePage')
-    elif (client['subsribed_at']+ timedelta(days=client['subscription_package']['time_period'])) <  datetime.now(anvil.tz.tzutc()):
-      anvil.open_form('PaymentForm')
-      alert("Your subscription ended please pay again to use this app")
-    else:
-      anvil.open_form(signUpReqquestStatus(item=client))
-      
     
   h = anvil.get_url_hash()
   if isinstance(h, dict) and 'email' in h:
@@ -63,3 +43,23 @@ def do_email_confirm_or_reset():
         
       else:
         alert("This confirmation link is not valid. Perhaps you have already confirmed your address?\n\nTry logging in normally.")
+
+  user = anvil.users.get_user()
+  if user:
+    if user['is_admin']:
+      anvil.open_form('admin_dashboard')
+      return
+    client = app_tables.clients.get(user=user)
+    if not client['status']:
+      anvil.open_form(signUpReqquestStatus(item=client))
+      return
+    elif not client['subscription_package']:
+      anvil.open_form(signUpReqquestStatus(item=client))
+      return
+    elif client['subscription_package'] and (client['subsribed_at']+ timedelta(days=client['subscription_package']['time_period'])) > datetime.now(anvil.tz.tzutc()):
+      anvil.open_form('ClientHomePage')
+    elif (client['subsribed_at']+ timedelta(days=client['subscription_package']['time_period'])) <  datetime.now(anvil.tz.tzutc()):
+      anvil.open_form('PaymentForm')
+      alert("Your subscription ended please pay again to use this app")
+    else:
+      anvil.open_form(signUpReqquestStatus(item=client))
