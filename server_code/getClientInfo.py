@@ -5,7 +5,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 import plotly.graph_objects as go
-import datetime
+from datetime import datetime
 from collections import Counter
 from operator import itemgetter
 import time
