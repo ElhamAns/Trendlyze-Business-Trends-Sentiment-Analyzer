@@ -73,5 +73,9 @@ class PaymentForm(PaymentFormTemplate):
       alert("Users logged out successfully")
       open_form('Form1')
 
+  def button_3_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('ClientSettings')
+
 
 
