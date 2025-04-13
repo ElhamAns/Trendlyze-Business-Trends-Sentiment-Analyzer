@@ -6,6 +6,8 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.js
+from datetime import datetime, timedelta
+import anvil.tz
 
 from anvil_extras import routing
 
@@ -27,11 +29,17 @@ class PaymentForm(PaymentFormTemplate):
 
   def button_5_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form("ClientHomePage")
+    if (self.current_client['subsribed_at']+ timedelta(days=self.current_client['subscription_package']['time_period'])) <  datetime.now(anvil.tz.tzutc()):
+        alert("Your subscription ended please pay again to use this app")
+    else:
+      open_form("ClientDashBoard")
 
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form("ClientDashBoard")
+    if (self.current_client['subsribed_at']+ timedelta(days=self.current_client['subscription_package']['time_period'])) <  datetime.now(anvil.tz.tzutc()):
+        alert("Your subscription ended please pay again to use this app")
+    else:
+      open_form("ClientDashBoard")
 
   def button_6_click(self, **event_args):
     if self.current_client['subscription_package'] and self.current_client['subscription_package']['type'] == 'Trial' and self.radio_button_1.selected:
