@@ -109,7 +109,7 @@ components:
     - layout_properties: {grid_position: 'VJCCHA,ZINEIN'}
       name: register1_1
       properties: {}
-      type: form:register1
+      type: form:recaptcha
     - data_bindings:
       - {code: self.enable_submit_button(), property: enabled, writeback: false}
       event_bindings: {click: button_1_click}

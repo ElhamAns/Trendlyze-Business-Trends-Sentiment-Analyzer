@@ -1,4 +1,4 @@
-from ._anvil_designer import register1Template
+from ._anvil_designer import recaptchaTemplate
 from anvil import *
 import anvil.server
 import anvil.users
@@ -7,7 +7,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 
 
-class register1(register1Template):
+class recaptcha(recaptchaTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
