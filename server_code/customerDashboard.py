@@ -207,7 +207,9 @@ def get_shop_sentiments(shop_name=None):
         yaxis=dict(showgrid=False),
         plot_bgcolor="white",
         barmode='group',
-        margin=dict(l=40, r=40, t=40, b=40)
+        margin=dict(l=40, r=40, t=40, b=40),
+        legend_itemclick=False,
+        legend_itemdoubleclick=False 
     )
     print("time taken c: ", time.time() - c)
 
