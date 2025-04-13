@@ -11,15 +11,7 @@ components:
       type: Label
     - layout_properties: {grid_position: 'SSZCJM,NNIYZD'}
       name: label_3
-      properties:
-        align: center
-        border: solid 1px;
-        font_size: 18
-        text: |-
-          Located in Al Khobar, Saudi Arabia, A cozy and modern coffee shop that serves a variety of
-          high-quality drinks and light snacks. It’s a comfortable space for people to relax, meet with
-          friends, or get work done. With friendly service and a warm atmosphere, it’s a go-to spot for
-          coffee lovers and casual visitors alike.
+      properties: {align: center, border: solid 1px;, font_size: 18, text: ''}
       type: Label
     layout_properties: {grid_position: 'AIJHEM,QMQFRL'}
     name: card_1
