@@ -5,7 +5,8 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-
+from datetime import datetime, timedelta
+import anvil.tz
 
 class ClientSettings(ClientSettingsTemplate):
   def __init__(self, **properties):
@@ -35,12 +36,17 @@ class ClientSettings(ClientSettingsTemplate):
 
   def button_5_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('ClientHomePage')
+    if (self.current_client['subsribed_at']+ timedelta(days=self.current_client['subscription_package']['time_period'])) <  datetime.now(anvil.tz.tzutc()):
+        alert("Your subscription ended please pay again to use this app")
+    else:
+      open_form("ClientDashBoard")
 
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('ClientDashBoard')
-
+    if (self.current_client['subsribed_at']+ timedelta(days=self.current_client['subscription_package']['time_period'])) <  datetime.now(anvil.tz.tzutc()):
+        alert("Your subscription ended please pay again to use this app")
+    else:
+      open_form("ClientDashBoard")
   def button_7_click(self, **event_args):
     """This method is called when the button is clicked"""
     response = alert("Are you sure you want to delete your profile?", buttons=["Yes", "No"])
