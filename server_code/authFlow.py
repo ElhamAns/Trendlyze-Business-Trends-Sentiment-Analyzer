@@ -20,8 +20,6 @@ def _send_password_reset(email, is_admin=False):
     """Send a password reset email with 6-digit code to the specified user"""
     user = app_tables.users.get(email=email)
     if is_admin:
-      print("hereeee")
-      print("is admin")
       user['link_key'] = mk_token()
       anvil.email.send(to=user['email'], subject="Reset your password", text=f"""
   Hi,Someone has requested a password reset for your account. If this wasn't you, just delete this email.
