@@ -5,7 +5,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 import plotly.graph_objects as go
-from datetime import datetime
+import datetime
 from collections import Counter
 from operator import itemgetter
 import time
@@ -239,7 +239,7 @@ def edit_profile(business_name, business_type, country, city, area):
 @anvil.server.callable
 def delete_user_account():
   user = anvil.users.get_user()
-  user['deleted_at'] = datetime.now()
+  user['deleted_at'] = datetime.datetime.now()
 
 @anvil.server.callable
 def reactivate_deleted_account():
