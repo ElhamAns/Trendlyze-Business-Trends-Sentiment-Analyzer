@@ -36,7 +36,8 @@ class login(loginTemplate):
       if user['is_admin']:
         open_form('admin_dashboard')
         return
-      print("user: ", user)
+      if user['deleted_at'] and user['deleted_at'] + timedelta(days=30) > datetime.now():
+        
       client = anvil.server.call('get_user_cleint', user)
       if not client['status']:
         open_form(signUpReqquestStatus(item=client))

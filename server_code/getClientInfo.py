@@ -239,9 +239,7 @@ def edit_profile(business_name, business_type, country, city, area):
 @anvil.server.callable
 def delete_user_account():
   user = anvil.users.get_user()
-  client = app_tables.clients.get(user=user)
-  user.delete()
-  client.delete()
+  user['deleted_at'] = datetime.now()
 
 
 @anvil.server.callable

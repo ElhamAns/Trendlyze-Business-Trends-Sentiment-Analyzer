@@ -152,6 +152,9 @@ db_schema:
     - admin_ui: {order: 19, width: 200}
       name: admin_name
       type: string
+    - admin_ui: {order: 20, width: 200}
+      name: deleted_at
+      type: datetime
     server: full
     title: Users
 dependencies:
