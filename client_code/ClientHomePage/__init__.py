@@ -15,17 +15,14 @@ class ClientHomePage(ClientHomePageTemplate):
     self.current_client = anvil.server.call('get_current_client')
     self.init_components(**properties)
     if self.current_client['shop']:
-      print("here")
       self.plot_1.figure = anvil.server.call('get_home_page_rating', self.current_client['shop']['shop_name'])
     else:
-      print("else")
       self.plot_1.figure = anvil.server.call('get_ratings_chart')
     self.label_5.text = f"Welcome Back {self.current_client['business_name']}"
     self.label_6.text = self.current_client['business_name']
     self.label_4.text = self.current_client['business_name']
     self.image_3.source = self.current_client['logo']
-    if self.current_client['shop']:
-      self.label_3.text = self.current_client['description']
+    self.label_3.text = self.current_client['description']
     
     self.repeating_panel_1.items = anvil.server.call('get_client_compitetors', self.current_client)
     # Any code you write here will run when the form opens.
