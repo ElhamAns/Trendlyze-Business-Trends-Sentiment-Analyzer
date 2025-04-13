@@ -32,9 +32,11 @@ class ClientHomePage(ClientHomePageTemplate):
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
-    anvil.users.logout()
-    alert("Users logged out successfully")
-    open_form('Form1')
+    response = alert("Are you sure you want to Logout?", buttons=["Yes", "No"])
+    if response == "Yes":
+      anvil.users.logout()
+      alert("Users logged out successfully")
+      open_form('Form1')
 
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""

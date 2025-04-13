@@ -217,7 +217,7 @@ components:
   type: FlowPanel
 - layout_properties: {slot: title}
   name: image_1
-  properties: {height: 75, source: _/theme/app-logo.svg}
+  properties: {height: 75, source: _/theme/app-logo.png}
   type: Image
 container:
   properties: {html: '@theme:admin_dashboard.html'}

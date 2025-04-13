@@ -23,6 +23,7 @@ class Form1(Form1Template):
     self.links = [self.button_2, self.button_1]
     self.button_7.tag.url_hash  = 'home'
     self.button_2.tag.url_hash = 'login'
+    self.button_6.tag.url_hash = 'home'
     self.button_1.tag.url_hash   = 'register'
     self.button_3.tag.url_hash   = 'payment'
     self.button_4.tag.url_hash   = 'success'
@@ -33,9 +34,6 @@ class Form1(Form1Template):
     routing.set_url_hash(url_hash)
 
   def on_navigation(self, **nav_args):
-    # this method is called whenever routing navigates to a new url
-    # an example of setting the link as selected 
-    # depending on the url_hash that is being navigated to
     for link in self.links:
       link.role = 'selected' if link.tag.url_hash == nav_args['url_hash'] else ''
 
@@ -46,7 +44,7 @@ class Form1(Form1Template):
 
   def button_6_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.raise_event_on_children(self.label_5.scroll_into_view(smooth=True))
+    self.scroll_into_view(smooth=True)
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -60,8 +58,11 @@ class Form1(Form1Template):
 
   def button_5_click(self, **event_args):
     """This method is called when the button is clicked"""
+    self.content_panel.clear()
+    self.content_panel.add_component(Form1t())
     self.card_1.scroll_into_view(smooth=True)
-
+    self.card_1.scroll_into_view(smooth=True)
+  
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.label_12.scroll_into_view(smooth=True)

@@ -50,7 +50,9 @@ class admin_dashboard(admin_dashboardTemplate):
     open_form('Settings')
 
   def button_2_click(self, **event_args):
-    anvil.users.logout()
-    alert("Users logged out successfully")
-    open_form('Form1')
+    response = alert("Are you sure you want to Logout?", buttons=["Yes", "No"])
+    if response == "Yes":
+      anvil.users.logout()
+      alert("Users logged out successfully")
+      open_form('Form1')
     

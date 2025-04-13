@@ -8,6 +8,7 @@
   margin-bottom: -10px;
 }
 
+
 .content > .placeholder {
   margin: 16px;
   color: #888;
@@ -173,8 +174,8 @@ a:hover, a:active {
    This can create unwanted scrollbars; we compensate for this at the top level with .nav-holder .content {overflow-x: hidden;}
 */
 .anvil-container-overflow {
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-x: visible;
+  overflow-y: visible;
 }
 
 
@@ -340,6 +341,7 @@ a:hover, a:active {
 .nav-holder .content {
   flex: 1;
   overflow-x: hidden;
+  /* overflow-y: hidden; */
 }
 
 /* Components: App Bar */

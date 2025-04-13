@@ -13,6 +13,8 @@ from anvil_extras import routing
 class Form1t(Form1tTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
+    self.card_1.scroll_into_view(smooth=True)
     self.init_components(**properties)
+    self.card_1.scroll_into_view(smooth=True)
 
     # Any code you write here will run before the form opens.
