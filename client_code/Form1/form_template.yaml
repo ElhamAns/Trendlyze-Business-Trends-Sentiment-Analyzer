@@ -14,11 +14,11 @@ components:
     name: button_5
     properties: {align: center, foreground: black, text: Features}
     type: Button
-  - event_bindings: {click: nav_link_click}
+  - event_bindings: {click: button_4_click}
     name: button_4
     properties: {foreground: black, text: Users}
     type: Button
-  - event_bindings: {click: nav_link_click}
+  - event_bindings: {click: button_5_click}
     name: button_3
     properties: {foreground: black, text: Payment}
     type: Button

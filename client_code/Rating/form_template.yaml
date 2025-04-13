@@ -1,0 +1,67 @@
+components:
+- components:
+  - components:
+    - layout_properties: {grid_position: 'YDIKFA,QUWOZY'}
+      name: spacer_1
+      properties: {height: 32}
+      type: Spacer
+    - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,GPBNZP MTEPHK,GVZBLY'}
+      name: button_1
+      properties: {align: right, icon: 'fa:star-o', text: ''}
+      type: Button
+    - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,GPBNZP VPEJHH,ULPTAZ'}
+      name: label_1
+      properties: {text: Very Bad}
+      type: Label
+    - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,BGSMXI'}
+      name: button_2
+      properties: {icon: 'fa:star-o', text: ''}
+      type: Button
+    - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,BGSMXI JPLSXA,OWGFWU'}
+      name: label_3
+      properties: {}
+      type: Label
+    - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,UHUZJZ KKXMAI,DMOZTH'}
+      name: button_3
+      properties: {icon: 'fa:star-o', text: ''}
+      type: Button
+    - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,UHUZJZ JGTOFI,TPKURE'}
+      name: label_4
+      properties: {}
+      type: Label
+    - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,RGHQZO KMFUHW,UPKCIH MASSPW,TSOEYP'}
+      name: button_4
+      properties: {icon: 'fa:star-o', text: ''}
+      type: Button
+    - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,RGHQZO KMFUHW,UPKCIH DBMOIS,JWPGRH'}
+      name: label_5
+      properties: {}
+      type: Label
+    - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,RGHQZO KMFUHW,ZKDOTG CFUAVQ,VFJWET'}
+      name: button_4_copy
+      properties: {align: left, icon: 'fa:star-o', text: ''}
+      type: Button
+    - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,RGHQZO KMFUHW,ZKDOTG TGJKOL,GSTRYE'}
+      name: label_2
+      properties: {text: Very Good}
+      type: Label
+    - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,KHEXVU'}
+      name: spacer_2
+      properties: {height: 32}
+      type: Spacer
+    layout_properties: {grid_position: 'ZDRFWQ,JDUVLE'}
+    name: card_1
+    properties:
+      col_spacing: none
+      col_widths: '{"GPBNZP":11,"BGSMXI":9,"UHUZJZ":10,"RGHQZO":20,"REUGCD":45,"QUWOZY":15,"KHEXVU":22,"UPKCIH":20,"ZKDOTG":40}'
+      role: card
+      spacing:
+        margin: [null, null, null, 0]
+        padding: ['0', '0', '0', 0]
+    type: ColumnPanel
+  layout_properties: {grid_position: 'CGVYZS,EORBVZ'}
+  name: column_panel_1
+  properties: {}
+  type: ColumnPanel
+container: {type: ColumnPanel}
+is_package: true
