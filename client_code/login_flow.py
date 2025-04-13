@@ -7,6 +7,8 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 from .PasswordResetDialog import PasswordResetDialog
 from .signUpReqquestStatus import signUpReqquestStatus
+from datetime import datetime, timedelta
+import anvil.tz
 
 def do_email_confirm_or_reset():
   """Check whether the user has arrived from an email-confirmation link or a password reset, and pop up any necessary dialogs.
@@ -30,7 +32,7 @@ def do_email_confirm_or_reset():
       anvil.open_form('PaymentForm')
       alert("Your subscription ended please pay again to use this app")
     else:
-      anvil.``````open_form(signUpReqquestStatus(item=client))
+      anvil.open_form(signUpReqquestStatus(item=client))
       
     
   h = anvil.get_url_hash()
