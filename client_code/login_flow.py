@@ -16,6 +16,7 @@ def do_email_confirm_or_reset():
   if user:
     if user['is_admin']:
       anvil.open_form('admin_dashboard')
+      return
     client = app_tables.clients.get(user=user)
     if client['status'] == False or client['status'] == None:
       anvil.open_form(signUpReqquestStatus(item=client))
@@ -41,7 +42,7 @@ def do_email_confirm_or_reset():
         else:
           break
   
-      if anvil.server.call('_perform_password_reset', h['email'], h['pwreset'], pwr.pw_box.text):
+      if anvil.server.call('_perform_password_reset', h['email'], pwr.pw_box.text):
         alert("Your password has been reset. You are now logged in.")
       else:
         alert("This is not a valid password reset link")

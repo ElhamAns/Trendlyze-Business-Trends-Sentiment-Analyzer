@@ -9,7 +9,7 @@ from datetime import datetime
 @anvil.server.callable
 def get_admin_requests(month=None):
     users = app_tables.users.search(confirmed_email=True, is_admin=q.not_(True))
-    clients = app_tables.clients.search(user=q.any_of(*users))
+    clients = app_tables.clients.search(tables.order_by('requested_at', ascending=False),user=q.any_of(*users))
     
     if not month:
         return clients
@@ -25,12 +25,12 @@ def get_admin_requests(month=None):
 
     # Filter users based on request time
     users = app_tables.users.search(confirmed_email=True)
-    clients = app_tables.clients.search(user=q.any_of(*users),requested_at=q.between(start_date, end_date))
+    clients = app_tables.clients.search(tables.order_by('requested_at', ascending=False),user=q.any_of(*users),requested_at=q.between(start_date, end_date))
     return clients
   
 @anvil.server.callable
 def get_all_clients():
-  return app_tables.clients.search(tables.order_by('requested_at'), status=True)
+  return app_tables.clients.search(tables.order_by('requested_at', ascending=False), status=True)
 
 @anvil.server.callable
 def get_admin_dashboard_data():
