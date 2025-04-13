@@ -36,14 +36,14 @@ class login(loginTemplate):
       if user['is_admin']:
         open_form('admin_dashboard')
         return
-      if user['deleted_at'] and user['deleted_at'] + timedelta(days=30) > datetime.now():
+      if user['deleted_at'] and user['deleted_at'] + timedelta(days=30) > datetime.now(anvil.tz.tzutc()):
         response = alert("Your account is deleted, do you want to reactivate your account?", buttons=["Yes", "No"])
         if response == "Yes":
           anvil.server.call('reactivate_deleted_account')
           alert("Your account is reactivated succesfully Login you use Business Trend Again!")
           open_form('login')
           return
-      if user['deleted_at'] and user['deleted_at'] + timedelta(days=30) < datetime.now():
+      if user['deleted_at'] and user['deleted_at'] + timedelta(days=30) < datetime.now(anvil.tz.tzutc()):
         alert("Your account is deleted permanently please register again!")
         open_form('register')
         return
