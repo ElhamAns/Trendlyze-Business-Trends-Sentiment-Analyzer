@@ -56,7 +56,7 @@ class ClientSettings(ClientSettingsTemplate):
         alert("Your profile has been deleted.")
         # Optionally, log out or redirect the user
         anvil.users.logout()
-        open_form('register')
+        open_form('login')
 
   def button_8_click(self, **event_args):
     """This method is called when the button is clicked"""
