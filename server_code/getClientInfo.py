@@ -241,6 +241,11 @@ def delete_user_account():
   user = anvil.users.get_user()
   user['deleted_at'] = datetime.now()
 
+@anvil.server.callable
+def reactivate_deleted_account():
+  user = anvil.users.get_user()
+  user['deleted_at'] = None
+
 
 @anvil.server.callable
 def send_approval_email(email, approved):
