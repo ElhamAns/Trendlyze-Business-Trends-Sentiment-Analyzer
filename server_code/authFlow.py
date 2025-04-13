@@ -5,6 +5,7 @@ import anvil.tables.query as q
 import sys
 from anvil.tables import app_tables
 import anvil.server
+import requests
 
 from anvil.http import url_encode
 import bcrypt
@@ -164,3 +165,17 @@ def check_existing_user(email):
   user = app_tables.users.get(email=email, enabled=True)
   if user:
     return True
+
+
+@anvil.server.callable
+def verify_recaptcha(response_token):
+    
+    SECRET_KEY = "6LdlWgErAAAAAA1tMhSiVM1KU6gfD3WEWpJepjJX"
+    
+    data = {
+        'secret': SECRET_KEY,
+        'response': response_token
+    }
+    
+    r = requests.post("https://www.google.com/recaptcha/api/siteverify", data=data)
+    return r.json()

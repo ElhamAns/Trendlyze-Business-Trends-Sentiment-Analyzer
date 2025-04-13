@@ -106,6 +106,10 @@ components:
           Service and Privacy Policy
         visible: true
       type: CheckBox
+    - layout_properties: {grid_position: 'VJCCHA,ZINEIN'}
+      name: register1_1
+      properties: {}
+      type: form:register1
     - data_bindings:
       - {code: self.enable_submit_button(), property: enabled, writeback: false}
       event_bindings: {click: button_1_click}

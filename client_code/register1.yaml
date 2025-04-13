@@ -1,0 +1,13 @@
+components: []
+container:
+  properties:
+    html: |-
+      <center style="font-style:italic; color:#888; margin: 3em;">
+      <div class="g-recaptcha" data-sitekey="6LdlWgErAAAAAErXNjHN9czv1Fyy63lzDZIwhJ8E"></div>
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+      </center>
+      <div anvil-slot="default"></div>
+  type: HtmlTemplate
+custom_component: true
+custom_component_container: true
+is_package: false

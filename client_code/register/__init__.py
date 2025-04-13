@@ -25,8 +25,18 @@ class register(registerTemplate):
     open_form('login')
 
   def button_1_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    # Check all mandatory fields are filled
+    recaptcha_response = anvil.js.window.grecaptcha.getResponse()
+    
+    if not recaptcha_response:
+        alert("Please complete the reCAPTCHA!")
+        return
+    
+    # Verify the reCAPTCHA response
+    verification = anvil.server.call('verify_recaptcha', recaptcha_response)
+    
+    if not verification.get('success', False):
+        alert("reCAPTCHA verification failed. Please try again.")
+        return
     mandatory_fields = {
         "Logo": self.file_loader_1.file,
         "Business name": self.business_name.text,
@@ -107,3 +117,20 @@ class register(registerTemplate):
       self.button_1.enabled = True
     else:
       self.button_1.enabled = False
+
+  def check_box_2_change(self, **event_args):
+    recaptcha_response = anvil.js.window.grecaptcha.getResponse()
+    
+    if not recaptcha_response:
+        alert("Please complete the reCAPTCHA!")
+        return
+    
+    # Verify the reCAPTCHA response
+    verification = anvil.server.call('verify_recaptcha', recaptcha_response)
+    
+    if not verification.get('success', False):
+        alert("reCAPTCHA verification failed. Please try again.")
+        return
+    
+    # If verification succeeds, continue with your form submission
+    # ... rest of your submit code ...
