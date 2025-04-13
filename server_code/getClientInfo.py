@@ -247,13 +247,13 @@ def delete_user_account():
 @anvil.server.callable
 def send_approval_email(email, approved):
   if approved:
-    anvil.email.send(to=email, subject="Approved by Businnes Trend Admin",text=f"""
+    anvil.email.send(to=email, subject="Approved by business Trend Admin",text=f"""
     You are approved! Please enter to complete the payment to
 activate your account {anvil.server.get_app_origin('published')}
   Thanks!
   """ )
   else:
-    anvil.email.send(to=email, subject="Approved by Businnes Trend Admin",text="""We’re sorry to inform you that you have been rejected. Please
+    anvil.email.send(to=email, subject="Rejecteed by business Trend Admin",text="""We’re sorry to inform you that you have been rejected. Please
   contact us for further information Seniorprojectbtsa@gmail.com
   Thanks!
   """ )
