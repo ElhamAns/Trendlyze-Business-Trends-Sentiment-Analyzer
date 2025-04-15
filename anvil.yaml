@@ -1,6 +1,14 @@
 allow_embedding: false
 correct_dependency_ids: {}
 db_schema:
+  app_review:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: stars
+      type: number
+    server: full
+    title: app_review
   clients:
     client: full
     columns:
@@ -212,3 +220,4 @@ services:
   source: /runtime/services/anvil/files.yml
 startup: {module: authh_module, type: module}
 startup_form: null
+uplink_visible: true
