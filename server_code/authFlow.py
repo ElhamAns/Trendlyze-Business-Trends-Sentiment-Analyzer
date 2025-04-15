@@ -181,3 +181,7 @@ def verify_recaptcha(response_token):
     
     r = requests.post("https://www.google.com/recaptcha/api/siteverify", data=data)
     return r.json()
+
+@anvil.server.callable
+def all_app_review(review):
+  app_tables.app_review.add_row(stars=review)
