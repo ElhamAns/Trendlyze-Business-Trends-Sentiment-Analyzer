@@ -35,7 +35,7 @@ components:
     - event_bindings: {click: button_4_click}
       layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,RGHQZO KMFUHW,UPKCIH MASSPW,TSOEYP'}
       name: button_4
-      properties: {icon: '', text: 😕}
+      properties: {icon: '', text: 😊}
       type: Button
     - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,RGHQZO KMFUHW,UPKCIH DBMOIS,JWPGRH'}
       name: label_5
