@@ -158,8 +158,7 @@ def get_notifaicatons():
 
 @anvil.server.callable
 def get_current_client():
-  user = app_tables.users.get(email="me.mansoor006@gmail.com")
-  # user = anvil.users.get_user()
+  user = anvil.users.get_user()
   client = app_tables.clients.get(user=user)
   if client:
     return client

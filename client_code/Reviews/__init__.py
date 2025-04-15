@@ -52,3 +52,7 @@ class Reviews(ReviewsTemplate):
   def drop_down_2_change(self, **event_args):
     """This method is called when an item is selected"""
     self.repeating_panel_1.items = anvil.server.call('get_client_review_type',self.item, self.drop_down_1.selected_value, self.drop_down_2.selected_value)
+
+  def button_5_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('ClientHomePage')
