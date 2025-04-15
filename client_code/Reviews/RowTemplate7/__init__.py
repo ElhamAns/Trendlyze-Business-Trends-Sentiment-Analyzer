@@ -14,7 +14,7 @@ class RowTemplate7(RowTemplate7Template):
 
   def review_rating(self):
     if self.item['label'] == 2:
-      return "Satisfied"
+      return "Satisfied 😄"
     elif self.item['label'] == 1:
       return "Partially Satisfied"
     return "Dissatisfied"
