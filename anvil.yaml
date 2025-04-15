@@ -7,6 +7,10 @@ db_schema:
     - admin_ui: {order: 0, width: 200}
       name: stars
       type: number
+    - admin_ui: {order: 1, width: 200}
+      name: user
+      target: users
+      type: link_single
     server: full
     title: app_review
   clients:

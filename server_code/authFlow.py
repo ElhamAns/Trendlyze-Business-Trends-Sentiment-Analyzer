@@ -184,4 +184,4 @@ def verify_recaptcha(response_token):
 
 @anvil.server.callable
 def all_app_review(review):
-  app_tables.app_review.add_row(stars=review)
+  app_tables.app_review.add_row(stars=review, user=anvil.users.get_user())
