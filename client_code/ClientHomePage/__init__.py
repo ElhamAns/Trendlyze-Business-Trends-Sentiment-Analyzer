@@ -7,6 +7,8 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from plotly import graph_objects as go
+import re
+
 
 
 class ClientHomePage(ClientHomePageTemplate):
@@ -45,4 +47,21 @@ class ClientHomePage(ClientHomePageTemplate):
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('ClientDashBoard')
+
+  def button_6_click(self, **event_args):
+    text = self.text_area_1.text
+    arabic_pattern = re.compile(r'^[\u0600-\u06FF\s]+$')
+    
+    if text and not arabic_pattern.match(text):
+        alert("❌ Please enter Arabic text only. No English, numbers, or symbols allowed.")
+    else:
+        satisfaction = anvil.server.call('predict_sentiment',text)
+        if satisfaction == 2:
+          self.label_8.text = "Satisfied 😃"
+        elif satisfaction == 1:
+          self.label_8.text = "Partially Satisfied 😕"
+        else:
+          self.label_8.text = "Dissatisfied 😠"
+
+
 
