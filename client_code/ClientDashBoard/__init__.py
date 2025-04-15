@@ -6,6 +6,7 @@ import anvil.users
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
+from ..Reviews import Reviews
 
 
 class ClientDashBoard(ClientDashBoardTemplate):
@@ -70,6 +71,7 @@ class ClientDashBoard(ClientDashBoardTemplate):
           self.plot_2.figure = anvil.server.call('get_total_review_counts',2024, self.first_coffee_shops[0])
           self.plot_3.figure = anvil.server.call('get_reviews_chart')
           self.label_1.text = "Total Reviews count over a year"
+          self.button_6.visible = False
     else:
         """This method is called when an item is selected"""
         self.dashboard_data = anvil.server.call('get_dahsboard_data', self.drop_down_3.selected_value)
@@ -87,6 +89,7 @@ class ClientDashBoard(ClientDashBoardTemplate):
         self.plot_1.figure = anvil.server.call('get_home_page_rating', self.drop_down_3.selected_value)
         self.plot_2.figure = anvil.server.call('get_shop_reviews', self.drop_down_3.selected_value)
         self.plot_3.figure = anvil.server.call('get_shop_sentiments', self.drop_down_3.selected_value)
+        self.button_6.visible = True
 
   def drop_down_1_change(self, **event_args):
     """This method is called when an item is selected"""
@@ -109,4 +112,13 @@ class ClientDashBoard(ClientDashBoardTemplate):
     media_object = anvil.server.call('create_zaphod_pdf', self.drop_down_3.selected_value,general_year=self.drop_down_1.selected_value, top_shop_name=self.drop_down_2.selected_value, start_year = self.drop_down_1.selected_value, end_year= self.drop_down_2.selected_value)
     anvil.media.download(media_object)
     
+  def view_review_button_visible(self):
+    print("here")
+    if not self.drop_down_3.selected_value:
+      return False
+    return True
+
+  def button_6_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    anvil.open_form(Reviews(item=self.drop_down_3.selected_value))
     

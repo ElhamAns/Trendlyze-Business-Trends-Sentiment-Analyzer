@@ -1,0 +1,15 @@
+components:
+- data_bindings:
+  - {code: 'self.item[''review_text'']', property: text, writeback: false}
+  layout_properties: {column: JKSDUP}
+  name: label_1
+  properties: {}
+  type: Label
+- data_bindings:
+  - {code: self.review_rating(), property: text, writeback: false}
+  layout_properties: {column: VJQQOR}
+  name: label_2
+  properties: {}
+  type: Label
+container: {type: DataRowPanel}
+is_package: true
