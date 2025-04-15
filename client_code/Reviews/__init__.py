@@ -26,10 +26,9 @@ class Reviews(ReviewsTemplate):
     """This method is called when the button is clicked"""
     response = alert("Are you sure you want to Logout?", buttons=["Yes", "No"])
     if response == "Yes":
-      alert(open_form("Rating"))
+      open_form("Rating")
       # alert("Users logged out successfully")
       anvil.users.logout()
-
       open_form("Form1")
 
   def button_4_click(self, **event_args):

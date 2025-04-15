@@ -5,7 +5,8 @@ components:
       name: spacer_1
       properties: {height: 32}
       type: Spacer
-    - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,GPBNZP MTEPHK,GVZBLY'}
+    - event_bindings: {click: button_1_click}
+      layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,GPBNZP MTEPHK,GVZBLY'}
       name: button_1
       properties: {align: right, icon: '', text: 😃}
       type: Button
@@ -13,7 +14,8 @@ components:
       name: label_1
       properties: {text: Very Bad}
       type: Label
-    - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,BGSMXI'}
+    - event_bindings: {click: button_2_click}
+      layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,BGSMXI'}
       name: button_2
       properties: {icon: '', text: 😊}
       type: Button
@@ -21,7 +23,8 @@ components:
       name: label_3
       properties: {}
       type: Label
-    - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,UHUZJZ KKXMAI,DMOZTH'}
+    - event_bindings: {click: button_3_click}
+      layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,UHUZJZ KKXMAI,DMOZTH'}
       name: button_3
       properties: {icon: '', text: 🙂}
       type: Button
@@ -29,7 +32,8 @@ components:
       name: label_4
       properties: {}
       type: Label
-    - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,RGHQZO KMFUHW,UPKCIH MASSPW,TSOEYP'}
+    - event_bindings: {click: button_4_click}
+      layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,RGHQZO KMFUHW,UPKCIH MASSPW,TSOEYP'}
       name: button_4
       properties: {icon: '', text: 😕}
       type: Button
@@ -37,7 +41,8 @@ components:
       name: label_5
       properties: {}
       type: Label
-    - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,RGHQZO KMFUHW,ZKDOTG CFUAVQ,VFJWET'}
+    - event_bindings: {click: button_4_copy_click}
+      layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,RGHQZO KMFUHW,ZKDOTG CFUAVQ,VFJWET'}
       name: button_4_copy
       properties: {align: left, icon: '', text: 😠}
       type: Button
