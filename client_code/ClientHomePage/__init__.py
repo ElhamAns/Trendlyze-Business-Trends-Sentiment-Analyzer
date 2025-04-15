@@ -33,9 +33,6 @@ class ClientHomePage(ClientHomePageTemplate):
     if response == "Yes":
       open_form('Rating')
       # alert("Users logged out successfully")
-      anvil.users.logout()
-      
-      open_form('Form1')
 
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""
