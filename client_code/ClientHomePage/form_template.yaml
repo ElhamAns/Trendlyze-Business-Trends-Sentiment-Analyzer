@@ -27,7 +27,7 @@ components:
     type: Label
   - layout_properties: {grid_position: 'WYLWYD,REJYFC'}
     name: text_area_1
-    properties: {placeholder: Enter Arabic Text, text: ''}
+    properties: {height: 69, placeholder: Enter Arabic Text, text: ''}
     type: TextArea
   - event_bindings: {click: button_6_click}
     layout_properties: {grid_position: 'WYLWYD,SCJMKG'}
@@ -36,7 +36,7 @@ components:
     type: Button
   - layout_properties: {grid_position: 'UJJXJE,FFIWTJ'}
     name: label_8
-    properties: {align: center, border: solid 1px;, text: Satisfied}
+    properties: {align: center, border: solid 1px;, text: '', visible: false}
     type: Label
   - components:
     - layout_properties: {grid_position: 'QZJLGZ,QODHNG'}

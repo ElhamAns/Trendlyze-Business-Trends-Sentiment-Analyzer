@@ -56,6 +56,7 @@ class ClientHomePage(ClientHomePageTemplate):
         alert("❌ Please enter Arabic text only. No English, numbers, or symbols allowed.")
     else:
         satisfaction = anvil.server.call('predict_sentiment',text)
+        self.label_8.visible=True
         if satisfaction == 2:
           self.label_8.text = "Satisfied 😃"
         elif satisfaction == 1:
