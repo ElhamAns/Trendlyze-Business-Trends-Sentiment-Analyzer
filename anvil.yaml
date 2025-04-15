@@ -78,6 +78,18 @@ db_schema:
       name: shop
       target: shops
       type: link_single
+    - admin_ui: {order: 8, width: 200}
+      name: service
+      type: bool
+    - admin_ui: {order: 9, width: 200}
+      name: products
+      type: bool
+    - admin_ui: {order: 10, width: 200}
+      name: price
+      type: bool
+    - admin_ui: {order: 11, width: 200}
+      name: place
+      type: bool
     server: full
     title: reviews
   shops:
