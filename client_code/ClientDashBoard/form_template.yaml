@@ -138,6 +138,46 @@ components:
   name: content_panel
   properties: {}
   type: ColumnPanel
+- layout_properties: {slot: title}
+  name: image_1
+  properties: {height: 75, source: _/theme/app-logo.png}
+  type: Image
+- components:
+  - layout_properties: {grid_position: 'PMYBAG,TKWUCJ GEQYOJ,SUSFOW'}
+    name: image_2
+    properties: {display_mode: shrink_to_fit, height: 102.5555419921875, horizontal_align: center, source: _/theme/app-logo.png, vertical_align: center}
+    type: Image
+  - layout_properties: {grid_position: 'PMYBAG,TKWUCJ FHMBYW,DWZISR'}
+    name: link_1_copy
+    properties: {font_size: 20, foreground: black, icon: 'fa:envelope', text: Seniorprojectbtsa@gmail.com, underline: true, url: 'mailto:Seniorprojectbtsa@gmail.com'}
+    type: Link
+  - layout_properties: {grid_position: 'PMYBAG,HUVEXR QODGFP,XCYSKY'}
+    name: label_1_copy
+    properties: {align: right, bold: true, foreground: black, text: BUSINESS TRENDS}
+    type: Label
+  - layout_properties: {grid_position: 'PMYBAG,HUVEXR XWVEMA,ZUJTYP'}
+    name: label_2_copy
+    properties:
+      align: right
+      font_size: 17
+      foreground: black
+      text: |-
+        Sentiment analysis of Arabic Google Maps reviews to help
+        local businesses stay competitive, spot trends, and improve.
+    type: Label
+  - components:
+    - layout_properties: {grid_position: 'SAOOKH,GUVAAA'}
+      name: label_3_copy
+      properties: {align: center, font_size: 18, foreground: black, text: © 2025 All Rights Reserved}
+      type: Label
+    layout_properties: {grid_position: 'DGADTC,XGGOKN'}
+    name: column_panel_2
+    properties: {col_spacing: none, col_widths: '{"HHKVHF":8}'}
+    type: ColumnPanel
+  layout_properties: {slot: footer-slot}
+  name: column_panel_1
+  properties: {col_widths: '{"HUVEXR":35,"TKWUCJ":35}', wrap_on: never}
+  type: ColumnPanel
 - components:
   - components:
     - event_bindings: {click: button_5_click}
@@ -170,50 +210,45 @@ components:
           padding: [null, '0', null, '0']
         text: Settings
       type: Button
-    - layout_properties: {grid_position: 'ZSBJJE,HRHVPB'}
-      name: spacer_7
-      properties: {height: 32}
-      type: Spacer
-    - layout_properties: {grid_position: 'ZSBJJE,YRTDKS'}
-      name: spacer_5
-      properties: {height: 32}
-      type: Spacer
-    - components:
-      - layout_properties: {grid_position: 'FSQIPE,SNPGIY'}
-        name: image_3
-        properties: {height: 31}
-        type: Image
-      - layout_properties: {grid_position: 'FSQIPE,MTFBGP'}
-        name: label_4
-        properties: {}
-        type: Label
-      layout_properties: {full_width_row: true, grid_position: 'ZSBJJE,UEYMAN'}
-      name: column_panel_3
-      properties: {col_widths: '{"SNPGIY":16,"MTFBGP":44}', wrap_on: never}
-      type: ColumnPanel
-    - event_bindings: {click: button_2_click}
-      layout_properties: {grid_position: 'ZSBJJE,MPBZQG'}
-      name: button_2
-      properties:
-        font_size: 25
-        foreground: black
-        icon: fa:sign-out
-        spacing:
-          margin: ['14', null, null, null]
-        text: ''
-      type: Button
+    layout_properties: {expand: true}
     name: column_panel_1_copy
-    properties: {col_widths: '{"IOCADU":10,"STIRKJ":15,"UVKFFB":10,"MPBZQG":7,"UEYMAN":14,"HRHVPB":3,"YRTDKS":3}', wrap_on: never}
+    properties:
+      col_widths: '{"IOCADU":10,"STIRKJ":15,"UVKFFB":10}'
+      spacing:
+        margin: [null, null, null, 126]
+      wrap_on: never
     type: ColumnPanel
+  - components:
+    - layout_properties: {grid_position: 'FSQIPE,SNPGIY'}
+      name: image_3
+      properties: {height: 31}
+      type: Image
+    - layout_properties: {grid_position: 'FSQIPE,MTFBGP'}
+      name: label_4
+      properties: {}
+      type: Label
+    name: column_panel_3
+    properties:
+      col_widths: '{"SNPGIY":16,"MTFBGP":44}'
+      spacing:
+        margin: [null, null, null, 177]
+      wrap_on: never
+    type: ColumnPanel
+  - event_bindings: {click: button_2_click}
+    name: button_2
+    properties:
+      font_size: 25
+      foreground: black
+      icon: fa:sign-out
+      spacing:
+        margin: ['14', null, null, null]
+      text: ''
+    type: Button
   layout_properties: {slot: nav-right}
   name: navbar_links
   properties: {}
   type: FlowPanel
-- layout_properties: {slot: title}
-  name: image_1
-  properties: {height: 75, source: _/theme/app-logo.png}
-  type: Image
 container:
-  properties: {html: '@theme:admin_dashboard.html'}
+  properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate
 is_package: true

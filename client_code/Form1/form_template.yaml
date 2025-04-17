@@ -3,7 +3,12 @@ components:
   - event_bindings: {click: nav_link_click}
     layout_properties: {}
     name: button_7
-    properties: {foreground: black, text: Home, tooltip: Welcome Page}
+    properties:
+      foreground: black
+      spacing:
+        margin: [null, null, null, '700']
+      text: Home
+      tooltip: Welcome Page
     type: Button
   - event_bindings: {click: nav_link_click}
     layout_properties: {}
@@ -25,7 +30,13 @@ components:
   - event_bindings: {click: nav_link_click}
     layout_properties: {}
     name: button_2
-    properties: {background: white, border: 2px solid black, foreground: black, text: Log In}
+    properties:
+      background: white
+      border: 2px solid black
+      foreground: black
+      spacing:
+        margin: [null, null, null, '730']
+      text: Log In
     type: Button
   - event_bindings: {click: nav_link_click}
     layout_properties: {}
