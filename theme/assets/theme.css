@@ -368,7 +368,7 @@ a:hover, a:active {
 
 .app-bar > .sidebar-toggle { display:block; float:left;  margin-left: -61px; }
 .app-bar > .top-left-btn { float: left; margin-left: -60px; margin-right: -40px; }
-.app-bar > .title { float: left; }
+/* .app-bar > .title { float: left; } */
 .app-bar > .title > .placeholder { outline: 1px dotted; padding-left: 16px; padding-right: 16px; margin: 8px 8px 0; display:none; }
 .app-bar > .app-bar-nav { float: right; font-weight: normal; }
 .app-bar > .app-bar-nav .placeholder { margin-top: 8px; padding: 0 8px; }
