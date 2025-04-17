@@ -1,6 +1,14 @@
 components:
 - components:
+  - layout_properties: {grid_position: 'YVOBTA,IQTEUH'}
+    name: spacer_3
+    properties: {height: 70}
+    type: Spacer
   - components:
+    - layout_properties: {grid_position: 'YPPNFR,SNSURN'}
+      name: label_6
+      properties: {align: center, bold: false, font_size: 30, role: headline, text: Customer Satisfaction Rating}
+      type: Label
     - layout_properties: {grid_position: 'YDIKFA,QUWOZY'}
       name: spacer_1
       properties: {height: 32}
@@ -8,47 +16,47 @@ components:
     - event_bindings: {click: button_1_click}
       layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,GPBNZP MTEPHK,GVZBLY'}
       name: button_1
-      properties: {align: right, icon: '', text: 😠}
+      properties: {align: right, bold: false, font_size: 30, icon: '', text: 😠}
       type: Button
     - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,GPBNZP VPEJHH,ULPTAZ'}
       name: label_1
-      properties: {text: Very Bad}
+      properties: {font_size: 25, text: Very Bad}
       type: Label
     - event_bindings: {click: button_2_click}
       layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,BGSMXI'}
       name: button_2
-      properties: {icon: '', text: 😕}
+      properties: {font_size: 30, icon: '', text: 😕}
       type: Button
     - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,BGSMXI JPLSXA,OWGFWU'}
       name: label_3
-      properties: {}
+      properties: {font_size: 25, text: '   '}
       type: Label
     - event_bindings: {click: button_3_click}
       layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,UHUZJZ KKXMAI,DMOZTH'}
       name: button_3
-      properties: {icon: '', text: 🙂}
+      properties: {font_size: 30, icon: '', text: 🙂}
       type: Button
     - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,UHUZJZ JGTOFI,TPKURE'}
       name: label_4
-      properties: {}
+      properties: {font_size: 25, text: '    '}
       type: Label
     - event_bindings: {click: button_4_click}
       layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,RGHQZO KMFUHW,UPKCIH MASSPW,TSOEYP'}
       name: button_4
-      properties: {icon: '', text: 😊}
+      properties: {font_size: 30, icon: '', text: 😊}
       type: Button
     - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,RGHQZO KMFUHW,UPKCIH DBMOIS,JWPGRH'}
       name: label_5
-      properties: {}
+      properties: {font_size: 25, text: '    '}
       type: Label
     - event_bindings: {click: button_4_copy_click}
       layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,RGHQZO KMFUHW,ZKDOTG CFUAVQ,VFJWET'}
       name: button_4_copy
-      properties: {align: left, icon: '', text: ' 😃'}
+      properties: {align: left, font_size: 30, icon: '', text: ' 😃'}
       type: Button
     - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,RGHQZO KMFUHW,ZKDOTG TGJKOL,GSTRYE'}
       name: label_2
-      properties: {text: Very Good}
+      properties: {font_size: 25, text: Very Good}
       type: Label
     - layout_properties: {grid_position: 'YDIKFA,REUGCD IGRDJK,KHEXVU'}
       name: spacer_2
