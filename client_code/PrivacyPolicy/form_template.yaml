@@ -1,0 +1,242 @@
+components:
+- components:
+  - layout_properties: {grid_position: 'EBVEUC,TFXHJL'}
+    name: label_1
+    properties: {align: center, bold: true, font_size: 35, role: headline, text: Privacy & policy Page}
+    type: Label
+  - layout_properties: {grid_position: 'BTQARV,TQKXRZ'}
+    name: label_2
+    properties: {align: right, bold: true, text: 'Effective Date: 15 April 2025'}
+    type: Label
+  - components:
+    - layout_properties: {grid_position: 'LUEPXH,ZIJANP'}
+      name: label_3
+      properties: {bold: true, font_size: 22, text: 1. Information We Collect}
+      type: Label
+    - layout_properties: {grid_position: 'TSGPLR,WNKAIQ'}
+      name: rich_text_2
+      properties:
+        border: solid 1px
+        content: |-
+          We collect the following information when you use our services,
+          From Business Users during Sign-Up:
+              • Business Name and Logo
+              • Business Email
+              • Business Type
+              • Country, City, Area
+              • Business Description
+              • Sign-Up Request Date
+              • Subscription Plan and Date
+              • App User Rating (for development purposes)
+          Automatically Collected or Scraped Data:
+              • Data from Google Maps reviews: Star ratings, published date, review text, shop name, city, phone number, and number of reviews.
+        format: plain_text
+      type: RichText
+    - layout_properties: {grid_position: 'KDPLBJ,JZGOPF'}
+      name: label_4
+      properties: {bold: true, font_size: 22, text: 2. How We Use Your Information}
+      type: Label
+    - layout_properties: {grid_position: 'CSJDHI,SHKXLA'}
+      name: rich_text_3
+      properties:
+        border: solid 1px;
+        content: |-
+          We use the collected information to:
+              • Provide and maintain our services
+              • Analyze customer sentiment and market trends
+              • Improve user experience and platform features
+              • Process subscription and account approvals
+              • Offer insights and comparisons for your business
+        font_size: 16
+        format: plain_text
+      type: RichText
+    - layout_properties: {grid_position: 'XVSRNI,RXUUUA'}
+      name: label_5
+      properties: {bold: true, font_size: 22, text: 3. Data Storage}
+      type: Label
+    - components: []
+      layout_properties: {grid_position: 'MRGPSB,JSYBPW'}
+      name: rich_text_4
+      properties: {border: solid 1px, content: 'All data is securely stored using Anvil’s built-in database system, which includes access control and built-in security mechanisms to protect your data.', font_size: 16, format: plain_text}
+      type: RichText
+    - layout_properties: {grid_position: 'LKVEYD,OGDVTB'}
+      name: label_6
+      properties: {bold: true, font_size: 22, text: 4. Payments}
+      type: Label
+    - data_bindings: []
+      layout_properties: {grid_position: 'ANGCUG,CYGBWC'}
+      name: rich_text_1
+      properties:
+        border: solid 1px
+        content: "We use <strong>PayPal</strong>  for processing payments. While we don’t directly share your account information with PayPal, please note that you will be redirected to PayPal’s secure platform to complete any transactions. \n\n<a href=\"https://www.paypal.com/us/legalhub/paypal/privacy-full\" style=\"color: #0070ba;\" target=\"_blank\">PayPal’s Privacy Policy</a>\n"
+        font_size: 16
+        format: restricted_html
+      type: RichText
+    - layout_properties: {grid_position: 'HXRULZ,ZHCZVL'}
+      name: label_7
+      properties: {bold: true, font_size: 22, text: 5. User Accounts}
+      type: Label
+    - layout_properties: {grid_position: 'UMFSXO,JHOVKI'}
+      name: rich_text_4_copy_5
+      properties: {border: solid 1px, content: 'To create an account, users must submit business information and agree to our Privacy Policy and Terms of Service. CAPTCHA verification is required to prevent spam and unauthorized access.', font_size: 16, format: plain_text}
+      type: RichText
+    - layout_properties: {grid_position: 'GJXAUL,VYFZWC'}
+      name: label_8
+      properties: {bold: true, font_size: 22, text: 6. Your Rights}
+      type: Label
+    - components: []
+      layout_properties: {grid_position: 'RFQCMJ,BILUHH'}
+      name: rich_text_4_copy_4
+      properties:
+        border: solid 1px
+        content: "You have full control over your account and personal data within <strong>Trendlyze</strong>. Through the account settings page, you can:\n    <ul>\n        <li>Edit your business details and profile information.</li>\n        <li>Delete your profile and permanently remove your data from our system after 30 days.</li>\n    </ul>\n    <p>If you wish to add, edit, or correct any information that is not directly editable from the settings page, you can contact us at <a href=\"mailto:Seniorprojectbtsa@gmail.com\" style=\"color: #0070ba;\" target=\"_blank\">Seniorprojectbtsa@gmail.com</a>\n    \n   <strong>Note:</strong> If you delete your account, you have <strong>30 days to reactivate it</strong> by logging in again. After this period, your data will be permanently removed from our systems."
+        font_size: 16
+        format: restricted_html
+      type: RichText
+    - layout_properties: {grid_position: 'HLHZAA,YVCBVI'}
+      name: label_9
+      properties: {bold: true, font_size: 22, text: 7. Security}
+      type: Label
+    - components: []
+      layout_properties: {grid_position: 'CXULWJ,DDTGNM'}
+      name: rich_text_4_copy_3
+      properties: {border: solid 1px, content: 'We prioritize the protection of your data. **Trendlyze** is built using **Anvil**, a secure web application platform that enforces HTTPS encryption for all communications. User data is stored within Anvil’s secure database infrastructure, which includes access control and built-in protections against unauthorized access. Only authorized personnel have access to user data, and we follow best practices to ensure their confidentiality and integrity.', font_size: 16, format: markdown}
+      type: RichText
+    - layout_properties: {grid_position: 'NIJWQO,NEBKTS'}
+      name: label_10
+      properties: {bold: true, font_size: 22, text: 8. Cookies and Tracking}
+      type: Label
+    - components: []
+      layout_properties: {grid_position: 'LTSYXL,MVDZQR'}
+      name: rich_text_4_copy_2
+      properties: {border: solid 1px, content: '**Trendlyze** does not currently use cookies, third-party trackers, or analytics tools.', font_size: 16, format: markdown}
+      type: RichText
+    - layout_properties: {grid_position: 'IWIFAA,GNJJRN'}
+      name: label_11
+      properties: {bold: true, font_size: 22, text: 9. Changes to This Policy}
+      type: Label
+    - layout_properties: {grid_position: 'NCAAGP,TSXWOV'}
+      name: rich_text_4_copy_2_copy
+      properties: {border: solid 1px, content: We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated “Effective Date.” We encourage you to review this page regularly., font_size: 16, format: plain_text}
+      type: RichText
+    - layout_properties: {grid_position: 'IUMTRR,KJCIYS'}
+      name: label_12
+      properties: {bold: true, font_size: 22, text: 10. Contact Us}
+      type: Label
+    - components:
+      - layout_properties: {}
+        name: link_1_copy_copy_2
+        properties:
+          font_size: 16
+          foreground: black
+          icon: fa:envelope
+          spacing:
+            margin: [null, null, null, 40]
+          text: Seniorprojectbtsa@gmail.com
+          underline: true
+          url: mailto:Seniorprojectbtsa@gmail.com
+        type: Link
+      layout_properties: {grid_position: ''}
+      name: rich_text_4_copy_2_copy_2
+      properties: {border: solid 1px, content: 'If you have any questions about this Privacy Policy or how your data is handled, please reach out at:', font_size: 16, format: plain_text}
+      type: RichText
+    layout_properties: {grid_position: 'NKXFPH,VBTQEX'}
+    name: card_1
+    properties: {background: 'theme:Primary 700', role: card}
+    type: ColumnPanel
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {}
+  type: ColumnPanel
+- components:
+  - components:
+    - event_bindings: {click: nav_link_click}
+      layout_properties: {}
+      name: button_7
+      properties:
+        foreground: black
+        spacing:
+          margin: [null, null, null, '700']
+        text: Home
+        tooltip: Welcome Page
+      type: Button
+    - event_bindings: {click: nav_link_click}
+      layout_properties: {}
+      name: button_6
+      properties: {foreground: black, icon: '', text: About, tooltip: About us section}
+      type: Button
+    - event_bindings: {click: button_5_click}
+      name: button_5
+      properties: {align: center, foreground: black, text: Features}
+      type: Button
+    - event_bindings: {click: button_4_click}
+      name: button_4
+      properties: {foreground: black, text: Users}
+      type: Button
+    - event_bindings: {click: button_5_click}
+      name: button_3
+      properties: {foreground: black, text: Payment}
+      type: Button
+    - event_bindings: {click: nav_link_click}
+      layout_properties: {}
+      name: button_2
+      properties:
+        background: white
+        border: 2px solid black
+        foreground: black
+        spacing:
+          margin: [null, null, null, '730']
+        text: Log In
+      type: Button
+    - event_bindings: {click: nav_link_click}
+      layout_properties: {}
+      name: button_1
+      properties: {background: '#59c8ff', border: 2px solid black, foreground: black, text: Request an account}
+      type: Button
+    name: navbar_links_copy
+    properties: {}
+    type: FlowPanel
+  layout_properties: {slot: nav-right}
+  name: navbar_links
+  properties: {}
+  type: FlowPanel
+- components:
+  - layout_properties: {grid_position: 'PMYBAG,TKWUCJ GEQYOJ,SUSFOW'}
+    name: image_2
+    properties: {display_mode: shrink_to_fit, height: 102.5555419921875, horizontal_align: center, source: _/theme/app-logo.png, vertical_align: center}
+    type: Image
+  - layout_properties: {grid_position: 'PMYBAG,TKWUCJ NNWAJO,GTGJHV'}
+    name: link_1_copy
+    properties: {font_size: 20, foreground: black, icon: 'fa:envelope', text: Seniorprojectbtsa@gmail.com, underline: true, url: 'mailto:Seniorprojectbtsa@gmail.com'}
+    type: Link
+  - layout_properties: {grid_position: 'PMYBAG,HUVEXR QODGFP,XCYSKY'}
+    name: label_1_copy
+    properties: {align: right, bold: true, foreground: black, text: BUSINESS TRENDS}
+    type: Label
+  - layout_properties: {grid_position: 'PMYBAG,HUVEXR XWVEMA,ZUJTYP'}
+    name: label_2_copy
+    properties:
+      align: right
+      font_size: 17
+      foreground: black
+      text: |-
+        Sentiment analysis of Arabic Google Maps reviews to help
+        local businesses stay competitive, spot trends, and improve.
+    type: Label
+  - components:
+    - layout_properties: {grid_position: 'SAOOKH,GUVAAA'}
+      name: label_3_copy
+      properties: {align: center, font_size: 18, foreground: black, text: © 2025 All Rights Reserved}
+      type: Label
+    layout_properties: {grid_position: 'DGADTC,XGGOKN'}
+    name: column_panel_2
+    properties: {col_spacing: none, col_widths: '{"HHKVHF":8}'}
+    type: ColumnPanel
+  layout_properties: {slot: footer-slot}
+  name: column_panel_1
+  properties: {col_widths: '{"HUVEXR":35,"TKWUCJ":35}', wrap_on: never}
+  type: ColumnPanel
+container:
+  properties: {html: '@theme:standard-page.html'}
+  type: HtmlTemplate
+is_package: true

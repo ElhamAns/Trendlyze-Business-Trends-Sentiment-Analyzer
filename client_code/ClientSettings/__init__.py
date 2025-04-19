@@ -49,7 +49,8 @@ class ClientSettings(ClientSettingsTemplate):
       open_form("ClientDashBoard")
   def button_7_click(self, **event_args):
     """This method is called when the button is clicked"""
-    response = alert("Are you sure you want to delete your profile?", buttons=["Yes", "No"])
+    response = alert("""Note: your account will be deleted permanently after 30 days. If you tried to login into
+your account within 30 days, your account will be reactivated.Are you sure you want to delete your profile?""", buttons=["Yes", "No"])
     if response == "Yes":
         # Call a server function or handle user deletion here
         anvil.server.call('delete_user_account')  # example server function

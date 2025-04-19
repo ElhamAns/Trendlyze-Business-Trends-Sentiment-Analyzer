@@ -23,7 +23,7 @@ components:
     type: Spacer
   - layout_properties: {grid_position: 'DALACL,HJEWZW'}
     name: label_7
-    properties: {text: Classify any Review}
+    properties: {bold: true, font_size: 24, role: subheading, text: Classify any Review}
     type: Label
   - layout_properties: {grid_position: 'WYLWYD,REJYFC'}
     name: text_area_1
