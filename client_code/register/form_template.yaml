@@ -106,6 +106,18 @@ components:
           Service and Privacy Policy
         visible: true
       type: CheckBox
+    - event_bindings: {click: button_8_click}
+      layout_properties: {grid_position: 'TSVVUV,KQIRBH'}
+      name: button_8
+      properties:
+        align: center
+        border: solid 1px black
+        foreground: black
+        spacing:
+          margin: [null, '375', null, '375']
+          padding: [null, '16', null, '16']
+        text: Privacy Statement
+      type: Button
     - layout_properties: {grid_position: 'VJCCHA,ZINEIN'}
       name: register1_1
       properties: {}

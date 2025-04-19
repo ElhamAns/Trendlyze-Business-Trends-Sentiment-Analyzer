@@ -60,7 +60,7 @@ components:
       border: solid 1px black
       foreground: black
       spacing:
-        margin: [null, '185', null, null]
+        margin: [null, '300', null, null]
         padding: [null, '16', null, '16']
       text: Privacy Statement
     type: Button
