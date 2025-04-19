@@ -91,4 +91,8 @@ your account within 30 days, your account will be reactivated.Are you sure you w
       anvil.users.logout()
       alert("Users logged out successfully")
       open_form('Form1')
+
+  def button_8_copy_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('PrivacyPolicy')
     

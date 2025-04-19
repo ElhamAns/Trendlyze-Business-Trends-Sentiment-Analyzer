@@ -222,6 +222,6 @@ services:
 - client_config: {}
   server_config: {file_table: files}
   source: /runtime/services/anvil/files.yml
-startup: {module: PrivacyPolicy, type: form}
+startup: {module: authh_module, type: module}
 startup_form: null
 uplink_visible: true

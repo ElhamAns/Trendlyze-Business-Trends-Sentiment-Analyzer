@@ -77,5 +77,9 @@ class PaymentForm(PaymentFormTemplate):
     """This method is called when the button is clicked"""
     open_form('ClientSettings')
 
+  def button_8_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('PrivacyPolicy')
+
 
 

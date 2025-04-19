@@ -121,4 +121,8 @@ class ClientDashBoard(ClientDashBoardTemplate):
   def button_6_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.open_form(Reviews(item=self.drop_down_3.selected_value))
+
+  def button_8_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('PrivacyPolicy')
     

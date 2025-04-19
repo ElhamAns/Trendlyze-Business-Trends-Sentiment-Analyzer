@@ -71,3 +71,7 @@ class Form1(Form1Template):
     """This method is called when the button is clicked"""
     self.label_24.scroll_into_view(smooth=True)
 
+  def button_8_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('PrivacyPolicy')
+

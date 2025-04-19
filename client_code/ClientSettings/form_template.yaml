@@ -198,6 +198,11 @@ components:
   properties: {}
   type: FlowPanel
 - components:
+  - event_bindings: {click: button_8_copy_click}
+    layout_properties: {grid_position: 'PMYBAG,TKWUCJ ANADKG,BFLPVO'}
+    name: button_8_copy
+    properties: {align: left, border: solid 1px black, foreground: black, text: Privacy Statement}
+    type: Button
   - layout_properties: {grid_position: 'PMYBAG,TKWUCJ GEQYOJ,SUSFOW'}
     name: image_2_copy
     properties: {display_mode: shrink_to_fit, height: 102.5555419921875, horizontal_align: center, source: _/theme/app-logo.png, vertical_align: center}
