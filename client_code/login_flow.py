@@ -46,11 +46,11 @@ def do_email_confirm_or_reset():
 
   
   user = anvil.users.get_user()
-  if user:
-    print("session authentication before: ", anvil.server.session["authenticated"])
-    anvil.server.session["authenticated"] = True
-    print("session authentication after: ", anvil.server.session["authenticated"])
-    if anvil.server.session.get("authenticated", False):
+  if anvil.server.call('get_authticated_session'):
+    anvil.server.call('get_session_authenticated')
+    print("here")
+    if anvil.server.call('get_authticated_session'):
+      print("in session auth")
       if user['is_admin']:
         anvil.open_form('admin_dashboard')
         return

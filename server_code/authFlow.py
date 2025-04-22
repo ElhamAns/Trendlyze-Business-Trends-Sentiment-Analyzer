@@ -185,3 +185,14 @@ def verify_recaptcha(response_token):
 @anvil.server.callable
 def all_app_review(review):
   app_tables.app_review.add_row(stars=review, user=anvil.users.get_user())
+
+
+@anvil.server.callable
+def get_session_authenticated():
+  print("in seee")
+  anvil.server.session["authenticated"] = True
+
+@anvil.server.callable
+def get_authticated_session():
+  print('anvil.server.session.get("authenticated", False)', anvil.server.session.get("authenticated", False))
+  return anvil.server.session.get("authenticated", False)
