@@ -1,0 +1,256 @@
+components:
+- components:
+  - event_bindings: {click: button_6_click}
+    layout_properties: {}
+    name: button_7
+    properties:
+      foreground: black
+      spacing:
+        margin: [null, null, null, '700']
+      text: Home
+      tooltip: Welcome Page
+    type: Button
+  - event_bindings: {click: button_6_click}
+    layout_properties: {}
+    name: button_6
+    properties: {foreground: black, icon: '', text: About, tooltip: About us section}
+    type: Button
+  - event_bindings: {click: button_6_click}
+    name: button_5
+    properties: {align: center, foreground: black, text: Features}
+    type: Button
+  - event_bindings: {click: button_6_click}
+    name: button_4
+    properties: {foreground: black, text: Users}
+    type: Button
+  - event_bindings: {click: button_6_click}
+    name: button_3
+    properties: {foreground: black, text: Payment}
+    type: Button
+  - event_bindings: {click: button_2_click}
+    layout_properties: {}
+    name: button_2
+    properties:
+      background: white
+      border: 2px solid black
+      foreground: black
+      spacing:
+        margin: [null, null, null, '730']
+      text: Log In
+    type: Button
+  - event_bindings: {click: button_1_click}
+    layout_properties: {}
+    name: button_1
+    properties: {background: '#59c8ff', border: 2px solid black, foreground: black, text: Request an account}
+    type: Button
+  layout_properties: {slot: nav-right}
+  name: navbar_links
+  properties: {}
+  type: FlowPanel
+- layout_properties: {slot: title}
+  name: image_1
+  properties: {display_mode: shrink_to_fit, height: 76.77777099609375, source: _/theme/app-logo.png, tooltip: Go to welcome page}
+  type: Image
+- components:
+  - event_bindings: {click: button_8_click}
+    layout_properties: {full_width_row: false, grid_position: 'PMYBAG,TKWUCJ WHDVIO,DIQZCT'}
+    name: button_8
+    properties:
+      align: left
+      border: solid 1px black
+      foreground: black
+      spacing:
+        margin: [null, '300', null, null]
+        padding: [null, '16', null, '16']
+      text: Privacy Statement
+    type: Button
+  - layout_properties: {grid_position: 'PMYBAG,TKWUCJ GEQYOJ,SUSFOW'}
+    name: image_2
+    properties: {display_mode: shrink_to_fit, height: 102.5555419921875, horizontal_align: center, source: _/theme/app-logo.png, vertical_align: center}
+    type: Image
+  - layout_properties: {grid_position: 'PMYBAG,TKWUCJ FHMBYW,DWZISR'}
+    name: link_1_copy
+    properties: {font_size: 20, foreground: black, icon: 'fa:envelope', text: Seniorprojectbtsa@gmail.com, underline: true, url: 'mailto:Seniorprojectbtsa@gmail.com'}
+    type: Link
+  - layout_properties: {grid_position: 'PMYBAG,HUVEXR QODGFP,XCYSKY'}
+    name: label_1
+    properties: {align: right, bold: true, foreground: black, text: BUSINESS TRENDS}
+    type: Label
+  - layout_properties: {grid_position: 'PMYBAG,HUVEXR XWVEMA,ZUJTYP'}
+    name: label_2
+    properties:
+      align: right
+      font_size: 17
+      foreground: black
+      text: |-
+        Sentiment analysis of Arabic Google Maps reviews to help
+        local businesses stay competitive, spot trends, and improve.
+    type: Label
+  - components:
+    - layout_properties: {grid_position: 'SAOOKH,GUVAAA'}
+      name: label_3
+      properties: {align: center, font_size: 18, foreground: black, text: © 2025 All Rights Reserved}
+      type: Label
+    layout_properties: {grid_position: 'DGADTC,XGGOKN'}
+    name: column_panel_2
+    properties: {col_spacing: none, col_widths: '{"HHKVHF":8}'}
+    type: ColumnPanel
+  layout_properties: {slot: footer-slot}
+  name: column_panel_1
+  properties: {col_widths: '{"HUVEXR":35,"TKWUCJ":35}', wrap_on: never}
+  type: ColumnPanel
+- components:
+  - layout_properties: {grid_position: 'HARACA,XLCQVG'}
+    name: label_1_copy
+    properties: {align: center, bold: true, font_size: 48, text: Request an Account}
+    type: Label
+  - components:
+    - layout_properties: {grid_position: 'CHHHOC,CNCTOU'}
+      name: file_loader_1
+      properties:
+        icon: fa:upload
+        spacing:
+          margin: [34, null, null, null]
+        text: Add Logo
+      type: FileLoader
+    - layout_properties: {grid_position: 'CHHHOC,SPHPGG IIVWIB,LWQDOF'}
+      name: label_2_copy
+      properties: {bold: true, font_size: 18, text: Business name}
+      type: Label
+    - layout_properties: {grid_position: 'CHHHOC,SPHPGG WDHXUB,NNNIGN'}
+      name: business_name
+      properties: {background: white, border: '', placeholder: 'e.g., John’s Bakery'}
+      type: TextBox
+    - layout_properties: {grid_position: 'ZHZFXW,TMORVK FAIZJT,EVUWGL'}
+      name: label_3_copy
+      properties: {bold: true, font_size: 18, text: Email}
+      type: Label
+    - layout_properties: {grid_position: 'ZHZFXW,TMORVK HPZWTO,BHHIIT'}
+      name: email
+      properties: {background: white, placeholder: example@gmail.com}
+      type: TextBox
+    - layout_properties: {grid_position: 'ZHZFXW,TMORVK GOOQQZ,LCKTKO'}
+      name: label_5
+      properties: {bold: true, font_size: 18, text: Password}
+      type: Label
+    - layout_properties: {grid_position: 'ZHZFXW,TMORVK IBJEXB,QXAFZS'}
+      name: passwrod
+      properties: {background: white, hide_text: true, placeholder: must be 8 characters}
+      type: TextBox
+    - layout_properties: {grid_position: 'ZHZFXW,TMORVK AALFLQ,FUYRFQ'}
+      name: label_7
+      properties: {bold: true, font_size: 18, text: Business Type}
+      type: Label
+    - layout_properties: {grid_position: 'ZHZFXW,TMORVK AIBNSH,EBYZEU'}
+      name: type_drop_down
+      properties: {background: white, foreground: ''}
+      type: DropDown
+    - layout_properties: {grid_position: 'ZHZFXW,TMORVK TSHWYM,AYJFEM'}
+      name: label_9
+      properties: {bold: true, font_size: 18, text: City}
+      type: Label
+    - layout_properties: {grid_position: 'ZHZFXW,TMORVK PYAWEC,VHMTNB'}
+      name: city_drop_down
+      properties: {background: white}
+      type: DropDown
+    - layout_properties: {grid_position: 'ZHZFXW,IBGFCP RPKSXF,XOVIQZ'}
+      name: label_4
+      properties: {bold: true, font_size: 18, text: Confirm email}
+      type: Label
+    - layout_properties: {grid_position: 'ZHZFXW,IBGFCP FCMPVV,BTZRPN'}
+      name: confirm_email
+      properties: {background: white, placeholder: repeat email}
+      type: TextBox
+    - layout_properties: {grid_position: 'ZHZFXW,IBGFCP TWBTQD,JYKJTO'}
+      name: label_6
+      properties: {bold: true, font_size: 18, text: Confirm password}
+      type: Label
+    - layout_properties: {grid_position: 'ZHZFXW,IBGFCP LLHCPY,PQHELJ'}
+      name: confirm_password
+      properties: {background: white, hide_text: true, placeholder: repeat password}
+      type: TextBox
+    - layout_properties: {grid_position: 'ZHZFXW,IBGFCP DMGRQE,KDHIRL'}
+      name: label_8
+      properties: {bold: true, font_size: 18, text: Country}
+      type: Label
+    - layout_properties: {grid_position: 'ZHZFXW,IBGFCP IJLCGX,PNVNRO'}
+      name: country_drop_down
+      properties: {background: white}
+      type: DropDown
+    - layout_properties: {grid_position: 'ZHZFXW,IBGFCP BDJQWK,VTYAEG'}
+      name: label_10
+      properties: {bold: true, font_size: 18, text: Area}
+      type: Label
+    - layout_properties: {grid_position: 'ZHZFXW,IBGFCP DJLBZD,EGAHJT'}
+      name: area_drop_down
+      properties: {background: white}
+      type: DropDown
+    - layout_properties: {grid_position: 'BXFILS,HLQTYQ'}
+      name: label_11
+      properties: {bold: true, font_size: 18, text: Description}
+      type: Label
+    - layout_properties: {grid_position: 'CYLGHO,UJGEWC'}
+      name: text_area_1
+      properties: {auto_expand: true, border: solid 1px;, placeholder: Describe Your Business in Few Words...}
+      type: TextArea
+    - data_bindings: []
+      event_bindings: {change: check_box_1_change}
+      layout_properties: {grid_position: 'BWUUOM,XVWHUQ'}
+      name: check_box_1
+      properties:
+        align: center
+        checked: false
+        enabled: true
+        text: |-
+          I have read and agreed to the Terms of 
+          Service and Privacy Policy
+        visible: true
+      type: CheckBox
+    - event_bindings: {click: button_8_click}
+      layout_properties: {grid_position: 'TSVVUV,KQIRBH'}
+      name: button_8_copy
+      properties:
+        align: center
+        border: solid 1px black
+        foreground: black
+        spacing:
+          margin: [null, '375', null, '375']
+          padding: [null, '16', null, '16']
+        text: Privacy Statement
+      type: Button
+    - layout_properties: {grid_position: 'VJCCHA,ZINEIN'}
+      name: register1_1
+      properties: {}
+      type: form:recaptcha
+    - data_bindings:
+      - {code: self.enable_submit_button(), property: enabled, writeback: false}
+      event_bindings: {click: submit_button}
+      layout_properties: {grid_position: 'SYTDON,GWJTKO'}
+      name: button_1_copy
+      properties:
+        background: black
+        bold: true
+        enabled: true
+        foreground: white
+        spacing:
+          margin: [null, 329, null, 327]
+          padding: [null, 15, null, null]
+        text: Submit
+      type: Button
+    - event_bindings: {click: open_login}
+      layout_properties: {grid_position: 'QCLPDA,KFBUNL'}
+      name: button_2_copy
+      properties: {bold: true, foreground: black, text: Already have an account Login}
+      type: Button
+    layout_properties: {grid_position: 'UFLMRA,URGBMJ'}
+    name: card_1
+    properties: {background: '#e1edfc', col_widths: '{"CNCTOU":15,"SPHPGG":45}', role: card}
+    type: ColumnPanel
+  layout_properties: {slot: default}
+  name: column_panel_1_copy
+  properties: {}
+  type: ColumnPanel
+container:
+  properties: {background: '', border: '', foreground: '', html: '@theme:standard-page.html', role: secondary-app-bar, tooltip: '', visible: true}
+  type: HtmlTemplate
+is_package: true

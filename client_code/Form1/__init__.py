@@ -31,16 +31,6 @@ class Form1(Form1Template):
     self.button_1.tag.url_hash   = 'register'
     self.button_3.tag.url_hash   = 'payment'
     self.button_4.tag.url_hash   = 'success'
-    # self.button_5.add_event_handler('click')
-
-  def nav_link_click(self, **event_args):
-    """This method is called when a navigation link is clicked"""
-    url_hash = event_args['sender'].tag.url_hash
-    # routing.set_url_hash(url_hash)
-
-  def on_navigation(self, **nav_args):
-    for link in self.links:
-      link.role = 'selected' if link.tag.url_hash == nav_args['url_hash'] else ''
 
     # Any code you write here will run when the form opens.
   def home_link_click(self, **event_args):
@@ -49,21 +39,21 @@ class Form1(Form1Template):
 
   def button_6_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.scroll_into_view(smooth=True)
+    self.label_5.scroll_into_view(smooth=True)
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('register')
+    open_form('RegisterForm')
     pass
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('login')
+    open_form('LoginForm')
     pass
 
   def button_5_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.content_panel.raise_event_on_children('x-click')
+    self.card_1.scroll_into_view(smooth=True)
   
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -76,4 +66,8 @@ class Form1(Form1Template):
   def button_8_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('PrivacyPolicy')
+
+  def nav_link_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass
 

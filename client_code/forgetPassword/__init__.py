@@ -89,10 +89,10 @@ class forgetPassword(forgetPasswordTemplate):
     # Perform the actual password reset
     if anvil.server.call('_perform_password_reset', email, password):
         alert("Your password has been reset successfully!")
-        open_form('login')
+        open_form('LoginForm')
     else:
         alert("Password reset failed. Please try the process again.")
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('login')
+    open_form('LoginForm')

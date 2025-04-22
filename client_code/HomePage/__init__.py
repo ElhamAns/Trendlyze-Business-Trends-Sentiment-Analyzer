@@ -17,3 +17,7 @@ class HomePage(HomePageTemplate):
   def button_5_click(self, **event_args):
     """This method is called when the button is clicked"""
     self.card_1.scroll_into_view(smooth=True)
+
+  def nav_link_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass

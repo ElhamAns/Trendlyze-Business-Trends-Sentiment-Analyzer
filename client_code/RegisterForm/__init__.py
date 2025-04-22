@@ -1,30 +1,82 @@
-from ._anvil_designer import registerTemplate
+from ._anvil_designer import RegisterFormTemplate
 from anvil import *
+import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.users
-import anvil.server
 
-from anvil_extras import routing
+from ..Form1t import Form1t
+from ..login import login
+from ..register import register
+from ..PaymentForm import PaymentForm
+from ..SuccessPayment import SuccessPayment
+from ..signUpReqquestStatus import signUpReqquestStatus
+from datetime import datetime, timedelta
 
-@routing.route('register', title="BusinessTrend")
-class register(registerTemplate):
+
+# from anvil_extras import routing
+
+
+# @routing.main_router
+class RegisterForm(RegisterFormTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
-    self.init_components(**properties)
-    self.type_drop_down.items = ['Coffee Shop']
-    self.country_drop_down.items = ['Saudi Arabia']
-    self.city_drop_down.items = ['Al-Khobar']
-    self.area_drop_down.items = ['North Alkhobar', 'West Alkhobar', 'South Alkhobar', 'Rakah','Thoqbah']
 
-    # Any code you write here will run before the form opens.
+    self.init_components(**properties)
+
+    # open_form('Form1t')
+
+    self.links = [self.button_2, self.button_1]
+    self.button_7.tag.url_hash = "home"
+    self.button_2.tag.url_hash = "login"
+    self.button_6.tag.url_hash = "home"
+    self.button_1.tag.url_hash = "register"
+    self.button_3.tag.url_hash = "payment"
+    self.button_4.tag.url_hash = "success"
+
+    # Any code you write here will run when the form opens.
+
+  def home_link_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.column_panel_3.scroll_into_view(smooth=True)
+
+  def button_6_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('Form1')
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form("RegisterForm")
+    pass
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
+    open_form("login")
+    pass
+
+  def button_5_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.card_1.scroll_into_view(smooth=True)
+
+  def button_4_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.label_12.scroll_into_view(smooth=True)
+
+  def button_3_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    self.label_24.scroll_into_view(smooth=True)
+
+  def button_8_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form("PrivacyPolicy")
+
+
+  def open_login(self, **event_args):
+    """This method is called when the button is clicked"""
     open_form('LoginForm')
 
-  def button_1_click(self, **event_args):
+  def submit_button(self, **event_args):
     recaptcha_response = anvil.js.window.grecaptcha.getResponse()
     
     if not recaptcha_response:
@@ -131,6 +183,4 @@ class register(registerTemplate):
     if not verification.get('success', False):
         alert("reCAPTCHA verification failed. Please try again.")
         return
-    
-    # If verification succeeds, continue with your form submission
-    # ... rest of your submit code ...
+

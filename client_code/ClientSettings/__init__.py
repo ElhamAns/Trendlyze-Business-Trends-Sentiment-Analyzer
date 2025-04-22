@@ -57,7 +57,7 @@ your account within 30 days, your account will be reactivated.Are you sure you w
         alert("Your profile has been deleted.")
         # Optionally, log out or redirect the user
         anvil.users.logout()
-        open_form('login')
+        open_form('LoginForm')
 
   def button_8_click(self, **event_args):
     """This method is called when the button is clicked"""
@@ -90,7 +90,7 @@ your account within 30 days, your account will be reactivated.Are you sure you w
     if response == "Yes":
       anvil.users.logout()
       alert("Users logged out successfully")
-      open_form('Form1')
+      open_form('HomePage')
 
   def button_8_copy_click(self, **event_args):
     """This method is called when the button is clicked"""

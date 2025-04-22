@@ -59,11 +59,11 @@ def do_email_confirm_or_reset():
         if response == "Yes":
           anvil.server.call('reactivate_deleted_account')
           alert("Your account is reactivated succesfully Login you use Business Trend Again!")
-          anvil.open_form('login')
+          anvil.open_form('LoginForm')
           return
       if user['deleted_at'] and user['deleted_at'] + timedelta(days=30) < datetime.now(anvil.tz.tzutc()):
         alert("Your account is deleted permanently please register again!")
-        anvil.open_form('register')
+        anvil.open_form('RegisterForm')
         return
       client = app_tables.clients.get(user=user)
       if not client['status']:

@@ -16,7 +16,6 @@ class Form1t(Form1tTemplate):
     self.card_1.scroll_into_view(smooth=True)
     self.init_components(**properties)
     self.card_1.scroll_into_view(smooth=True)
-    self.column_panel_3.add_event_handler('x-click', self.handle_click)
 
   def handle_click(self, **event_args):
     print("in here")

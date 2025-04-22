@@ -185,7 +185,7 @@ components:
   properties: {col_widths: '{"HUVEXR":35,"TKWUCJ":35}', wrap_on: never}
   type: ColumnPanel
 - components:
-  - event_bindings: {click: nav_link_click}
+  - event_bindings: {click: button_4_click}
     layout_properties: {}
     name: button_7
     properties:
@@ -195,12 +195,12 @@ components:
       text: Home
       tooltip: Welcome Page
     type: Button
-  - event_bindings: {click: nav_link_click}
+  - event_bindings: {click: button_4_click}
     layout_properties: {}
     name: button_6
     properties: {foreground: black, icon: '', text: About, tooltip: About us section}
     type: Button
-  - event_bindings: {click: button_5_click}
+  - event_bindings: {click: button_4_click}
     name: button_5
     properties: {align: center, foreground: black, text: Features}
     type: Button
@@ -208,11 +208,11 @@ components:
     name: button_4
     properties: {foreground: black, text: Users}
     type: Button
-  - event_bindings: {click: button_5_click}
+  - event_bindings: {click: button_4_click}
     name: button_3
     properties: {foreground: black, text: Payment}
     type: Button
-  - event_bindings: {click: nav_link_click}
+  - event_bindings: {click: button_2_click}
     layout_properties: {}
     name: button_2
     properties:
@@ -223,7 +223,7 @@ components:
         margin: [null, null, null, '730']
       text: Log In
     type: Button
-  - event_bindings: {click: nav_link_click}
+  - event_bindings: {click: button_1_click}
     layout_properties: {}
     name: button_1
     properties: {background: '#59c8ff', border: 2px solid black, foreground: black, text: Request an account}

@@ -31,10 +31,14 @@ class PrivacyPolicy(PrivacyPolicyTemplate):
 
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('register')
+    open_form('RegisterForm')
     pass
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('login')
+    open_form('LoginForm')
     pass
+
+  def button_4_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('Form1')
