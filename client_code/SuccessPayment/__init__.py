@@ -13,7 +13,7 @@ from anvil_extras import routing
 @routing.route(
   "success-payment",
   url_keys=["token", routing.ANY],
-  title="cancel-payment | RoutingExample",
+  title="cancel-payment | CancelPayment",
 )
 class SuccessPayment(SuccessPaymentTemplate):
   def __init__(self, **properties):

@@ -7,7 +7,8 @@ from anvil import open_form
 from . import login_flow
 from .Form1 import Form1
 
-from anvil_extras import routing
+# from anvil_extras import routing
 
-routing.launch()
+# routing.launch()
+open_form('Form1')
 login_flow.do_email_confirm_or_reset()

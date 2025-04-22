@@ -9,9 +9,9 @@ from datetime import datetime, timedelta
 import anvil.tz
 from ..signUpReqquestStatus import signUpReqquestStatus
 
-from anvil_extras import routing
+# from anvil_extras import routing
 
-@routing.route('login', title="BusinessTrend")
+# @routing.route('login', title="BusinessTrend")
 class login(loginTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.

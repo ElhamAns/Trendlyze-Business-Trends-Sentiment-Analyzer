@@ -12,14 +12,18 @@ from ..register import register
 from ..PaymentForm import PaymentForm
 from ..SuccessPayment import SuccessPayment
 
-from anvil_extras import routing
+# from anvil_extras import routing
 
 
-@routing.main_router
+# @routing.main_router
 class Form1(Form1Template):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
+    
     self.init_components(**properties)
+    
+    # open_form('Form1t')
+    
     self.links = [self.button_2, self.button_1]
     self.button_7.tag.url_hash  = 'home'
     self.button_2.tag.url_hash = 'login'
@@ -27,11 +31,12 @@ class Form1(Form1Template):
     self.button_1.tag.url_hash   = 'register'
     self.button_3.tag.url_hash   = 'payment'
     self.button_4.tag.url_hash   = 'success'
+    # self.button_5.add_event_handler('click')
 
   def nav_link_click(self, **event_args):
     """This method is called when a navigation link is clicked"""
     url_hash = event_args['sender'].tag.url_hash
-    routing.set_url_hash(url_hash)
+    # routing.set_url_hash(url_hash)
 
   def on_navigation(self, **nav_args):
     for link in self.links:
@@ -58,10 +63,7 @@ class Form1(Form1Template):
 
   def button_5_click(self, **event_args):
     """This method is called when the button is clicked"""
-    self.content_panel.clear()
-    self.content_panel.add_component(Form1t())
-    self.card_1.scroll_into_view(smooth=True)
-    self.card_1.scroll_into_view(smooth=True)
+    self.content_panel.raise_event_on_children('x-click')
   
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""

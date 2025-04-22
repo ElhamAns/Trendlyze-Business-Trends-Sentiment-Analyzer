@@ -12,7 +12,7 @@ import anvil.tz
 from anvil_extras import routing
 
 @routing.route('payment', title="BusinessTrend")
-@routing.route('cancel-payment', url_keys=['token', routing.ANY], title="cancel-payment | RoutingExample")
+@routing.route('cancel-payment', url_keys=['token', routing.ANY], title="cancel-payment | PaymentForm")
 class PaymentForm(PaymentFormTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
