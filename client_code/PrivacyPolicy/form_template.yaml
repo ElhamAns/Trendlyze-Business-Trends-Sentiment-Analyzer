@@ -232,6 +232,10 @@ components:
   name: navbar_links
   properties: {}
   type: FlowPanel
+- layout_properties: {slot: title}
+  name: image_1
+  properties: {display_mode: shrink_to_fit, height: 76.77777099609375, source: _/theme/app-logo.png, tooltip: Go to welcome page}
+  type: Image
 container:
   properties: {html: '@theme:standard-page.html'}
   type: HtmlTemplate
