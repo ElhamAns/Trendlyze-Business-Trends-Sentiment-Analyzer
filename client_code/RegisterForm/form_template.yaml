@@ -202,22 +202,23 @@ components:
         allow_indeterminate: false
         checked: false
         enabled: true
-        text: |-
-          I have read and agreed to the Terms of 
-          Service and Privacy Policy
+        spacing:
+          margin: [null, null, null, 209]
+        text: ''
         visible: true
       type: CheckBox
     - event_bindings: {click: button_8_click}
-      layout_properties: {grid_position: 'TSVVUV,KQIRBH'}
+      layout_properties: {grid_position: 'BWUUOM,RXIDMU'}
       name: button_8_copy
       properties:
-        align: center
-        border: solid 1px black
+        align: left
+        border: ''
         foreground: black
         spacing:
-          margin: [null, '375', null, '375']
-          padding: [null, '16', null, '16']
-        text: Privacy Statement
+          margin: [null, 38, null, 0]
+          padding: [null, '0', null, '0']
+        text: |-
+          I have read and agreed to the Terms of           Service and Privacy Policy
       type: Button
     - layout_properties: {grid_position: 'VJCCHA,ZINEIN'}
       name: register1_1
@@ -245,7 +246,7 @@ components:
       type: Button
     layout_properties: {grid_position: 'UFLMRA,URGBMJ'}
     name: card_1
-    properties: {background: '#e1edfc', col_widths: '{"CNCTOU":15,"SPHPGG":45}', role: card}
+    properties: {background: '#e1edfc', col_widths: '{"CNCTOU":15,"SPHPGG":45,"XVWHUQ":15,"RXIDMU":45}', role: card}
     type: ColumnPanel
   layout_properties: {slot: default}
   name: column_panel_1_copy

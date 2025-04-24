@@ -49,7 +49,7 @@ def do_email_confirm_or_reset():
   if anvil.server.call('get_authticated_session'):
     anvil.server.call('get_session_authenticated')
     print("here")
-    if anvil.server.call('get_authticated_session'):
+    if user:
       print("in session auth")
       if user['is_admin']:
         anvil.open_form('admin_dashboard')
