@@ -15,12 +15,17 @@ class ServicePage(ServicePageTemplate):
 
     # Any code you write here will run when the form opens.
 
-  def nav_link_click(self, **event_args):
-    """This method is called when a navigation link is clicked"""
-    url_hash = event_args['sender'].tag.url_hash
-    # routing.set_url_hash(url_hash)
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('RegisterForm')
+    pass
 
-  def on_navigation(self, **nav_args):
-    for link in self.links:
-      link.role = 'selected' if link.tag.url_hash == nav_args['url_hash'] else ''
+  def button_2_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('LoginForm')
+    pass
+
+  def button_4_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('Form1')
 
