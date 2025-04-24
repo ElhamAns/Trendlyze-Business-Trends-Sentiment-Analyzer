@@ -95,11 +95,13 @@ class LoginForm(LoginFormTemplate):
           if response == "Yes":
             anvil.server.call('reactivate_deleted_account')
             alert("Your account is reactivated succesfully Login you use Business Trend Again!")
+            anvil.server.session["authenticated"] = False
             anvil.users.logout()
             open_form('LoginForm')
             return
         if user['deleted_at'] and user['deleted_at'] + timedelta(days=30) < datetime.now(anvil.tz.tzutc()):
           alert("Your account is deleted permanently please register again!")
+          anvil.server.session["authenticated"] = False
           anvil.users.logout()
           open_form('RegisterForm')
           return

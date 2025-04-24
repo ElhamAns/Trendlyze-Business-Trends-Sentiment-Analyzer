@@ -17,6 +17,7 @@ class Rating(RatingTemplate):
   def button_1_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.server.call('all_app_review', 1)
+    anvil.server.session["authenticated"] = False
     anvil.users.logout()
     alert("Users logged out successfully")
     open_form("Form1")
@@ -24,6 +25,7 @@ class Rating(RatingTemplate):
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.server.call('all_app_review', 2)
+    anvil.server.session["authenticated"] = False
     anvil.users.logout()
     alert("Users logged out successfully")
     open_form("Form1")
@@ -31,6 +33,7 @@ class Rating(RatingTemplate):
   def button_3_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.server.call('all_app_review', 3)
+    anvil.server.session["authenticated"] = False
     anvil.users.logout()
     alert("Users logged out successfully")
     open_form("Form1")
@@ -38,6 +41,7 @@ class Rating(RatingTemplate):
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.server.call('all_app_review', 4)
+    anvil.server.session["authenticated"] = False
     anvil.users.logout()
     alert("Users logged out successfully")
     open_form("Form1")
@@ -45,6 +49,7 @@ class Rating(RatingTemplate):
   def button_4_copy_click(self, **event_args):
     """This method is called when the button is clicked"""
     anvil.server.call('all_app_review', 5)
+    anvil.server.session["authenticated"] = False
     anvil.users.logout()
     alert("Users logged out successfully")
     open_form("Form1")

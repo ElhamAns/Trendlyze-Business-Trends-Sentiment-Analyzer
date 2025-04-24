@@ -24,6 +24,7 @@ class clients_page(clients_pageTemplate):
     """This method is called when the button is clicked"""
     response = alert("Are you sure you want to Logout?", buttons=["Yes", "No"])
     if response == "Yes":
+      anvil.server.session["authenticated"] = False
       anvil.users.logout()
       alert("Users logged out successfully")
       open_form('Form1')
