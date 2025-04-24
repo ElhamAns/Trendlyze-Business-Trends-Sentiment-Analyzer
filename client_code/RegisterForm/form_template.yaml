@@ -199,6 +199,7 @@ components:
       name: check_box_1
       properties:
         align: center
+        allow_indeterminate: false
         checked: false
         enabled: true
         text: |-
