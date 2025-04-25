@@ -27,7 +27,10 @@ class ServicePage(ServicePageTemplate):
 
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('Form1')
+    if anvil.users.get_user():
+      open_form('ClientHomePage')
+    else:
+      open_form('Form1')
 
   def policy_button_click(self, **event_args):
     """This method is called when the button is clicked"""
