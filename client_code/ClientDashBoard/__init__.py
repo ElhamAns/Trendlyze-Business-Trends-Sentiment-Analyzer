@@ -122,7 +122,11 @@ class ClientDashBoard(ClientDashBoardTemplate):
     """This method is called when the button is clicked"""
     anvil.open_form(Reviews(item=self.drop_down_3.selected_value))
 
-  def button_8_click(self, **event_args):
+  def policy_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('ServicePage')
+
+  def privacy_statement_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('PrivacyPolicy')
     

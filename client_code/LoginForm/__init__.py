@@ -122,3 +122,11 @@ class LoginForm(LoginFormTemplate):
           open_form(signUpReqquestStatus(item=client))
     except anvil.users.AuthenticationFailed as e:
       alert(f"{e}")
+
+  def policy_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('ServicePage')
+
+  def privacy_statement_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('PrivacyPolicy')

@@ -53,3 +53,11 @@ class Reviews(ReviewsTemplate):
   def button_5_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('ClientHomePage')
+
+  def policy_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('ServicePage')
+
+  def privacy_statement_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('PrivacyPolicy')

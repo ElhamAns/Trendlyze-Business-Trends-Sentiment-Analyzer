@@ -184,3 +184,10 @@ class RegisterForm(RegisterFormTemplate):
         alert("reCAPTCHA verification failed. Please try again.")
         return
 
+  def policy_button_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('ServicePage')
+
+  def privacy_statement_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form('PrivacyPolicy')

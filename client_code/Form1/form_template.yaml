@@ -79,9 +79,9 @@ components:
       name: label_3
       properties: {align: center, font_size: 18, foreground: black, text: © 2025 All Rights Reserved}
       type: Label
-    - event_bindings: {click: button_8_click}
+    - event_bindings: {click: privacy_statement_click}
       layout_properties: {grid_position: 'JEBWZL,QWONIV'}
-      name: button_8
+      name: privacy_button
       properties:
         align: left
         border: ''
@@ -91,9 +91,9 @@ components:
           padding: [null, '16', null, '16']
         text: Privacy Statement
       type: Button
-    - event_bindings: {click: button_9_click}
+    - event_bindings: {click: policy_button_click}
       layout_properties: {grid_position: 'JEBWZL,VVACDC'}
-      name: button_9
+      name: policy_button
       properties: {align: right, foreground: black, text: Terms and policy}
       type: Button
     layout_properties: {grid_position: 'DGADTC,XGGOKN'}
