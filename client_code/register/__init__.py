@@ -18,7 +18,6 @@ class register(registerTemplate):
     self.city_drop_down.items = ['Al-Khobar']
     self.area_drop_down.items = ['North Alkhobar', 'West Alkhobar', 'South Alkhobar', 'Rakah','Thoqbah']
 
-    # Any code you write here will run before the form opens.
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""

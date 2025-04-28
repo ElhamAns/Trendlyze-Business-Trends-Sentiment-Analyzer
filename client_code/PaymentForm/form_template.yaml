@@ -190,7 +190,7 @@ components:
     - event_bindings: {click: policy_button_click}
       layout_properties: {grid_position: 'JEBWZL,VVACDC'}
       name: policy_button
-      properties: {align: right, foreground: black, text: Terms and policy}
+      properties: {align: right, foreground: black, text: Terms of services}
       type: Button
     layout_properties: {grid_position: 'UFRLPP,EKBSXO'}
     name: column_panel_2
