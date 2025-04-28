@@ -189,10 +189,13 @@ def all_app_review(review):
 
 @anvil.server.callable
 def get_session_authenticated():
-  print("in seee")
   anvil.server.session["authenticated"] = True
 
 @anvil.server.callable
 def get_authticated_session():
-  print('anvil.server.session.get("authenticated", False)', anvil.server.session.get("authenticated", False))
   return anvil.server.session.get("authenticated", False)
+
+
+@anvil.server.callable
+def get_session_unauthenticated():
+  anvil.server.session["authenticated"] = False

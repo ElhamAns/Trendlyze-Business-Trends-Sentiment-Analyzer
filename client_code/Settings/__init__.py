@@ -24,7 +24,7 @@ class Settings(SettingsTemplate):
     response = alert("Are you sure you want to Logout?", buttons=["Yes", "No"])
     if response == "Yes":
       anvil.server.session["authenticated"] = False
-      anvil.users.logout()
+      anvil.server.call('get_session_unauthenticated')
       alert("Users logged out successfully")
       open_form('Form1')
       

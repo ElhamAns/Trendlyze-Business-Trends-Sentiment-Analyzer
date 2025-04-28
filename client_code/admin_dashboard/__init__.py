@@ -52,7 +52,7 @@ class admin_dashboard(admin_dashboardTemplate):
   def button_2_click(self, **event_args):
     response = alert("Are you sure you want to Logout?", buttons=["Yes", "No"])
     if response == "Yes":
-      anvil.server.session["authenticated"] = False
+      anvil.server.call('get_session_unauthenticated')
       anvil.users.logout()
       alert("Users logged out successfully")
       open_form('Form1')
