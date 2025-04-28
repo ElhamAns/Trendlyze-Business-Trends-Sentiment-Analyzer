@@ -56,7 +56,7 @@ class RegisterForm(RegisterFormTemplate):
 
   def button_2_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form("login")
+    open_form("LoginForm")
     pass
 
   def button_5_click(self, **event_args):
@@ -73,7 +73,7 @@ class RegisterForm(RegisterFormTemplate):
 
   def button_8_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form("PrivacyPolicy")
+    open_form("ServicePage")
 
 
   def open_login(self, **event_args):
@@ -169,9 +169,9 @@ class RegisterForm(RegisterFormTemplate):
 
   def check_box_1_change(self, **event_args):
     if self.check_box_1.checked:
-      self.button_1.enabled = True
+      self.button_submit.enabled = True
     else:
-      self.button_1.enabled = False
+      self.button_submit.enabled = False
 
   def check_box_2_change(self, **event_args):
     recaptcha_response = anvil.js.window.grecaptcha.getResponse()
@@ -194,3 +194,7 @@ class RegisterForm(RegisterFormTemplate):
   def privacy_statement_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('PrivacyPolicy')
+
+  def button_9_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    open_form("PrivacyPolicy")
