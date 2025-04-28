@@ -165,7 +165,6 @@ class RegisterForm(RegisterFormTemplate):
     
   def enable_submit_button(self):
     if self.check_box_1.checked:
-      print("in if")
       return True
 
   def check_box_1_change(self, **event_args):

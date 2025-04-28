@@ -198,22 +198,12 @@ components:
       name: text_area_1
       properties: {auto_expand: true, border: solid 1px;, placeholder: Describe Your Business in Few Words...}
       type: TextArea
-    - data_bindings: []
-      event_bindings: {change: check_box_1_change}
-      layout_properties: {grid_position: 'BWUUOM,XVWHUQ'}
+    - layout_properties: {grid_position: 'SIXJNV,ZFAPQS'}
       name: check_box_1
-      properties:
-        align: center
-        allow_indeterminate: false
-        checked: false
-        enabled: true
-        spacing:
-          margin: [null, null, null, 209]
-        text: ''
-        visible: true
+      properties: {align: right, text: ''}
       type: CheckBox
     - event_bindings: {click: button_8_click}
-      layout_properties: {grid_position: 'BWUUOM,RXIDMU'}
+      layout_properties: {grid_position: 'SIXJNV,SJAYEX'}
       name: button_8_copy
       properties:
         align: left
@@ -251,7 +241,7 @@ components:
       type: Button
     layout_properties: {grid_position: 'UFLMRA,URGBMJ'}
     name: card_1
-    properties: {background: '#e1edfc', col_widths: '{"CNCTOU":15,"SPHPGG":45,"XVWHUQ":15,"RXIDMU":45}', role: card}
+    properties: {background: '#e1edfc', col_spacing: none, col_widths: '{"CNCTOU":15,"SPHPGG":45,"ZFAPQS":20,"SJAYEX":40}', role: card}
     type: ColumnPanel
   layout_properties: {slot: default}
   name: column_panel_1_copy
