@@ -17,6 +17,7 @@ class RowTemplate2(RowTemplate2Template):
 
   def button_1_click(self, **event_args):
     self.item['status'] = True
+    print("here")
     anvil.server.call('send_approval_email',self.item['user']['email'], True)
     self.refresh_data_bindings()
 

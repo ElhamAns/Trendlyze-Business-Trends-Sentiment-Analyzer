@@ -29,6 +29,9 @@ class PaymentForm(PaymentFormTemplate):
 
   def button_5_click(self, **event_args):
     """This method is called when the button is clicked"""
+    if not self.current_client['subsribed_at']:
+      alert("Please Subsribe First to use this app")
+      return
     if (self.current_client['subsribed_at']+ timedelta(days=self.current_client['subscription_package']['time_period'])) <  datetime.now(anvil.tz.tzutc()):
         alert("Your subscription ended please pay again to use this app")
     else:
@@ -36,7 +39,9 @@ class PaymentForm(PaymentFormTemplate):
 
   def button_4_click(self, **event_args):
     """This method is called when the button is clicked"""
-    if (self.current_client['subsribed_at']+ timedelta(days=self.current_client['subscription_package']['time_period'])) <  datetime.now(anvil.tz.tzutc()):
+    if not self.current_client['subsribed_at']:
+      alert("Please Subsribe First to use this app")
+    if not self.current_client['subsribed_at'] and (self.current_client['subsribed_at']+ timedelta(days=self.current_client['subscription_package']['time_period'])) <  datetime.now(anvil.tz.tzutc()):
         alert("Your subscription ended please pay again to use this app")
     else:
       open_form("ClientDashBoard")
