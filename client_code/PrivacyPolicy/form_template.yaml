@@ -237,7 +237,7 @@ components:
       border: 2px solid black
       foreground: black
       spacing:
-        margin: [null, null, null, '730']
+        margin: [null, null, null, '0']
       text: Log In
     type: Button
   - event_bindings: {click: button_1_click}

@@ -60,6 +60,17 @@ db_schema:
       type: datetime
     server: full
     title: Clients
+  data_csv:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: data_file
+      type: media
+    - admin_ui: {order: -1, width: 200}
+      name: name
+      type: string
+    server: full
+    title: data_csv
   files:
     client: none
     columns:
@@ -149,17 +160,6 @@ db_schema:
       type: number
     server: full
     title: Subscription_types
-  test_csv:
-    client: none
-    columns:
-    - admin_ui: {order: 0, width: 200}
-      name: data_file
-      type: media
-    - admin_ui: {order: -1, width: 200}
-      name: name
-      type: string
-    server: full
-    title: test_csv
   users:
     client: none
     columns:
