@@ -114,7 +114,6 @@ class ClientDashBoard(ClientDashBoardTemplate):
     anvil.media.download(media_object)
     
   def view_review_button_visible(self):
-    print("here")
     if not self.drop_down_3.selected_value:
       return False
     return True

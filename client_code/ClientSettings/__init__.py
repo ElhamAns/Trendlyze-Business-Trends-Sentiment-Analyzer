@@ -28,7 +28,6 @@ class ClientSettings(ClientSettingsTemplate):
     self.city_drop_down.selected_value = self.current_client['city']
     self.area_drop_down.selected_value = self.current_client['area']
     self.label_12.text = self.current_client['subscription_package']['type']
-    print("in int")
     self.init_components(**properties)
     
 
@@ -60,11 +59,10 @@ your account within 30 days, your account will be reactivated.Are you sure you w
 
   def button_8_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('forgetPassword')
+    open_form('ForgetPasswordForm')
 
   def button_6_click(self, **event_args):
     """This method is called when the button is clicked"""
-    print("kkkk: ", self.text_box_1.text)
     if not self.text_box_1.text or self.text_box_1.text == " ":
       alert("Business Name Cannot be Empty")
       return
@@ -87,7 +85,7 @@ your account within 30 days, your account will be reactivated.Are you sure you w
     """This method is called when the button is clicked"""
     response = alert("Are you sure you want to Logout?", buttons=["Yes", "No"])
     if response == "Yes":
-      anvil.server.session["authenticated"] = False
+      anvil.server.call('get_session_unauthenticated')
       anvil.users.logout()
       alert("Users logged out successfully")
       open_form('HomePage')

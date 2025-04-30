@@ -56,14 +56,14 @@ components:
       name: spacer_3
       properties: {height: 32}
       type: Spacer
-    - event_bindings: {click: button_1_click}
+    - event_bindings: {click: send_otp_click}
       layout_properties: {grid_position: 'AHEGNP,CEOCLT'}
-      name: button_1
+      name: send_otp
       properties: {background: black, bold: true, foreground: white, text: Send Otp Code}
       type: Button
-    - event_bindings: {click: button_2_click}
+    - event_bindings: {click: login_button_click}
       layout_properties: {grid_position: 'GXYQCV,NHKJNS'}
-      name: button_2
+      name: login_button
       properties: {bold: true, foreground: black, text: Enter Password to Login}
       type: Button
     layout_properties: {grid_position: 'YAYZQK,ZATKLL'}

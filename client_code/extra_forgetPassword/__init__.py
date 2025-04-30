@@ -1,4 +1,4 @@
-from ._anvil_designer import forgetPasswordTemplate
+from ._anvil_designer import extra_forgetPasswordTemplate
 from anvil import *
 import anvil.tables as tables
 import anvil.tables.query as q
@@ -8,14 +8,14 @@ import anvil.server
 from ..PasswordResetDialog import PasswordResetDialog
 
 
-class forgetPassword(forgetPasswordTemplate):
+class extra_forgetPassword(extra_forgetPasswordTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
 
-  def button_1_click(self, **event_args):
+  def send_otp_click(self, **event_args):
     """This method is called when the button is clicked"""
     # Step 1: Send reset code
     email = self.text_box_2.text
@@ -93,6 +93,6 @@ class forgetPassword(forgetPasswordTemplate):
     else:
         alert("Password reset failed. Please try the process again.")
 
-  def button_2_click(self, **event_args):
+  def login_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     open_form('LoginForm')

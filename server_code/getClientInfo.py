@@ -81,7 +81,6 @@ def get_competitor_plot():
         ),
         plot_bgcolor="white"
     )
-    print("time taken a: ", time.time() - a)
     return fig
 
 @anvil.server.callable
@@ -119,7 +118,6 @@ def get_ratings_chart():
     paper_bgcolor="rgba(0,0,0,0)"
 )
 
-    print("time taken b: ", time.time() - b)
     return fig
 
 @anvil.server.callable
@@ -145,13 +143,11 @@ def get_reviews_chart():
         plot_bgcolor="white",
         margin=dict(l=40, r=40, t=40, b=40)
     )
-    print("time taken c: ", time.time() - c)
 
     return fig
 
 @anvil.server.callable
 def get_user_cleint(user):
-  print("in fin")
   return app_tables.clients.get(user=user)
 
 @anvil.server.callable
@@ -180,8 +176,6 @@ def get_home_page_rating(client=None):
     bad_reviews = len(app_tables.reviews.search(shop=shop, label=0))
     satisfactory_reviews = len(app_tables.reviews.search(shop=shop, label=1))
     good_reviews = len(app_tables.reviews.search(shop=shop, label=2))
-    print("time taken before: ", time.time() - b)
-    
     labels = ["Unsatisfied", "Partially Satisfied" , "Satisfied"]
     values = [bad_reviews, good_reviews, satisfactory_reviews]
     colors = ["black", "lightblue", "lightgreen"]  # Custom colors
@@ -210,8 +204,6 @@ def get_home_page_rating(client=None):
     plot_bgcolor="rgba(0,0,0,0)",
     paper_bgcolor="rgba(0,0,0,0)"
 )
-
-    print("time taken b: ", time.time() - b)
     return fig
 
 @anvil.server.callable

@@ -24,7 +24,6 @@ def _get_auth_token():
     }
     
     try:
-        print("in try")
         response = requests.post(
             url=f"{PAYPAL_BASE_URL}/v1/oauth2/token",
             headers=headers,
@@ -38,9 +37,7 @@ def _get_auth_token():
 def create_payment(amount, currency="USD", description=""):
     """Create a PayPal payment"""
     try:
-        print("here")
         access_token = _get_auth_token()
-        print("here")
         headers = {
             "Content-Type": "application/json",
             "Authorization": f"Bearer {access_token}"
@@ -61,15 +58,11 @@ def create_payment(amount, currency="USD", description=""):
                 "brand_name": "Business Trend"  # Customize this
             }
         }
-        print("origin: ", anvil.server.get_app_origin())
-        print("header: ", headers)
         response = requests.post(
             url=f"{PAYPAL_BASE_URL}/v2/checkout/orders",
             headers=headers,
             data=json.dumps(payload)
         )
-        print("response: ", response)
-        # Find approval URL in response
         for link in response.json()['links']:
             if link['rel'] == 'approve':
                 return {'status': 'success', 'approval_url': link['href']}

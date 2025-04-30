@@ -1,4 +1,4 @@
-from ._anvil_designer import registerTemplate
+from ._anvil_designer import extra_registerTemplate
 from anvil import *
 import anvil.tables as tables
 import anvil.tables.query as q
@@ -9,7 +9,7 @@ import anvil.server
 from anvil_extras import routing
 
 @routing.route('register', title="BusinessTrend")
-class register(registerTemplate):
+class extra_register(extra_registerTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
@@ -108,7 +108,6 @@ class register(registerTemplate):
     
   def enable_submit_button(self):
     if self.check_box_1.checked:
-      print("in if")
       return True
 
   def check_box_1_change(self, **event_args):

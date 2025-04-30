@@ -6,7 +6,6 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.users
 
-from ..Form1t import Form1t
 from ..login import login
 from ..register import register
 from ..PaymentForm import PaymentForm
@@ -21,11 +20,8 @@ from datetime import datetime, timedelta
 # @routing.main_router
 class LoginForm(LoginFormTemplate):
   def __init__(self, **properties):
-    # Set Form properties and Data Bindings.
-
     self.init_components(**properties)
 
-    # open_form('Form1t')
 
     self.links = [self.button_2, self.button_1]
     self.button_7.tag.url_hash = "home"
@@ -77,7 +73,7 @@ class LoginForm(LoginFormTemplate):
 
   def forget_password_open(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('forgetPassword')
+    open_form('ForgetPasswordForm')
     pass
 
   def login_button(self, **event_args):

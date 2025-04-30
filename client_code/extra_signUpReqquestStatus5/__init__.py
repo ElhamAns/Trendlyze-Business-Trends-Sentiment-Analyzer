@@ -1,4 +1,4 @@
-from ._anvil_designer import signUpReqquestStatus5Template
+from ._anvil_designer import extra_signUpReqquestStatus5Template
 from anvil import *
 import anvil.tables as tables
 import anvil.tables.query as q
@@ -7,7 +7,7 @@ import anvil.users
 import anvil.server
 
 
-class signUpReqquestStatus5(signUpReqquestStatus5Template):
+class extra_signUpReqquestStatus5(extra_signUpReqquestStatus5Template):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)

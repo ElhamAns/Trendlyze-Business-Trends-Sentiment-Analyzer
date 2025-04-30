@@ -116,7 +116,6 @@ def get_total_review_counts(year=2024, shop=None):
         margin=dict(r=180),
         plot_bgcolor="white"
     )
-    print("time taken a: ", time.time() - a)
     return fig
 
 
@@ -172,7 +171,6 @@ def get_shop_reviews(shop_name, start_year=2024, end_year=2025):
         ),
         plot_bgcolor="white"
     )
-    print("time taken a: ", time.time() - a)
     return fig
 
 @anvil.server.callable
@@ -213,7 +211,6 @@ def get_shop_sentiments(shop_name=None):
         legend_itemclick=False,
         legend_itemdoubleclick=False 
     )
-    print("time taken c: ", time.time() - c)
 
     return fig
 

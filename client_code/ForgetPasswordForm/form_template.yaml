@@ -1,0 +1,191 @@
+components:
+- components:
+  - event_bindings: {click: nav_link_click}
+    layout_properties: {}
+    name: button_7
+    properties:
+      foreground: black
+      spacing:
+        margin: [null, null, null, '700']
+      text: Home
+      tooltip: Welcome Page
+    type: Button
+  - event_bindings: {click: button_6_click}
+    layout_properties: {}
+    name: button_6
+    properties: {foreground: black, icon: '', text: About, tooltip: About us section}
+    type: Button
+  - event_bindings: {click: button_5_click}
+    name: button_5
+    properties: {align: center, foreground: black, text: Features}
+    type: Button
+  - event_bindings: {click: button_4_click}
+    name: button_4
+    properties: {foreground: black, text: Users}
+    type: Button
+  - event_bindings: {click: button_3_click}
+    name: button_3
+    properties: {foreground: black, text: Payment}
+    type: Button
+  - event_bindings: {click: button_2_click}
+    layout_properties: {}
+    name: button_2
+    properties:
+      background: white
+      border: 2px solid black
+      foreground: black
+      spacing:
+        margin: [null, null, null, '0']
+      text: Log In
+    type: Button
+  - event_bindings: {click: button_1_click}
+    layout_properties: {}
+    name: button_1
+    properties:
+      background: '#59c8ff'
+      border: 2px solid black
+      foreground: black
+      spacing:
+        margin: [null, null, null, '0']
+      text: Request an account
+    type: Button
+  layout_properties: {slot: nav-right}
+  name: navbar_links
+  properties: {align: left}
+  type: FlowPanel
+- layout_properties: {slot: title}
+  name: image_1
+  properties: {display_mode: shrink_to_fit, height: 76.77777099609375, source: _/theme/app-logo.png, tooltip: Go to welcome page}
+  type: Image
+- components:
+  - layout_properties: {grid_position: 'PMYBAG,TKWUCJ GEQYOJ,SUSFOW'}
+    name: image_2
+    properties: {display_mode: shrink_to_fit, height: 102.5555419921875, horizontal_align: center, source: _/theme/app-logo.png, vertical_align: center}
+    type: Image
+  - layout_properties: {grid_position: 'PMYBAG,TKWUCJ FHMBYW,DWZISR'}
+    name: link_1_copy
+    properties: {font_size: 20, foreground: black, icon: 'fa:envelope', text: Seniorprojectbtsa@gmail.com, underline: true, url: 'mailto:Seniorprojectbtsa@gmail.com'}
+    type: Link
+  - layout_properties: {grid_position: 'PMYBAG,HUVEXR QODGFP,XCYSKY'}
+    name: label_1
+    properties: {align: right, bold: true, foreground: black, text: BUSINESS TRENDS}
+    type: Label
+  - layout_properties: {grid_position: 'PMYBAG,HUVEXR XWVEMA,ZUJTYP'}
+    name: label_2
+    properties:
+      align: right
+      font_size: 17
+      foreground: black
+      text: |-
+        Sentiment analysis of Arabic Google Maps reviews to help
+        local businesses stay competitive, spot trends, and improve.
+    type: Label
+  - components:
+    - layout_properties: {grid_position: 'SAOOKH,GUVAAA'}
+      name: label_3
+      properties: {align: center, font_size: 18, foreground: black, text: © 2025 All Rights Reserved}
+      type: Label
+    - event_bindings: {click: privacy_statement_click}
+      layout_properties: {grid_position: 'JEBWZL,QWONIV'}
+      name: privacy_button
+      properties:
+        align: left
+        border: ''
+        foreground: black
+        spacing:
+          margin: [null, '300', null, 0]
+          padding: [null, '16', null, '16']
+        text: Privacy Statement
+      type: Button
+    - event_bindings: {click: policy_button_click}
+      layout_properties: {grid_position: 'JEBWZL,VVACDC'}
+      name: policy_button
+      properties: {align: right, foreground: black, text: Terms of services}
+      type: Button
+    layout_properties: {grid_position: 'DGADTC,XGGOKN'}
+    name: column_panel_2
+    properties: {col_spacing: none, col_widths: '{"HHKVHF":8}'}
+    type: ColumnPanel
+  layout_properties: {slot: footer-slot}
+  name: column_panel_1
+  properties: {col_widths: '{"HUVEXR":35,"TKWUCJ":35}', wrap_on: never}
+  type: ColumnPanel
+- components:
+  - layout_properties: {grid_position: 'KYIJYL,YSABEX'}
+    name: image_1_copy
+    properties:
+      height: '200'
+      margin: [null, 183, null, 182]
+      source: _/theme/app-logo.png
+    type: Image
+  - layout_properties: {grid_position: 'DCEUDS,LCYEAZ'}
+    name: label_1_copy
+    properties: {align: center, bold: true, font_size: 36, text: Forget Password}
+    type: Label
+  - components:
+    - layout_properties: {grid_position: 'TXZQLI,TGGCGB'}
+      name: spacer_1
+      properties: {height: 32}
+      type: Spacer
+    - layout_properties: {grid_position: 'MOJMTF,MFLLDI'}
+      name: label_2_copy
+      properties:
+        bold: true
+        font_size: 18
+        spacing:
+          margin: [null, '168', null, 168]
+        text: Email
+      type: Label
+    - layout_properties: {grid_position: 'ELCVUH,ELYMJJ'}
+      name: text_box_2
+      properties:
+        background: white
+        margin: [null, '0', null, '168']
+        placeholder: example@gmail.com
+      type: TextBox
+    - layout_properties: {grid_position: 'ELCVUH,VHRMAW'}
+      name: spacer_2
+      properties: {height: 32}
+      type: Spacer
+    - layout_properties: {grid_position: 'EQLHHA,ZDDPDU'}
+      name: label_4
+      properties:
+        bold: true
+        font_size: 18
+        spacing:
+          margin: [null, '168', null, '168']
+        text: Confirm Email
+      type: Label
+    - layout_properties: {grid_position: 'FDQZLA,EWKIOZ'}
+      name: text_box_1
+      properties:
+        background: white
+        margin: [null, null, null, '168']
+        placeholder: example@gmail.com
+      type: TextBox
+    - layout_properties: {grid_position: 'FDQZLA,PERFWP'}
+      name: spacer_3
+      properties: {height: 32}
+      type: Spacer
+    - event_bindings: {click: send_otp_click}
+      layout_properties: {grid_position: 'AHEGNP,CEOCLT'}
+      name: send_otp
+      properties: {background: black, bold: true, foreground: white, text: Send Otp Code}
+      type: Button
+    - event_bindings: {click: login_button_click}
+      layout_properties: {grid_position: 'GXYQCV,NHKJNS'}
+      name: login_button
+      properties: {bold: true, foreground: black, text: Enter Password to Login}
+      type: Button
+    layout_properties: {grid_position: 'YAYZQK,ZATKLL'}
+    name: card_1
+    properties: {background: '#e1edfc', col_widths: '{"ELYMJJ":40,"VHRMAW":20,"EWKIOZ":40,"PERFWP":20}', role: card}
+    type: ColumnPanel
+  layout_properties: {slot: default}
+  name: column_panel_1_copy
+  properties: {}
+  type: ColumnPanel
+container:
+  properties: {background: '', border: '', foreground: '', html: '@theme:standard-page.html', role: secondary-app-bar, tooltip: '', visible: true}
+  type: HtmlTemplate
+is_package: true

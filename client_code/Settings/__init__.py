@@ -23,7 +23,6 @@ class Settings(SettingsTemplate):
     """This method is called when the button is clicked"""
     response = alert("Are you sure you want to Logout?", buttons=["Yes", "No"])
     if response == "Yes":
-      anvil.server.session["authenticated"] = False
       anvil.server.call('get_session_unauthenticated')
       alert("Users logged out successfully")
       open_form('Form1')
