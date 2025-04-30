@@ -12,10 +12,8 @@ from ..signUpReqquestStatus import signUpReqquestStatus
 from datetime import datetime, timedelta
 
 
-# from anvil_extras import routing
 
 
-# @routing.main_router
 class LoginForm(LoginFormTemplate):
   def __init__(self, **properties):
     self.init_components(**properties)
@@ -29,7 +27,6 @@ class LoginForm(LoginFormTemplate):
     self.button_3.tag.url_hash = "payment"
     self.button_4.tag.url_hash = "success"
 
-    # Any code you write here will run when the form opens.
 
   def home_link_click(self, **event_args):
     """This method is called when the button is clicked"""

@@ -21,35 +21,26 @@ def get_competitor_plot():
     current_year = datetime.datetime.now().year
     previous_year = current_year - 1
     
-    # Initialize a dictionary to store the count of reviews per month
     monthly_counts = {}
     
-    # Loop through each year (current year and previous year)
     for year in [previous_year, current_year]:
         data = []
-        # Loop through each month (1 to 12)
         for month in range(1, 13):
-            # Create the start and end date for the month
             start_date = datetime.datetime(year, month, 1)
             
-            # For months other than December, set the end date to the last day of the month
             if month == 12:
                 end_date = datetime.datetime(year, month, 31)
             else:
-                # For months with 31 days
                 end_date = datetime.datetime(year, month + 1, 1) - datetime.timedelta(days=1)
     
-            # Query the reviews table for reviews published within this month
             reviews = app_tables.reviews.search(published_at=q.between(start_date, end_date), shop=q.any_of(*top_clients[:6]))
             
-            # Store the count of reviews for this month in the dictionary
             data.append(len(reviews))
         monthly_counts[year] = data
     
     last_year = monthly_counts[current_year]
     this_year = monthly_counts[previous_year]
 
-    # Create traces as separate Scatter objects
     last_year_trace = go.Scatter(
         x=months,
         y=last_year,
@@ -66,10 +57,8 @@ def get_competitor_plot():
         line=dict(color='lightblue', width=2, dash='dot')
     )
 
-    # Create Figure and pass traces in the `data` argument
     fig = go.Figure(data=[last_year_trace, this_year_trace])
 
-    # Update Layout
     fig.update_layout(
         title="Total reviews count over years",
         xaxis=dict(showgrid=False, zeroline=False),
@@ -85,13 +74,11 @@ def get_competitor_plot():
 
 @anvil.server.callable
 def get_ratings_chart():
-    # Data
-    b = time.time()
     client = app_tables.clients.search()[0]
     values = anvil.server.call('get_client_home_page', client)
     labels = [key for key, value in values]
     values = [value for key, value in values]
-    colors = ["black", "lightblue", "lightgreen", "#d4e4fa"]  # Custom colors
+    colors = ["black", "lightblue", "lightgreen", "#d4e4fa"]
 
     # Create Donut Chart
     fig = go.Figure(
@@ -99,12 +86,11 @@ def get_ratings_chart():
             labels=labels,
             values=values,
             marker=dict(colors=colors),
-            hole=0.5,  # Donut effect
-            textinfo="none",  # Hide percentage labels on the chart
+            hole=0.5,
+            textinfo="none",
         )]
     )
 
-    # Update Layout
     fig.update_layout(
     title="Top Ratings",
     showlegend=True,
@@ -132,7 +118,7 @@ def get_reviews_chart():
             x=categories,
             y=values,
             marker=dict(color=colors, line=dict(width=0)),
-            width=0.3,  # Adjust bar width
+            width=0.3,
         )]
     )
     # Update Layout
@@ -178,7 +164,7 @@ def get_home_page_rating(client=None):
     good_reviews = len(app_tables.reviews.search(shop=shop, label=2))
     labels = ["Unsatisfied", "Partially Satisfied" , "Satisfied"]
     values = [bad_reviews, good_reviews, satisfactory_reviews]
-    colors = ["black", "lightblue", "lightgreen"]  # Custom colors
+    colors = ["black", "lightblue", "lightgreen"]
 
     # Create Donut Chart
     fig = go.Figure(
@@ -186,12 +172,11 @@ def get_home_page_rating(client=None):
             labels=labels,
             values=values,
             marker=dict(colors=colors),
-            hole=0.5,  # Donut effect
-            textinfo="none",  # Hide percentage labels on the chart
+            hole=0.5,
+            textinfo="none",
         )]
     )
 
-    # Update Layout
     fig.update_layout(
     title="Customer satisfaction",
     showlegend=True,

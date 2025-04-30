@@ -15,7 +15,6 @@ from anvil_extras import routing
 @routing.route('cancel-payment', url_keys=['token', routing.ANY], title="cancel-payment | PaymentForm")
 class PaymentForm(PaymentFormTemplate):
   def __init__(self, **properties):
-    # Set Form properties and Data Bindings.
     self.current_client = anvil.server.call("get_current_client")
     self.label_1.text = f"Welcome, {self.current_client['business_name']}"
     self.label_4.text = f"{self.current_client['business_name']} User"
@@ -25,7 +24,6 @@ class PaymentForm(PaymentFormTemplate):
     self.image_3.source = self.current_client["logo"]
     self.init_components(**properties)
 
-    # Any code you write here will run when the form opens.
 
   def button_5_click(self, **event_args):
     """This method is called when the button is clicked"""

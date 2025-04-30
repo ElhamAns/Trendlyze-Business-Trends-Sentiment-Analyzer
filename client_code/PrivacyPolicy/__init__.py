@@ -11,7 +11,6 @@ from anvil_extras import routing
 @routing.route('privacyPolicy', title="BusinessTrend")
 class PrivacyPolicy(PrivacyPolicyTemplate):
   def __init__(self, **properties):
-    # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.links = [self.button_2, self.button_1, self.button_6]
     self.button_7.tag.url_hash  = 'home'
