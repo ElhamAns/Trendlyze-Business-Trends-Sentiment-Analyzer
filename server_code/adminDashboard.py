@@ -16,7 +16,6 @@ def get_admin_requests(month=None):
     if not month:
         return clients
     
-    # Get the start and end of the given month
     month_number = datetime.strptime(month, '%B').month
     current_year = datetime.now().year
     start_date = datetime(current_year, month_number, 1)
