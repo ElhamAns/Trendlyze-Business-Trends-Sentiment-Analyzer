@@ -6,16 +6,10 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.users
 
-from ..Form1t import Form1t
-from ..login import login
-from ..register import register
 from ..PaymentForm import PaymentForm
 from ..SuccessPayment import SuccessPayment
 from ..signUpReqquestStatus import signUpReqquestStatus
 from datetime import datetime, timedelta
-
-
-# from anvil_extras import routing
 
 
 # @routing.main_router
@@ -29,7 +23,6 @@ class RegisterForm(RegisterFormTemplate):
     self.city_drop_down.items = ['Al-Khobar']
     self.area_drop_down.items = ['North Alkhobar', 'West Alkhobar', 'South Alkhobar', 'Rakah','Thoqbah']
 
-    # open_form('Form1t')
 
     self.links = [self.button_2, self.button_1]
     self.button_7.tag.url_hash = "home"
@@ -39,7 +32,6 @@ class RegisterForm(RegisterFormTemplate):
     self.button_3.tag.url_hash = "payment"
     self.button_4.tag.url_hash = "success"
 
-    # Any code you write here will run when the form opens.
 
   def home_link_click(self, **event_args):
     """This method is called when the button is clicked"""

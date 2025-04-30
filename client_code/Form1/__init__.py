@@ -19,7 +19,6 @@ class Form1(Form1Template):
     
     self.init_components(**properties)
     
-    # open_form('Form1t')
     
     self.links = [self.button_2, self.button_1]
     self.button_7.tag.url_hash  = 'home'

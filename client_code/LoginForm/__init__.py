@@ -6,8 +6,6 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.users
 
-from ..login import login
-from ..register import register
 from ..PaymentForm import PaymentForm
 from ..SuccessPayment import SuccessPayment
 from ..signUpReqquestStatus import signUpReqquestStatus

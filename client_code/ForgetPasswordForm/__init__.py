@@ -6,9 +6,6 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.users
 
-from ..Form1t import Form1t
-from ..login import login
-from ..register import register
 from ..PaymentForm import PaymentForm
 from ..SuccessPayment import SuccessPayment
 
@@ -22,7 +19,6 @@ class ForgetPasswordForm(ForgetPasswordFormTemplate):
 
     self.init_components(**properties)
 
-    # open_form('Form1t')
 
     self.links = [self.button_2, self.button_1]
     self.button_7.tag.url_hash = "home"
