@@ -17,12 +17,16 @@ class RowTemplate2(RowTemplate2Template):
 
   def button_1_click(self, **event_args):
     self.item['status'] = True
+    print("before func")
     anvil.server.call('send_approval_email',self.item['user']['email'], True)
+    print("after func")
     self.refresh_data_bindings()
 
   def button_2_click(self, **event_args):
     self.item['status'] = False
+    print("before func")
     anvil.server.call('send_approval_email',self.item['user']['email'], False)
+    print("after")
     self.refresh_data_bindings()
     """This method is called when the button is clicked"""
     pass

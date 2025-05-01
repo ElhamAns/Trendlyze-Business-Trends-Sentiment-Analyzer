@@ -5,10 +5,18 @@ components:
       name: label_1
       properties: {font_size: 24, text: Notifications}
       type: Label
-    - layout_properties: {grid_position: 'LPIWDD,RKSQHZ'}
-      name: repeating_panel_2
-      properties: {item_template: admin_dashboard.ItemTemplate3}
-      type: RepeatingPanel
+    - components:
+      - name: repeating_panel_4
+        properties: {item_template: admin_dashboard.RowTemplate8}
+        type: RepeatingPanel
+      layout_properties: {grid_position: 'KLUFYK,LRHPAU'}
+      name: data_grid_2
+      properties:
+        auto_header: false
+        columns:
+        - {data_key: column_1, id: JKSDUP, title: Column 1}
+        rows_per_page: 5
+      type: DataGrid
     layout_properties: {grid_position: 'CMWUGY,BOCLYD'}
     name: column_panel_6
     properties: {}

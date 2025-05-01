@@ -228,13 +228,17 @@ def reactivate_deleted_account():
 
 @anvil.server.callable
 def send_approval_email(email, approved):
+  print("here in funcx")
+  print("email: ", email)
   if approved:
+    print("in if")
     anvil.email.send(to=email, subject="Approved by business Trend Admin",text=f"""
     You are approved! Please enter to complete the payment to
 activate your account {anvil.server.get_app_origin('published')}
   Thanks!
   """ )
   else:
+    print("in else")
     anvil.email.send(to=email, subject="Rejecteed by business Trend Admin",text="""We’re sorry to inform you that you have been rejected. Please
   contact us for further information Seniorprojectbtsa@gmail.com
   Thanks!

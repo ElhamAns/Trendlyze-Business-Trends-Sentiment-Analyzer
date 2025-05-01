@@ -1,0 +1,19 @@
+components:
+- data_bindings:
+  - {code: 'self.item[''text'']', property: text, writeback: false}
+  layout_properties: {column: JKSDUP}
+  name: label_1
+  properties: {}
+  type: Label
+- data_bindings:
+  - {code: self.get_time_difference(), property: text, writeback: false}
+  layout_properties: {column: JKSDUP}
+  name: label_2
+  properties:
+    font_size: 12
+    spacing:
+      margin: ['0', null, '0', null]
+      padding: ['0', null, '0', null]
+  type: Label
+container: {type: DataRowPanel}
+is_package: true

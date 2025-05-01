@@ -16,7 +16,7 @@ class admin_dashboard(admin_dashboardTemplate):
     self.repeating_panel_3.items = anvil.server.call('get_admin_requests')
     self.all_clients = anvil.server.call('get_all_clients')
     self.repeating_panel_1.items = self.all_clients
-    self.repeating_panel_2.items = anvil.server.call('get_notifaicatons')
+    self.repeating_panel_4.items = anvil.server.call('get_notifaicatons')
     self.drop_down_1.items = ['','January',
                               'February',
                               'March',
