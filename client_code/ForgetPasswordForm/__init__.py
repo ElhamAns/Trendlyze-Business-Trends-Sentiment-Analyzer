@@ -76,6 +76,11 @@ class ForgetPasswordForm(ForgetPasswordFormTemplate):
   def send_otp_click(self, **event_args):
     """This method is called when the button is clicked"""
     email = self.text_box_2.text
+
+    # Email validation
+    if email != self.text_box_1text:
+        alert("Email and Confirm email must be same")
+        return
     reset_code = anvil.server.call('_send_password_reset', email)
     
     if not reset_code:

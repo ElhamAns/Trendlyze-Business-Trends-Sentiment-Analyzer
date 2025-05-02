@@ -53,7 +53,7 @@ your account within 30 days, your account will be reactivated.Are you sure you w
     if response == "Yes":
         anvil.server.call('delete_user_account')
         alert("Your profile has been deleted.")
-        anvil.server.session["authenticated"] = False
+        anvil.server.call('get_session_unauthenticated')
         anvil.users.logout()
         open_form('LoginForm')
 
@@ -88,7 +88,7 @@ your account within 30 days, your account will be reactivated.Are you sure you w
       anvil.server.call('get_session_unauthenticated')
       anvil.users.logout()
       alert("Users logged out successfully")
-      open_form('HomePage')
+      open_form('Form1')
 
   def policy_button_click(self, **event_args):
     """This method is called when the button is clicked"""

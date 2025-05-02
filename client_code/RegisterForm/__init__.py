@@ -108,6 +108,10 @@ class RegisterForm(RegisterFormTemplate):
     if self.email.text != self.confirm_email.text:
         alert("Email and Confirm email must be same")
         return
+
+    if "@" not in self.email.text or not self.email.text.endswith(".com"):
+        alert("Invalid email format. Email must contain '@' and end with '.com'")
+        return
     
     # Password length validation
     if len(self.passwrod.text) < 8:
