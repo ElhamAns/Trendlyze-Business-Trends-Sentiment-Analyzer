@@ -73,10 +73,7 @@ class PaymentForm(PaymentFormTemplate):
     """This method is called when the button is clicked"""
     response = alert("Are you sure you want to Logout?", buttons=["Yes", "No"])
     if response == "Yes":
-      anvil.server.call('get_session_unauthenticated')
-      anvil.users.logout()
-      alert("Users logged out successfully")
-      open_form('Form1')
+      open_form('Rating')
 
   def button_3_click(self, **event_args):
     """This method is called when the button is clicked"""
