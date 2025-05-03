@@ -78,7 +78,7 @@ class ForgetPasswordForm(ForgetPasswordFormTemplate):
     email = self.text_box_2.text
 
     # Email validation
-    if email != self.text_box_1text:
+    if email != self.text_box_1.text:
         alert("Email and Confirm email must be same")
         return
     reset_code = anvil.server.call('_send_password_reset', email)
