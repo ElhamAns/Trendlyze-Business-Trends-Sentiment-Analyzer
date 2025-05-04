@@ -59,7 +59,7 @@ components:
         properties:
           spacing:
             padding: [null, null, '0', null]
-          text: Trail Plan
+          text: Trial Plan
         type: RadioButton
       - layout_properties: {grid_position: 'BBJEVU,GPYGOB'}
         name: label_3
