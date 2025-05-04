@@ -85,7 +85,7 @@ class LoginForm(LoginFormTemplate):
           response = alert("Your account is deleted, do you want to reactivate your account?", buttons=["Yes", "No"])
           if response == "Yes":
             anvil.server.call('reactivate_deleted_account')
-            alert("Your account is reactivated succesfully Login you use Business Trend Again!")
+            alert("Your account is reactivated succesfully! Please login to use Trendlyze Again.")
             anvil.server.call('get_session_unauthenticated')
             anvil.users.logout()
             open_form('LoginForm')
